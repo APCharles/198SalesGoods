@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  198SalesGoods
+//
+//  Created by BST on 2017/7/26.
+//  Copyright © 2017年 AP. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "NSString+TextFrame.h"
+
+#import "UIcolortool.h"
+
+#import "UIView+APFrame.h"
+
+#define MAXSIZE CGSizeMake(MAXFLOAT, MAXFLOAT)
+
+#define mainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define mainScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+    //白色背景
+#define LIGHTWHITE  [UIColor colorWithRed:244/255.f green:244/255.f blue:244/255.f alpha:1]
+/******************    TabBar          *************/
+#define MallClassKey   @"rootVCClassString"
+#define MallTitleKey   @"title"
+#define MallImgKey     @"imageName"
+#define MallSelImgKey  @"selectedImageName"
+
+
+    //全局背景色
+#define DCBGColor RGB(245,245,245)
+
+#define PFR [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"PingFang SC"
+
+#endif /* PrefixHeader_pch */
