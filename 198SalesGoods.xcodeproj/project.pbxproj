@@ -32,7 +32,6 @@
 		0F3F6FAD1F39E19500152140 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FAC1F39E19500152140 /* HomeViewController.m */; };
 		0F3F6FB01F39E1A900152140 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FAF1F39E1A900152140 /* GoodsViewController.m */; };
 		0F3F6FB31F39E1B200152140 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FB21F39E1B200152140 /* MineViewController.m */; };
-		0F3F6FB61F39E1CE00152140 /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FB51F39E1CE00152140 /* ShoppingCartViewController.m */; };
 		0F520EB11F29BDB3004AFCB4 /* NSString+TextFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F520EAE1F29BDB3004AFCB4 /* NSString+TextFrame.m */; };
 		0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F520EB01F29BDB3004AFCB4 /* UIcolortool.m */; };
 		0F520EB51F29BEA0004AFCB4 /* UIView+APFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F520EB41F29BEA0004AFCB4 /* UIView+APFrame.m */; };
@@ -43,6 +42,7 @@
 		0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67B1801F3C0974000028A1 /* ToolsCollectionViewCell.m */; };
 		0F67B1831F3C36E3000028A1 /* home_good.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F67B1821F3C36E3000028A1 /* home_good.gif */; };
 		0F67B1861F3C39B3000028A1 /* GoodsShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67B1851F3C39B3000028A1 /* GoodsShowCell.m */; };
+		0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */; };
 		0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C11F28849200ED09D9 /* SalesTabController.m */; };
 		0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */; };
 		0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C71F28851E00ED09D9 /* SalesTabBar.m */; };
@@ -104,8 +104,6 @@
 		0F3F6FAF1F39E1A900152140 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
 		0F3F6FB11F39E1B200152140 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0F3F6FB21F39E1B200152140 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		0F3F6FB41F39E1CE00152140 /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingCartViewController.h; path = ../Mine/ShoppingCartViewController.h; sourceTree = "<group>"; };
-		0F3F6FB51F39E1CE00152140 /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingCartViewController.m; path = ../Mine/ShoppingCartViewController.m; sourceTree = "<group>"; };
 		0F520EAD1F29BDB3004AFCB4 /* NSString+TextFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextFrame.h"; sourceTree = "<group>"; };
 		0F520EAE1F29BDB3004AFCB4 /* NSString+TextFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextFrame.m"; sourceTree = "<group>"; };
 		0F520EAF1F29BDB3004AFCB4 /* UIcolortool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIcolortool.h; sourceTree = "<group>"; };
@@ -122,6 +120,8 @@
 		0F67B1821F3C36E3000028A1 /* home_good.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = home_good.gif; sourceTree = "<group>"; };
 		0F67B1841F3C39B3000028A1 /* GoodsShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsShowCell.h; sourceTree = "<group>"; };
 		0F67B1851F3C39B3000028A1 /* GoodsShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsShowCell.m; sourceTree = "<group>"; };
+		0FC6095E1F3D4DF80017531E /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingCartViewController.h; path = 198SalesGoods/Mine/ShoppingCartViewController.h; sourceTree = SOURCE_ROOT; };
+		0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingCartViewController.m; path = 198SalesGoods/Mine/ShoppingCartViewController.m; sourceTree = SOURCE_ROOT; };
 		0FF685C01F28849200ED09D9 /* SalesTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTabController.h; sourceTree = "<group>"; };
 		0FF685C11F28849200ED09D9 /* SalesTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTabController.m; sourceTree = "<group>"; };
 		0FF685C31F2884C200ED09D9 /* SalesNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesNavgationController.h; sourceTree = "<group>"; };
@@ -307,8 +307,8 @@
 		0FF685BB1F28843500ED09D9 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				0F3F6FB41F39E1CE00152140 /* ShoppingCartViewController.h */,
-				0F3F6FB51F39E1CE00152140 /* ShoppingCartViewController.m */,
+				0FC6095E1F3D4DF80017531E /* ShoppingCartViewController.h */,
+				0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
@@ -484,7 +484,6 @@
 				0F19AA491F0D085000997F66 /* ViewController.m in Sources */,
 				0F3F6FB31F39E1B200152140 /* MineViewController.m in Sources */,
 				0F3F6FB01F39E1A900152140 /* GoodsViewController.m in Sources */,
-				0F3F6FB61F39E1CE00152140 /* ShoppingCartViewController.m in Sources */,
 				0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */,
 				0F19AA461F0D085000997F66 /* AppDelegate.m in Sources */,
 				0F3F6F9B1F39DFF800152140 /* GQGesVCTransition.m in Sources */,
@@ -493,6 +492,7 @@
 				0F3F6F9E1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.m in Sources */,
 				0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */,
 				0F520EB51F29BEA0004AFCB4 /* UIView+APFrame.m in Sources */,
+				0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */,
 				0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */,
 				0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */,
 				0F520EB11F29BDB3004AFCB4 /* NSString+TextFrame.m in Sources */,
@@ -649,6 +649,7 @@
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				GCC_PREFIX_HEADER = /Users/bst/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ap.-98SalesGoods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -662,6 +663,7 @@
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				GCC_PREFIX_HEADER = /Users/bst/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ap.-98SalesGoods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
