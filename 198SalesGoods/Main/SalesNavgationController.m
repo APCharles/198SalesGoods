@@ -44,7 +44,8 @@
         // 设置导航栏字体颜色
     UIColor * naiColor = [UIColor blackColor];
     attributes[NSForegroundColorAttributeName] = naiColor;
-    attributes[NSFontAttributeName] = [UIFont fontWithName:PFR size:18];
+
+    attributes[NSFontAttributeName] = [UIFont systemFontOfSize:18];
     bar.titleTextAttributes = attributes;
 }
 
