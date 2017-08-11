@@ -130,7 +130,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
         
         UIImageView *headerView = [[UIImageView alloc] init];
         headerView.image = [UIImage imageNamed:@"home_good.gif"];
-        headerView.y = 0;
+        headerView.y = -22;
         headerView.x = 0;
         headerView.width = mainScreenWidth;
         headerView.height = 205;
