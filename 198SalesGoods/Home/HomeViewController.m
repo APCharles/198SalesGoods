@@ -37,7 +37,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     
     self.navigationController.navigationBar.hidden = YES;
     
-   
+    NSLog(@"fuck");
     
     
     UIScrollView * myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, mainScreenWidth, mainScreenHeight)];
