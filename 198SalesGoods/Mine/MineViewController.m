@@ -22,6 +22,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
+    
+//    [self.view addSubview:self.topView];
   
 }
 
