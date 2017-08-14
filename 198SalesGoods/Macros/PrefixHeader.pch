@@ -20,8 +20,23 @@
 #define mainScreenWidth [UIScreen mainScreen].bounds.size.width
 #define mainScreenHeight [UIScreen mainScreen].bounds.size.height
 
+/**
+ *	@brief 底部，导航的高度
+ */
+#define TabBarHeight                        49.0f
+#define NaviBarHeight                       44.0f
+
+/**
+ *	@brief 导航条与系统状态栏的高度
+ */
+#define StateNaviBarHeight                  64.0f
+/**
+ *	@brief 状态栏的高度
+ */
+#define SystemstatusHeight                       20.0f
 
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
 
     //白色背景
 #define LIGHTWHITE  [UIColor colorWithRed:244/255.f green:244/255.f blue:244/255.f alpha:1]
