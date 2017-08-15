@@ -15,6 +15,17 @@
 		0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F19AA4F1F0D085000997F66 /* LaunchScreen.storyboard */; };
 		0F19AA5C1F0D085000997F66 /* _98SalesGoodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA5B1F0D085000997F66 /* _98SalesGoodsTests.m */; };
 		0F19AA671F0D085100997F66 /* _98SalesGoodsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA661F0D085100997F66 /* _98SalesGoodsUITests.m */; };
+		0F1DA7211F42816400595405 /* MineInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA71E1F42816400595405 /* MineInfoViewCell.m */; };
+		0F1DA7221F42816400595405 /* MineTermViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7201F42816400595405 /* MineTermViewCell.m */; };
+		0F1DA7251F4283CE00595405 /* MineGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7241F4283CE00595405 /* MineGroup.m */; };
+		0F1DA7281F42847400595405 /* MineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7271F42847400595405 /* MineItem.m */; };
+		0F1DA72E1F42863100595405 /* 地址.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7291F42863100595405 /* 地址.png */; };
+		0F1DA72F1F42863100595405 /* 订单.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA72A1F42863100595405 /* 订单.png */; };
+		0F1DA7301F42863100595405 /* 二维码.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA72B1F42863100595405 /* 二维码.png */; };
+		0F1DA7311F42863100595405 /* 积分.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA72C1F42863100595405 /* 积分.png */; };
+		0F1DA7321F42863100595405 /* 客户.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA72D1F42863100595405 /* 客户.png */; };
+		0F1DA7341F428C3200595405 /* img_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7331F428C3200595405 /* img_line@2x.png */; };
+		0F1DA7361F428C5C00595405 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7351F428C5C00595405 /* setting.png */; };
 		0F3F6F901F39DE5E00152140 /* tabr_01_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */; };
 		0F3F6F911F39DE5E00152140 /* tabr_01_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */; };
 		0F3F6F921F39DE5E00152140 /* tabr_01_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8F1F39DE5E00152140 /* tabr_01_up@3x.png */; };
@@ -82,6 +93,21 @@
 		0F19AA621F0D085000997F66 /* 198SalesGoodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 198SalesGoodsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F19AA661F0D085100997F66 /* _98SalesGoodsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _98SalesGoodsUITests.m; sourceTree = "<group>"; };
 		0F19AA681F0D085100997F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F1DA71D1F42816400595405 /* MineInfoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInfoViewCell.h; sourceTree = "<group>"; };
+		0F1DA71E1F42816400595405 /* MineInfoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewCell.m; sourceTree = "<group>"; };
+		0F1DA71F1F42816400595405 /* MineTermViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTermViewCell.h; sourceTree = "<group>"; };
+		0F1DA7201F42816400595405 /* MineTermViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTermViewCell.m; sourceTree = "<group>"; };
+		0F1DA7231F4283CE00595405 /* MineGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineGroup.h; sourceTree = "<group>"; };
+		0F1DA7241F4283CE00595405 /* MineGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineGroup.m; sourceTree = "<group>"; };
+		0F1DA7261F42847400595405 /* MineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineItem.h; sourceTree = "<group>"; };
+		0F1DA7271F42847400595405 /* MineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineItem.m; sourceTree = "<group>"; };
+		0F1DA7291F42863100595405 /* 地址.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地址.png"; sourceTree = "<group>"; };
+		0F1DA72A1F42863100595405 /* 订单.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "订单.png"; sourceTree = "<group>"; };
+		0F1DA72B1F42863100595405 /* 二维码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码.png"; sourceTree = "<group>"; };
+		0F1DA72C1F42863100595405 /* 积分.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "积分.png"; sourceTree = "<group>"; };
+		0F1DA72D1F42863100595405 /* 客户.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户.png"; sourceTree = "<group>"; };
+		0F1DA7331F428C3200595405 /* img_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_line@2x.png"; sourceTree = "<group>"; };
+		0F1DA7351F428C5C00595405 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabr_01_up.png; sourceTree = "<group>"; };
 		0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_01_up@2x.png"; sourceTree = "<group>"; };
 		0F3F6F8F1F39DE5E00152140 /* tabr_01_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_01_up@3x.png"; sourceTree = "<group>"; };
@@ -229,6 +255,13 @@
 		0F3F6F8C1F39DE4800152140 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0F1DA7351F428C5C00595405 /* setting.png */,
+				0F1DA7331F428C3200595405 /* img_line@2x.png */,
+				0F1DA7291F42863100595405 /* 地址.png */,
+				0F1DA72A1F42863100595405 /* 订单.png */,
+				0F1DA72B1F42863100595405 /* 二维码.png */,
+				0F1DA72C1F42863100595405 /* 积分.png */,
+				0F1DA72D1F42863100595405 /* 客户.png */,
 				0F67B1821F3C36E3000028A1 /* home_good.gif */,
 				0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */,
 				0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */,
@@ -300,6 +333,14 @@
 			children = (
 				0F3F6FB11F39E1B200152140 /* MineViewController.h */,
 				0F3F6FB21F39E1B200152140 /* MineViewController.m */,
+				0F1DA71D1F42816400595405 /* MineInfoViewCell.h */,
+				0F1DA71E1F42816400595405 /* MineInfoViewCell.m */,
+				0F1DA71F1F42816400595405 /* MineTermViewCell.h */,
+				0F1DA7201F42816400595405 /* MineTermViewCell.m */,
+				0F1DA7231F4283CE00595405 /* MineGroup.h */,
+				0F1DA7241F4283CE00595405 /* MineGroup.m */,
+				0F1DA7261F42847400595405 /* MineItem.h */,
+				0F1DA7271F42847400595405 /* MineItem.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -397,7 +438,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3ED54QFZS2;
+						DevelopmentTeam = 7VH6A7LBL2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -437,11 +478,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1DA7321F42863100595405 /* 客户.png in Resources */,
 				0F3F6F971F39DE6700152140 /* tabr_01_down@2x.png in Resources */,
 				0F3F6F981F39DE6700152140 /* tabr_01_down@3x.png in Resources */,
+				0F1DA7301F42863100595405 /* 二维码.png in Resources */,
 				0F3F6F961F39DE6700152140 /* tabr_01_down.png in Resources */,
 				0F3F6FA21F39E0C400152140 /* tabr_03_up@2x.png in Resources */,
+				0F1DA7361F428C5C00595405 /* setting.png in Resources */,
 				0F67B17C1F3C084B000028A1 /* 2222@2x.png in Resources */,
+				0F1DA7311F42863100595405 /* 积分.png in Resources */,
 				0F3F6F921F39DE5E00152140 /* tabr_01_up@3x.png in Resources */,
 				0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */,
 				0F19AA4E1F0D085000997F66 /* Assets.xcassets in Resources */,
@@ -453,7 +498,10 @@
 				0F3F6FA81F39E0F500152140 /* tabr_05_down@2x.png in Resources */,
 				0F3F6FAA1F39E0FC00152140 /* tabr_05_up@2x.png in Resources */,
 				0F3F6F901F39DE5E00152140 /* tabr_01_up.png in Resources */,
+				0F1DA72F1F42863100595405 /* 订单.png in Resources */,
+				0F1DA72E1F42863100595405 /* 地址.png in Resources */,
 				0F67B17E1F3C084B000028A1 /* 4444@2x.png in Resources */,
+				0F1DA7341F428C3200595405 /* img_line@2x.png in Resources */,
 				0F19AA4C1F0D085000997F66 /* Main.storyboard in Resources */,
 				0F67B1831F3C36E3000028A1 /* home_good.gif in Resources */,
 				0F3F6FA61F39E0EA00152140 /* tabr_04_up@2x.png in Resources */,
@@ -491,13 +539,17 @@
 				0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */,
 				0F3F6F9E1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.m in Sources */,
 				0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */,
+				0F1DA7221F42816400595405 /* MineTermViewCell.m in Sources */,
 				0F520EB51F29BEA0004AFCB4 /* UIView+APFrame.m in Sources */,
 				0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */,
 				0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */,
 				0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */,
 				0F520EB11F29BDB3004AFCB4 /* NSString+TextFrame.m in Sources */,
+				0F1DA7251F4283CE00595405 /* MineGroup.m in Sources */,
 				0F19AA431F0D085000997F66 /* main.m in Sources */,
+				0F1DA7281F42847400595405 /* MineItem.m in Sources */,
 				0F3F6FAD1F39E19500152140 /* HomeViewController.m in Sources */,
+				0F1DA7211F42816400595405 /* MineInfoViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,15 +698,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
-=======
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
->>>>>>> 55e6feeb67bc4afc40b5f39ad4c62143058b4f55
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -667,15 +714,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
-=======
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
->>>>>>> 55e6feeb67bc4afc40b5f39ad4c62143058b4f55
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

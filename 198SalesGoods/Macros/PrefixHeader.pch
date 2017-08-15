@@ -37,4 +37,8 @@
 
 #define PFR [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"PingFang SC"
 
+
+    //分割线
+#define LINECOLOR [UIColor colorWithRed:212/255.f green:212/255.f blue:212/255.f alpha:1]
+
 #endif /* PrefixHeader_pch */
