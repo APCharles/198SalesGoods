@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "FindPassWordViewController.h"
 
 @interface LoginViewController ()
 
@@ -84,7 +86,24 @@
     forgetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [forgetBtn addTarget:self action:@selector(onClickForgetPassWord) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:forgetBtn];
+    
+    UIImage *wechat = [UIImage imageNamed:@"login_wechat"];
+    UIButton *wechatBtn = [[UIButton alloc]initWithFrame:CGRectMake((mainScreenWidth-wechat.size.width)/2, mainScreenHeight-20-wechat.size.height, wechat.size.width, wechat.size.height)];
+    [wechatBtn setImage:wechat forState:UIControlStateNormal];
+    [wechatBtn addTarget:self action:@selector(onClickWeChatLogin) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:wechatBtn];
+}
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [_mobileTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (textField == _passwordTextField) {
+        [self onClickLogin];
+    }
+    return YES;
 }
 
 #pragma mark 返回
@@ -95,17 +114,35 @@
 #pragma mark 注册
 -(void)onClickRegister{
     NSLog(@"注册");
+    RegisterViewController *registerViewController = [[RegisterViewController alloc]init];
+    [self.navigationController pushViewController:registerViewController animated:YES];
+}
+
+#pragma mark 微信登录
+-(void)onClickWeChatLogin{
+    NSLog(@"微信登录");
 }
 
 #pragma mark 登录
 -(void)onClickLogin{
     NSLog(@"登录");
-    
+    [_mobileTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+    [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
+    [paramDic setObject:_passwordTextField.text forKey:@"password"];
+    [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/sigin_ios" params:paramDic success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark 忘记密码
 -(void)onClickForgetPassWord{
     NSLog(@"忘记密码");
+    FindPassWordViewController *findPassWordViewController = [[FindPassWordViewController alloc]init];
+    [self.navigationController pushViewController:findPassWordViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
