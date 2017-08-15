@@ -97,6 +97,8 @@
 		0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */; };
 		0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C71F28851E00ED09D9 /* SalesTabBar.m */; };
 		BC0A43F11F41923B00A929C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A43F01F41923B00A929C0 /* LoginViewController.m */; };
+		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
+		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +274,10 @@
 		0FF685C71F28851E00ED09D9 /* SalesTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTabBar.m; sourceTree = "<group>"; };
 		BC0A43EF1F41923B00A929C0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BC0A43F01F41923B00A929C0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BC2DD9C81F429B71004E67E6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
+		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
 		BC99D5191F3D4D2900D4C4B8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -620,6 +626,10 @@
 			children = (
 				BC0A43EF1F41923B00A929C0 /* LoginViewController.h */,
 				BC0A43F01F41923B00A929C0 /* LoginViewController.m */,
+				BC2DD9C81F429B71004E67E6 /* RegisterViewController.h */,
+				BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */,
+				BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */,
+				BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -845,11 +855,13 @@
 				0F1DA7281F42847400595405 /* MineItem.m in Sources */,
 				0F1DA76A1F4293AC00595405 /* SDWebImagePrefetcher.m in Sources */,
 				0F1DA7AB1F4293B400595405 /* UIRefreshControl+AFNetworking.m in Sources */,
+				BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */,
 				0F3F6FAD1F39E19500152140 /* HomeViewController.m in Sources */,
 				0F1DA7A01F4293B400595405 /* AFURLRequestSerialization.m in Sources */,
 				0F1DA7AC1F4293B400595405 /* UIWebView+AFNetworking.m in Sources */,
 				0F1DA76C1F4293AC00595405 /* UIImage+GIF.m in Sources */,
 				0F1DA7A11F4293B400595405 /* AFURLResponseSerialization.m in Sources */,
+				BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */,
 				0F1DA7211F42816400595405 /* MineInfoViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
