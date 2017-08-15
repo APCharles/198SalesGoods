@@ -8,13 +8,21 @@
 
 #import "EditAddressController.h"
 #import "EditAddressViewCell.h"
-@interface EditAddressController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+#import "AddressPickerView.h"
+@interface EditAddressController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,AddressPickerViewDelegate>
 
 /** dizhi  */
 @property(strong,nonatomic) UITableView *addressTableview;
 
 /** shuju  */
 @property(strong,nonatomic) NSArray *infoArr;
+
+
+/** pickerV iew */
+@property(strong,nonatomic)AddressPickerView *pickerView;
+
+/** 地址 */
+@property(strong,nonatomic)NSString *address;
 @end
 
 @implementation EditAddressController
@@ -27,20 +35,30 @@
     
     [self.view addSubview:self.addressTableview];
     
+    [self.view addSubview:self.pickerView];
+    
     [self requestProvince];
 }
 
 
 - (void)requestProvince{
-    NSDictionary *dic = [[NSDictionary alloc] init];
-    [NetService serviceWithGetURL:@"http://wx.dianpuj.com/index.php/wap/addbook/province" params:dic success:^(id responseObject) {
-        
-        NSLog(@"---");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+   
+  
     
+    NSString *provincepath = [[NSBundle mainBundle] pathForResource:@"Province.txt" ofType:nil];
+    
+    NSData *  provincedata = [NSData dataWithContentsOfFile:provincepath];
+    NSString* provinceStr = [[NSString alloc] initWithData:provincedata encoding:NSUTF8StringEncoding];
+    
+    NSString *citypath = [[NSBundle mainBundle] pathForResource:@"city.txt" ofType:nil];
+    
+    NSData *  citydata = [NSData dataWithContentsOfFile:citypath];
+    NSString* cityStr = [[NSString alloc] initWithData:citydata encoding:NSUTF8StringEncoding];
+   
+
+    NSDictionary *provinceDic = [Tools dictionaryWithJsonString:provinceStr];
+    
+    NSDictionary *cityDic = [Tools dictionaryWithJsonString:cityStr];
 }
 
 
@@ -80,8 +98,47 @@
     }else{
         cell.bottomLineView.hidden = YES;
     }
+    
+    if (indexPath.row == 3) {
+        
+        if (![Tools isBlankString:_address]) {
+            
+            cell.addressLabel.text = _address;
+            cell.addressLabel.textColor = [UIColor blackColor];
+            
+        }
+    }
     return cell;
     
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 3) {
+        [self.pickerView show];
+        
+    }
+}
+
+
+#pragma mark - AddressPickerViewDelegate
+- (void)cancelBtnClick{
+    NSLog(@"点击了取消按钮");
+    [self.pickerView hide];
+
+}
+
+- (void)sureBtnClickReturnProvince:(NSString *)province City:(NSDictionary *)cityDic{
+    
+    
+    [self.pickerView hide];
+    _address = [NSString stringWithFormat:@"%@ %@",province,cityDic[@"CityName"]];
+    
+
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
+    [_addressTableview reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    NSLog(@"%@%@",province,cityDic[@"CityName"]);
 }
 
 
@@ -158,6 +215,16 @@
     }
     
     return _infoArr;
+}
+
+- (AddressPickerView *)pickerView{
+    if (!_pickerView) {
+        _pickerView = [[AddressPickerView alloc]initWithFrame:CGRectMake(0, mainScreenHeight , mainScreenWidth, 300)];
+        _pickerView.delegate = self;
+            // 关闭默认支持打开上次的结果
+            //        _pickerView.isAutoOpenLast = NO;
+    }
+    return _pickerView;
 }
 
 @end

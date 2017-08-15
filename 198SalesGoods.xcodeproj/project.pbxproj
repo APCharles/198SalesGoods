@@ -106,6 +106,10 @@
 		0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C11F28849200ED09D9 /* SalesTabController.m */; };
 		0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */; };
 		0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C71F28851E00ED09D9 /* SalesTabBar.m */; };
+		560174E81F4333D200EAC87E /* city.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560174E61F4333D200EAC87E /* city.txt */; };
+		560174E91F4333D200EAC87E /* Province.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560174E71F4333D200EAC87E /* Province.txt */; };
+		560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560174EF1F435B4F00EAC87E /* AddressPickerView.m */; };
+		560174F31F435B4F00EAC87E /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 560174F11F435B4F00EAC87E /* Province.m */; };
 		BC0A43F11F41923B00A929C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A43F01F41923B00A929C0 /* LoginViewController.m */; };
 		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
@@ -297,6 +301,12 @@
 		0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesNavgationController.m; sourceTree = "<group>"; };
 		0FF685C61F28851E00ED09D9 /* SalesTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTabBar.h; sourceTree = "<group>"; };
 		0FF685C71F28851E00ED09D9 /* SalesTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTabBar.m; sourceTree = "<group>"; };
+		560174E61F4333D200EAC87E /* city.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.txt; sourceTree = "<group>"; };
+		560174E71F4333D200EAC87E /* Province.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Province.txt; sourceTree = "<group>"; };
+		560174EE1F435B4F00EAC87E /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
+		560174EF1F435B4F00EAC87E /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
+		560174F01F435B4F00EAC87E /* Province.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Province.h; sourceTree = "<group>"; };
+		560174F11F435B4F00EAC87E /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
 		BC0A43EF1F41923B00A929C0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BC0A43F01F41923B00A929C0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BC2DD9C81F429B71004E67E6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -363,7 +373,6 @@
 				0F3F6F8C1F39DE4800152140 /* Resource */,
 				0FF685B81F28843500ED09D9 /* Macros */,
 				0FF685BC1F28843500ED09D9 /* Venders */,
-				BC0A43F21F419D7200A929C0 /* Tools */,
 				0F19AA441F0D085000997F66 /* AppDelegate.h */,
 				0F19AA451F0D085000997F66 /* AppDelegate.m */,
 				0F19AA471F0D085000997F66 /* ViewController.h */,
@@ -525,6 +534,8 @@
 		0F3F6F8C1F39DE4800152140 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				560174E61F4333D200EAC87E /* city.txt */,
+				560174E71F4333D200EAC87E /* Province.txt */,
 				0F1DA7C21F4315CF00595405 /* 电话.png */,
 				0F1DA7C31F4315CF00595405 /* 定位.png */,
 				0F1DA7C41F4315CF00595405 /* 通讯录.png */,
@@ -626,6 +637,10 @@
 				0F1DA7BD1F430C4D00595405 /* EditAddressController.m */,
 				0F1DA7BF1F43135A00595405 /* EditAddressViewCell.h */,
 				0F1DA7C01F43135A00595405 /* EditAddressViewCell.m */,
+				560174EE1F435B4F00EAC87E /* AddressPickerView.h */,
+				560174EF1F435B4F00EAC87E /* AddressPickerView.m */,
+				560174F01F435B4F00EAC87E /* Province.h */,
+				560174F11F435B4F00EAC87E /* Province.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -672,14 +687,6 @@
 				BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		BC0A43F21F419D7200A929C0 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tools;
-			path = Venders/Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -796,6 +803,7 @@
 				0F1DA7C91F4315CF00595405 /* 通讯录.png in Resources */,
 				0F3F6F981F39DE6700152140 /* tabr_01_down@3x.png in Resources */,
 				0F1DA7301F42863100595405 /* 二维码.png in Resources */,
+				560174E81F4333D200EAC87E /* city.txt in Resources */,
 				0F1DA7611F4293AC00595405 /* LICENSE in Resources */,
 				0F3F6F961F39DE6700152140 /* tabr_01_down.png in Resources */,
 				0F3F6FA21F39E0C400152140 /* tabr_03_up@2x.png in Resources */,
@@ -806,6 +814,7 @@
 				0F3F6F921F39DE5E00152140 /* tabr_01_up@3x.png in Resources */,
 				0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */,
 				0F19AA4E1F0D085000997F66 /* Assets.xcassets in Resources */,
+				560174E91F4333D200EAC87E /* Province.txt in Resources */,
 				0F3F6FA41F39E0CB00152140 /* tabr_04_down@2x.png in Resources */,
 				0F1DA73E1F4293A400595405 /* MBProgressHUD.bundle in Resources */,
 				0F67B17B1F3C084B000028A1 /* 1111@2x.png in Resources */,
@@ -880,9 +889,11 @@
 				0F3F6F9E1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.m in Sources */,
 				0F1DA7BE1F430C4D00595405 /* EditAddressController.m in Sources */,
 				0F1DA79E1F4293B400595405 /* AFSecurityPolicy.m in Sources */,
+				560174F31F435B4F00EAC87E /* Province.m in Sources */,
 				0F1DA7A51F4293B400595405 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0F1DA7641F4293AC00595405 /* SDImageCache.m in Sources */,
 				0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */,
+				560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */,
 				0F1DA7A71F4293B400595405 /* UIAlertView+AFNetworking.m in Sources */,
 				0F1DA76D1F4293AC00595405 /* UIImage+MultiFormat.m in Sources */,
 				0F1DA7681F4293AC00595405 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1062,7 +1073,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charles/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1077,7 +1088,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charles/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

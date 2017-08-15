@@ -28,7 +28,8 @@
                   success:(void (^)(id responseObject))successBlock
                   failure:(void (^)(NSError *error))failureBlock{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
         //    NSString *url = [Login_URL stringByAppendingFormat:@"%@", methedName];
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
          successBlock(responseObject);

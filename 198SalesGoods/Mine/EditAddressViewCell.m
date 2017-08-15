@@ -16,8 +16,6 @@
 
 
 
-
-
 @end
 @implementation EditAddressViewCell
 
@@ -47,7 +45,7 @@
         [self.contentView addSubview:_topLineView];
         [self addSubview:self.iconView];
         [self addSubview:self.filed];
-        
+        [self addSubview:self.addressLabel];
     }
     
     return self;
@@ -59,8 +57,10 @@
     self.iconView.image = [UIImage imageNamed:[data objectForKey:@"image"]];
     if ([Tools isBlankString:[data objectForKey:@"plaeHolder"]]) {
         
+        self.addressLabel.hidden = NO;
         self.filed.hidden = YES;
     }else{
+        self.addressLabel.hidden = YES;
         self.filed.hidden = NO;
         self.filed.placeholder = [data objectForKey:@"plaeHolder"];
         
@@ -105,4 +105,22 @@
     return _filed;
 }
 
+
+- (UILabel *)addressLabel{
+    
+    if (!_addressLabel) {
+        
+        UILabel *addressLabel = [[UILabel alloc ] init];
+        addressLabel.font = [UIFont systemFontOfSize:14];
+        addressLabel.textColor = GRAYETEXTCOLOR;
+        addressLabel.text = @"请选择地址";
+        addressLabel.height = [addressLabel.text sizeWithFont:[UIFont systemFontOfSize:14] maxSize:MAXSIZE].height;
+        addressLabel.width = 250;
+        addressLabel.x = CGRectGetMaxX(self.iconView.frame) + 10;
+        addressLabel.y = 25 - addressLabel.height * 0.5;
+        _addressLabel = addressLabel;
+    }
+    
+    return _addressLabel;
+}
 @end

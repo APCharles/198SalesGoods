@@ -23,4 +23,8 @@
 
 /**  UIImageView *topLineView  */
 @property(strong,nonatomic)   UIImageView *bottomLineView;
+
+
+/** address */
+@property(strong,nonatomic)UILabel *addressLabel;
 @end
