@@ -10,7 +10,7 @@
 #define PrefixHeader_pch
 
 #import "NSString+TextFrame.h"
-
+#import "NetService.h"
 #import "UIcolortool.h"
 
 #import "UIView+APFrame.h"
