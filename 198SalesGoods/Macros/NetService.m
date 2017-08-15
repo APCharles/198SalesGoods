@@ -31,9 +31,9 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         //    NSString *url = [Login_URL stringByAppendingFormat:@"%@", methedName];
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+         successBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+          failureBlock(error);
         
         
     }] ;

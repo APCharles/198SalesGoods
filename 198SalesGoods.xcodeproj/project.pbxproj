@@ -65,6 +65,16 @@
 		0F1DA7AB1F4293B400595405 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7971F4293B400595405 /* UIRefreshControl+AFNetworking.m */; };
 		0F1DA7AC1F4293B400595405 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7991F4293B400595405 /* UIWebView+AFNetworking.m */; };
 		0F1DA7AF1F4293D300595405 /* NetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7AE1F4293D300595405 /* NetService.m */; };
+		0F1DA7B81F42F3AB00595405 /* MyAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7B71F42F3AB00595405 /* MyAddressController.m */; };
+		0F1DA7BB1F430B3F00595405 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7BA1F430B3F00595405 /* BaseViewController.m */; };
+		0F1DA7BE1F430C4D00595405 /* EditAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7BD1F430C4D00595405 /* EditAddressController.m */; };
+		0F1DA7C11F43135A00595405 /* EditAddressViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C01F43135A00595405 /* EditAddressViewCell.m */; };
+		0F1DA7C71F4315CF00595405 /* 电话.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C21F4315CF00595405 /* 电话.png */; };
+		0F1DA7C81F4315CF00595405 /* 定位.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C31F4315CF00595405 /* 定位.png */; };
+		0F1DA7C91F4315CF00595405 /* 通讯录.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C41F4315CF00595405 /* 通讯录.png */; };
+		0F1DA7CA1F4315CF00595405 /* 详细地址.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C51F4315CF00595405 /* 详细地址.png */; };
+		0F1DA7CB1F4315CF00595405 /* 邮编.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C61F4315CF00595405 /* 邮编.png */; };
+		0F1DA7CE1F43171D00595405 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7CD1F43171D00595405 /* Tools.m */; };
 		0F3F6F901F39DE5E00152140 /* tabr_01_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */; };
 		0F3F6F911F39DE5E00152140 /* tabr_01_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */; };
 		0F3F6F921F39DE5E00152140 /* tabr_01_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8F1F39DE5E00152140 /* tabr_01_up@3x.png */; };
@@ -224,6 +234,21 @@
 		0F1DA7991F4293B400595405 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		0F1DA7AD1F4293D300595405 /* NetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetService.h; sourceTree = "<group>"; };
 		0F1DA7AE1F4293D300595405 /* NetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetService.m; sourceTree = "<group>"; };
+		0F1DA7B61F42F3AB00595405 /* MyAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressController.h; sourceTree = "<group>"; };
+		0F1DA7B71F42F3AB00595405 /* MyAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressController.m; sourceTree = "<group>"; };
+		0F1DA7B91F430B3F00595405 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = ../Login/BaseViewController.h; sourceTree = "<group>"; };
+		0F1DA7BA1F430B3F00595405 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = ../Login/BaseViewController.m; sourceTree = "<group>"; };
+		0F1DA7BC1F430C4D00595405 /* EditAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressController.h; sourceTree = "<group>"; };
+		0F1DA7BD1F430C4D00595405 /* EditAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressController.m; sourceTree = "<group>"; };
+		0F1DA7BF1F43135A00595405 /* EditAddressViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressViewCell.h; sourceTree = "<group>"; };
+		0F1DA7C01F43135A00595405 /* EditAddressViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressViewCell.m; sourceTree = "<group>"; };
+		0F1DA7C21F4315CF00595405 /* 电话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电话.png"; sourceTree = "<group>"; };
+		0F1DA7C31F4315CF00595405 /* 定位.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位.png"; sourceTree = "<group>"; };
+		0F1DA7C41F4315CF00595405 /* 通讯录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通讯录.png"; sourceTree = "<group>"; };
+		0F1DA7C51F4315CF00595405 /* 详细地址.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详细地址.png"; sourceTree = "<group>"; };
+		0F1DA7C61F4315CF00595405 /* 邮编.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邮编.png"; sourceTree = "<group>"; };
+		0F1DA7CC1F43171D00595405 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		0F1DA7CD1F43171D00595405 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabr_01_up.png; sourceTree = "<group>"; };
 		0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_01_up@2x.png"; sourceTree = "<group>"; };
 		0F3F6F8F1F39DE5E00152140 /* tabr_01_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_01_up@3x.png"; sourceTree = "<group>"; };
@@ -494,6 +519,11 @@
 		0F3F6F8C1F39DE4800152140 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0F1DA7C21F4315CF00595405 /* 电话.png */,
+				0F1DA7C31F4315CF00595405 /* 定位.png */,
+				0F1DA7C41F4315CF00595405 /* 通讯录.png */,
+				0F1DA7C51F4315CF00595405 /* 详细地址.png */,
+				0F1DA7C61F4315CF00595405 /* 邮编.png */,
 				0F1DA7351F428C5C00595405 /* setting.png */,
 				0F1DA7331F428C3200595405 /* img_line@2x.png */,
 				0F1DA7291F42863100595405 /* 地址.png */,
@@ -565,6 +595,8 @@
 				0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */,
 				0FF685C61F28851E00ED09D9 /* SalesTabBar.h */,
 				0FF685C71F28851E00ED09D9 /* SalesTabBar.m */,
+				0F1DA7B91F430B3F00595405 /* BaseViewController.h */,
+				0F1DA7BA1F430B3F00595405 /* BaseViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -582,6 +614,12 @@
 				0F1DA7241F4283CE00595405 /* MineGroup.m */,
 				0F1DA7261F42847400595405 /* MineItem.h */,
 				0F1DA7271F42847400595405 /* MineItem.m */,
+				0F1DA7B61F42F3AB00595405 /* MyAddressController.h */,
+				0F1DA7B71F42F3AB00595405 /* MyAddressController.m */,
+				0F1DA7BC1F430C4D00595405 /* EditAddressController.h */,
+				0F1DA7BD1F430C4D00595405 /* EditAddressController.m */,
+				0F1DA7BF1F43135A00595405 /* EditAddressViewCell.h */,
+				0F1DA7C01F43135A00595405 /* EditAddressViewCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -611,6 +649,8 @@
 				0F520EB01F29BDB3004AFCB4 /* UIcolortool.m */,
 				0F3F6F9C1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.h */,
 				0F3F6F9D1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.m */,
+				0F1DA7CC1F43171D00595405 /* Tools.h */,
+				0F1DA7CD1F43171D00595405 /* Tools.m */,
 			);
 			path = Venders;
 			sourceTree = "<group>";
@@ -739,8 +779,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1DA7CB1F4315CF00595405 /* 邮编.png in Resources */,
+				0F1DA7C81F4315CF00595405 /* 定位.png in Resources */,
 				0F1DA7321F42863100595405 /* 客户.png in Resources */,
 				0F3F6F971F39DE6700152140 /* tabr_01_down@2x.png in Resources */,
+				0F1DA7C91F4315CF00595405 /* 通讯录.png in Resources */,
 				0F3F6F981F39DE6700152140 /* tabr_01_down@3x.png in Resources */,
 				0F1DA7301F42863100595405 /* 二维码.png in Resources */,
 				0F1DA7611F4293AC00595405 /* LICENSE in Resources */,
@@ -749,12 +792,14 @@
 				0F1DA7361F428C5C00595405 /* setting.png in Resources */,
 				0F67B17C1F3C084B000028A1 /* 2222@2x.png in Resources */,
 				0F1DA7311F42863100595405 /* 积分.png in Resources */,
+				0F1DA7C71F4315CF00595405 /* 电话.png in Resources */,
 				0F3F6F921F39DE5E00152140 /* tabr_01_up@3x.png in Resources */,
 				0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */,
 				0F19AA4E1F0D085000997F66 /* Assets.xcassets in Resources */,
 				0F3F6FA41F39E0CB00152140 /* tabr_04_down@2x.png in Resources */,
 				0F1DA73E1F4293A400595405 /* MBProgressHUD.bundle in Resources */,
 				0F67B17B1F3C084B000028A1 /* 1111@2x.png in Resources */,
+				0F1DA7CA1F4315CF00595405 /* 详细地址.png in Resources */,
 				0F3F6FA01F39E0BE00152140 /* tabr_02_up@2x.png in Resources */,
 				0F3F6F911F39DE5E00152140 /* tabr_01_up@2x.png in Resources */,
 				0F67B17D1F3C084B000028A1 /* 3333@2x.png in Resources */,
@@ -794,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F19AA491F0D085000997F66 /* ViewController.m in Sources */,
+				0F1DA7BB1F430B3F00595405 /* BaseViewController.m in Sources */,
 				0F1DA7701F4293AC00595405 /* UIView+WebCacheOperation.m in Sources */,
 				0F1DA76B1F4293AC00595405 /* UIButton+WebCache.m in Sources */,
 				0F1DA7691F4293AC00595405 /* SDWebImageManager.m in Sources */,
@@ -813,13 +859,16 @@
 				0F1DA76F1F4293AC00595405 /* UIImageView+WebCache.m in Sources */,
 				0F1DA79A1F4293B400595405 /* AFHTTPRequestOperation.m in Sources */,
 				0F1DA7A41F4293B400595405 /* README.md in Sources */,
+				0F1DA7CE1F43171D00595405 /* Tools.m in Sources */,
 				0F67B1861F3C39B3000028A1 /* GoodsShowCell.m in Sources */,
 				0F1DA73F1F4293A400595405 /* MBProgressHUD.m in Sources */,
+				0F1DA7B81F42F3AB00595405 /* MyAddressController.m in Sources */,
 				0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */,
 				0F1DA7AF1F4293D300595405 /* NetService.m in Sources */,
 				0F1DA76E1F4293AC00595405 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0F1DA7AA1F4293B400595405 /* UIProgressView+AFNetworking.m in Sources */,
 				0F3F6F9E1F39E02500152140 /* UIBarButtonItem+DCBarButtonItem.m in Sources */,
+				0F1DA7BE1F430C4D00595405 /* EditAddressController.m in Sources */,
 				0F1DA79E1F4293B400595405 /* AFSecurityPolicy.m in Sources */,
 				0F1DA7A51F4293B400595405 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0F1DA7641F4293AC00595405 /* SDImageCache.m in Sources */,
@@ -835,6 +884,7 @@
 				0F1DA7631F4293AC00595405 /* NSData+ImageContentType.m in Sources */,
 				0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */,
 				BC0A43F11F41923B00A929C0 /* LoginViewController.m in Sources */,
+				0F1DA7C11F43135A00595405 /* EditAddressViewCell.m in Sources */,
 				0F520EB11F29BDB3004AFCB4 /* NSString+TextFrame.m in Sources */,
 				0F1DA7661F4293AC00595405 /* SDWebImageDecoder.m in Sources */,
 				0F1DA79C1F4293B400595405 /* AFHTTPSessionManager.m in Sources */,
@@ -1000,7 +1050,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1015,7 +1065,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3ED54QFZS2;
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -11,6 +11,7 @@
 #import "MineTermViewCell.h"
 #import "MineGroup.h"
 #import "MineItem.h"
+#import "MyAddressController.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
@@ -129,6 +130,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 2) {
+        
+        if (indexPath.row == 1) {
+            
+            MyAddressController *add = [[MyAddressController alloc] init];
+            [self.navigationController pushViewController:add animated:YES];
+        }
+    }
 }
 #pragma mark - getter
 - (UIView *)topView{

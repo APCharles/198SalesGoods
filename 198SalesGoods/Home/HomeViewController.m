@@ -36,9 +36,9 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    LoginViewController *loginViewController = [[LoginViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
-    [self.navigationController presentViewController:nav animated:YES completion:nil];
+//    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+//    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
