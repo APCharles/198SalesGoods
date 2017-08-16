@@ -88,6 +88,27 @@
     [self.view addSubview:mbProgressHUD];
 }
 
+/**
+ *	@brief	同步提示对话框
+ *
+ *	@param 	content 	提示内容
+ *	@param 	atime 	对话框显示时间
+ */
+- (void)showSynProgressHUDString:(NSString *)content time:(float)atime completion:(void (^)())completion
+{
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:atime];
+    [self.view addSubview:mbProgressHUD];
+    
+    [mbProgressHUD setCompletionBlock:^{
+        if (completion) {
+            completion();
+        }
+    }];
+}
+
 
 - (void)back{
     

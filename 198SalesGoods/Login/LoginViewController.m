@@ -10,6 +10,8 @@
 #import "RegisterViewController.h"
 #import "FindPassWordViewController.h"
 #import "MBProgressHUD.h"
+#import "UserModel.h"
+#import "UMShareHelper.h"
 
 @interface LoginViewController ()
 
@@ -122,6 +124,12 @@
 #pragma mark 微信登录
 -(void)onClickWeChatLogin{
     NSLog(@"微信登录");
+    __weak typeof(self)weakSelf = self;
+    [[UMShareHelper defaultUMShareHelper]applyByController:self snsAccountWithUMSocialSnsType:UMSocialPlatformType_WechatSession success:^(UMSocialUserInfoResponse *response) {
+        [weakSelf showProgressHUDString:@"登录成功"];
+    } failed:^(NSError *error) {
+        [weakSelf showProgressHUDString:@"登录失败"];
+    }];
 }
 
 #pragma mark 登录
@@ -133,8 +141,10 @@
         NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
         [paramDic setObject:_passwordTextField.text forKey:@"password"];
-        [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/sigin_ios" params:paramDic success:^(id responseObject) {
-            
+        __weak typeof(self)weakSelf = self;
+        [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
+            UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
+            [weakSelf doDealWithUserModel:userModel];
         } failure:^(NSError *error) {
             
         }];
@@ -165,6 +175,26 @@
     return result;
 }
 
+#pragma mark 忘记密码
+-(void)onClickForgetPassWord{
+    NSLog(@"忘记密码");
+    FindPassWordViewController *findPassWordViewController = [[FindPassWordViewController alloc]init];
+    [self.navigationController pushViewController:findPassWordViewController animated:YES];
+}
+
+-(void)doDealWithUserModel:(UserModel *)userModel{
+    if (userModel.user_info.pid.intValue>0) {
+        [[NSUserDefaults standardUserDefaults]setObject:[userModel.user_info keyValues] forKey:kUserInfoModel];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        __weak typeof(self)weakSelf = self;
+        [self showSynProgressHUDString:userModel.res.message time:1 completion:^{
+            [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }else{
+        
+    }
+}
+
 - (void)showProgressHUDString:(NSString *)content{
     UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:window animated:YES];
@@ -174,11 +204,17 @@
     [self.view addSubview:mbProgressHUD];
 }
 
-#pragma mark 忘记密码
--(void)onClickForgetPassWord{
-    NSLog(@"忘记密码");
-    FindPassWordViewController *findPassWordViewController = [[FindPassWordViewController alloc]init];
-    [self.navigationController pushViewController:findPassWordViewController animated:YES];
+- (void)showSynProgressHUDString:(NSString *)content time:(float)atime completion:(void (^)())completion{
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:atime];
+    [self.view addSubview:mbProgressHUD];
+    [mbProgressHUD setCompletionBlock:^{
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
