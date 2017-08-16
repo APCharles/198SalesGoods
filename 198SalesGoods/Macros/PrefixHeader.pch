@@ -18,6 +18,7 @@
 
 #define ApplicationDelegate  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
+#import "MBProgressHUD+MJ.h"
 
 #define MAXSIZE CGSizeMake(MAXFLOAT, MAXFLOAT)
 
