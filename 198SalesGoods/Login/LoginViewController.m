@@ -144,7 +144,12 @@
         __weak typeof(self)weakSelf = self;
         [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
             UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
-            [weakSelf doDealWithUserModel:userModel];
+            if (userModel.res) {
+                [weakSelf doDealWithUserModel:userModel];
+            }else{
+                ResModel *resModel = [ResModel objectWithKeyValues:responseObject];
+                [weakSelf showProgressHUDString:resModel.message];
+            }
         } failure:^(NSError *error) {
             
         }];
