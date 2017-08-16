@@ -35,7 +35,7 @@
     UIButton*rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
     [rightButton setTitle:@"注册" forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(onClickRegister)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem= rightItem;
@@ -151,7 +151,7 @@
                 [weakSelf showProgressHUDString:resModel.message];
             }
         } failure:^(NSError *error) {
-            
+            [weakSelf showProgressHUDString:@"服务器数据异常"];
         }];
     }
 }
@@ -160,7 +160,7 @@
     BOOL result = YES;
     NSString *msg = @"";
     if (_mobileTextField.text.length == 0) {
-        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入用户名"];
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入手机号码"];
     }
     if (_mobileTextField.text.length) {
         if (![[_mobileTextField.text substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {

@@ -18,7 +18,6 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failureBlock(error);
-        
     }];
     
 }
