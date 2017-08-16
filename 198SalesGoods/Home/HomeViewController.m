@@ -36,9 +36,6 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    LoginViewController *loginViewController = [[LoginViewController alloc]init];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
-//    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -75,6 +72,18 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     [myScrollView addSubview:self.collectionView];
     
     [myScrollView addSubview:self.goodsTableview];
+    
+    UIButton *login = [[UIButton alloc]initWithFrame:CGRectMake(0, NaviBarHeight, 30, 30)];
+    login.backgroundColor = [UIColor redColor];
+    [login addTarget:self action:@selector(onClickLogin) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:login];
+}
+
+-(void)onClickLogin{
+    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+
 }
 
 

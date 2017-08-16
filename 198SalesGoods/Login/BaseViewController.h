@@ -17,4 +17,6 @@
 - (void)back;
 
 - (void)setBarName:(NSString *)barName;
+
+- (void)showProgressHUDString:(NSString *)content;
 @end

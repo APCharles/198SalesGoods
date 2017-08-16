@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "FindPassWordViewController.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -128,14 +129,49 @@
     NSLog(@"登录");
     [_mobileTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
-    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
-    [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
-    [paramDic setObject:_passwordTextField.text forKey:@"password"];
-    [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/sigin_ios" params:paramDic success:^(id responseObject) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    if ([self checkText]) {
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+        [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
+        [paramDic setObject:_passwordTextField.text forKey:@"password"];
+        [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/sigin_ios" params:paramDic success:^(id responseObject) {
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+}
+
+-(BOOL)checkText{
+    BOOL result = YES;
+    NSString *msg = @"";
+    if (_mobileTextField.text.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入用户名"];
+    }
+    if (_mobileTextField.text.length) {
+        if (![[_mobileTextField.text substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {
+            msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+        }
+    }
+    if (_mobileTextField.text.length != 11) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+    }
+    if (_passwordTextField.text.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入密码"];
+    }
+    if (msg.length > 0) {
+        [self showProgressHUDString:msg];
+        result = NO;
+    }
+    return result;
+}
+
+- (void)showProgressHUDString:(NSString *)content{
+    UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:window animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:1];
+    [self.view addSubview:mbProgressHUD];
 }
 
 #pragma mark 忘记密码

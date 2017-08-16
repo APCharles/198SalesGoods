@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "MBProgressHUD.h"
 
 @interface BaseViewController ()
 
@@ -76,6 +77,15 @@
     }
     
     return _navigationBarView;
+}
+
+- (void)showProgressHUDString:(NSString *)content{
+    UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:window animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:1];
+    [self.view addSubview:mbProgressHUD];
 }
 
 
