@@ -36,9 +36,9 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    LoginViewController *loginViewController = [[LoginViewController alloc]init];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
-//    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    if (![ApplicationDelegate checkUserLogin]) {
+        [self onClickLogin];
+    }
 }
 
 - (void)viewDidLoad {
@@ -75,6 +75,13 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     [myScrollView addSubview:self.collectionView];
     
     [myScrollView addSubview:self.goodsTableview];
+}
+
+-(void)onClickLogin{
+    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+
 }
 
 

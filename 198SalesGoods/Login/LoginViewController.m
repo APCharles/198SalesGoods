@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "FindPassWordViewController.h"
+#import "MBProgressHUD.h"
+#import "UserModel.h"
+#import "UMShareHelper.h"
 
 @interface LoginViewController ()
 
@@ -121,6 +124,12 @@
 #pragma mark 微信登录
 -(void)onClickWeChatLogin{
     NSLog(@"微信登录");
+    __weak typeof(self)weakSelf = self;
+    [[UMShareHelper defaultUMShareHelper]applyByController:self snsAccountWithUMSocialSnsType:UMSocialPlatformType_WechatSession success:^(UMSocialUserInfoResponse *response) {
+        [weakSelf showProgressHUDString:@"登录成功"];
+    } failed:^(NSError *error) {
+        [weakSelf showProgressHUDString:@"登录失败"];
+    }];
 }
 
 #pragma mark 登录
@@ -128,14 +137,47 @@
     NSLog(@"登录");
     [_mobileTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
-    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
-    [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
-    [paramDic setObject:_passwordTextField.text forKey:@"password"];
-    [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/sigin_ios" params:paramDic success:^(id responseObject) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    if ([self checkText]) {
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+        [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
+        [paramDic setObject:_passwordTextField.text forKey:@"password"];
+        __weak typeof(self)weakSelf = self;
+        [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
+            UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
+            if (userModel.res) {
+                [weakSelf doDealWithUserModel:userModel];
+            }else{
+                ResModel *resModel = [ResModel objectWithKeyValues:responseObject];
+                [weakSelf showProgressHUDString:resModel.message];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+}
+
+-(BOOL)checkText{
+    BOOL result = YES;
+    NSString *msg = @"";
+    if (_mobileTextField.text.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入用户名"];
+    }
+    if (_mobileTextField.text.length) {
+        if (![[_mobileTextField.text substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {
+            msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+        }
+    }
+    if (_mobileTextField.text.length != 11) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+    }
+    if (_passwordTextField.text.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入密码"];
+    }
+    if (msg.length > 0) {
+        [self showProgressHUDString:msg];
+        result = NO;
+    }
+    return result;
 }
 
 #pragma mark 忘记密码
@@ -143,6 +185,41 @@
     NSLog(@"忘记密码");
     FindPassWordViewController *findPassWordViewController = [[FindPassWordViewController alloc]init];
     [self.navigationController pushViewController:findPassWordViewController animated:YES];
+}
+
+-(void)doDealWithUserModel:(UserModel *)userModel{
+    if (userModel.user_info.pid.intValue>0) {
+        [[NSUserDefaults standardUserDefaults]setObject:[userModel.user_info keyValues] forKey:kUserInfoModel];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        __weak typeof(self)weakSelf = self;
+        [self showSynProgressHUDString:userModel.res.message time:1 completion:^{
+            [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }else{
+        
+    }
+}
+
+- (void)showProgressHUDString:(NSString *)content{
+    UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:window animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:1];
+    [self.view addSubview:mbProgressHUD];
+}
+
+- (void)showSynProgressHUDString:(NSString *)content time:(float)atime completion:(void (^)())completion{
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [mbProgressHUD setMode:MBProgressHUDModeText];
+    [mbProgressHUD setLabelText:content];
+    [mbProgressHUD hide:YES afterDelay:atime];
+    [self.view addSubview:mbProgressHUD];
+    [mbProgressHUD setCompletionBlock:^{
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

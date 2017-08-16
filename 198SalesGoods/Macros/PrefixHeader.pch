@@ -12,12 +12,14 @@
 #import "NSString+TextFrame.h"
 #import "NetService.h"
 #import "UIcolortool.h"
-
 #import "UIView+APFrame.h"
+#import "Tools.h"
+#import "AppDelegate.h"
+
+#define ApplicationDelegate  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 #import "MBProgressHUD+MJ.h"
 
-#import "Tools.h"
 #define MAXSIZE CGSizeMake(MAXFLOAT, MAXFLOAT)
 
 #define mainScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -59,5 +61,13 @@
 
     //分割线
 #define LINECOLOR [UIColor colorWithRed:212/255.f green:212/255.f blue:212/255.f alpha:1]
+
+//接口地址前缀
+#define API_URL @"http://wx.dianpuj.com/index.php/Wap/"
+
+/**
+ *	@brief user对象本地化key
+ */
+#define kUserInfoModel         @"userInfoModel"
 
 #endif /* PrefixHeader_pch */

@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+/**
+ *	@brief	判断用户是否登录
+*/
+-(BOOL)checkUserLogin;
 @end
 
