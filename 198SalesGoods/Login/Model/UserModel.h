@@ -16,4 +16,7 @@
 
 @property(nonatomic,strong) UserInfoModel *user_info;
 
+
++(instancetype)shareInstance;
+
 @end

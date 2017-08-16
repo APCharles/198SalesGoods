@@ -39,11 +39,12 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     if (![ApplicationDelegate checkUserLogin]) {
         [self onClickLogin];
     }
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self onClickLogin];
     self.navigationController.navigationBar.hidden = YES;
     
     NSLog(@"做好会经常冲突的准备");

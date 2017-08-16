@@ -106,6 +106,7 @@
 		0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C11F28849200ED09D9 /* SalesTabController.m */; };
 		0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */; };
 		0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C71F28851E00ED09D9 /* SalesTabBar.m */; };
+		0FF8A8C51F446F4100A49A6E /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8A8C41F446F4100A49A6E /* UserData.m */; };
 		560174E81F4333D200EAC87E /* city.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560174E61F4333D200EAC87E /* city.txt */; };
 		560174E91F4333D200EAC87E /* Province.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560174E71F4333D200EAC87E /* Province.txt */; };
 		560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560174EF1F435B4F00EAC87E /* AddressPickerView.m */; };
@@ -390,6 +391,8 @@
 		0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesNavgationController.m; sourceTree = "<group>"; };
 		0FF685C61F28851E00ED09D9 /* SalesTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTabBar.h; sourceTree = "<group>"; };
 		0FF685C71F28851E00ED09D9 /* SalesTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTabBar.m; sourceTree = "<group>"; };
+		0FF8A8C31F446F4100A49A6E /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		0FF8A8C41F446F4100A49A6E /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		560174E61F4333D200EAC87E /* city.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.txt; sourceTree = "<group>"; };
 		560174E71F4333D200EAC87E /* Province.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Province.txt; sourceTree = "<group>"; };
 		560174EE1F435B4F00EAC87E /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
@@ -1081,6 +1084,8 @@
 				BC036ECE1F43E23B0037312D /* UserModel.m */,
 				BC036ED41F43E3D90037312D /* UserInfoModel.h */,
 				BC036ED51F43E3D90037312D /* UserInfoModel.m */,
+				0FF8A8C31F446F4100A49A6E /* UserData.h */,
+				0FF8A8C41F446F4100A49A6E /* UserData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1823,6 +1828,7 @@
 				0F1DA7641F4293AC00595405 /* SDImageCache.m in Sources */,
 				0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */,
 				BC036E981F43E1170037312D /* MJConst.m in Sources */,
+				0FF8A8C51F446F4100A49A6E /* UserData.m in Sources */,
 				560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */,
 				0F1DA7A71F4293B400595405 /* UIAlertView+AFNetworking.m in Sources */,
 				0F1DA76D1F4293AC00595405 /* UIImage+MultiFormat.m in Sources */,
@@ -2017,12 +2023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
-=======
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
-
->>>>>>> 3e86a8a1f35901276e05a01471630ed881ee5123
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2035,11 +2036,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-<<<<<<< HEAD
 				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
-=======
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
->>>>>>> 3e86a8a1f35901276e05a01471630ed881ee5123
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2090,12 +2087,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 7VH6A7LBL2;
-=======
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
-
->>>>>>> 3e86a8a1f35901276e05a01471630ed881ee5123
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2108,11 +2100,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-<<<<<<< HEAD
 				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
-=======
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
->>>>>>> 3e86a8a1f35901276e05a01471630ed881ee5123
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

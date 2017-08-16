@@ -9,5 +9,12 @@
 #import "UserInfoModel.h"
 
 @implementation UserInfoModel
-
++ (NSDictionary *)replacedKeyFromPropertyName {
+        return @{
+                 
+                                @"base_id":@"id"
+                   
+            };
+    
+   }
 @end

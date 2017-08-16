@@ -137,6 +137,9 @@
     NSLog(@"登录");
     [_mobileTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
+    
+    _mobileTextField.text = @"18683898365";
+    _passwordTextField.text = @"123321";
     if ([self checkText]) {
         NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
@@ -144,6 +147,9 @@
         __weak typeof(self)weakSelf = self;
         [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
             UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
+            
+            [UserData shareInstance].user_Model = userModel.user_info;
+         
             if (userModel.res) {
                 [weakSelf doDealWithUserModel:userModel];
             }else{
@@ -188,6 +194,7 @@
 }
 
 -(void)doDealWithUserModel:(UserModel *)userModel{
+    
     if (userModel.user_info.pid.intValue>0) {
         [[NSUserDefaults standardUserDefaults]setObject:[userModel.user_info keyValues] forKey:kUserInfoModel];
         [[NSUserDefaults standardUserDefaults]synchronize];
