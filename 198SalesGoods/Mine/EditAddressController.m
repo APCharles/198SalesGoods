@@ -23,6 +23,13 @@
 
 /** 地址 */
 @property(strong,nonatomic)NSString *address;
+
+/** 保存按钮  */
+@property(strong,nonatomic) UIButton *saveBtn;
+
+
+/** citYDta  */
+@property(strong,nonatomic) NSDictionary *cityDic;
 @end
 
 @implementation EditAddressController
@@ -37,29 +44,64 @@
     
     [self.view addSubview:self.pickerView];
     
-    [self requestProvince];
+    [self.view addSubview:self.saveBtn];
+    
+   
 }
 
+- (void)saveBtnclick:(UIButton *)sender{
+    
+    UITextField *nameFiled = (UITextField *)[self.view viewWithTag:100];
+    UITextField *mobileFiled = (UITextField *)[self.view viewWithTag:101];
+    UITextField *codeFiled = (UITextField *)[self.view viewWithTag:102];
+    UITextField *addressFiled = (UITextField *)[self.view viewWithTag:104];
+    if (nameFiled.text.length == 0) {
+        [MBProgressHUD showMessage:@"请输入姓名"];
+    }else if (mobileFiled.text.length == 0){
+        
+         [MBProgressHUD showMessage:@"请输入手机号码"];
+    }else if ( ![self isMobileWithStr:mobileFiled.text]){
+        
+        [MBProgressHUD showMessage:@"请输入正确的手机号码"];
+    }else if ( codeFiled.text.length == 0){
+        
+        [MBProgressHUD showMessage:@"请输入邮政编码"];
+    }else if ( _address.length == 0){
+        
+        [MBProgressHUD showMessage:@"请选择地址"];
+    }else if ( addressFiled.text.length == 0){
+        
+        [MBProgressHUD showMessage:@"请输入详细地址"];
+    }
+    
+    NSDictionary *dic = @{@"name":nameFiled.text,
+                          @"tel":mobileFiled.text,
+                          @"province":[_cityDic objectForKey:@"ProvinceID"],
+                          @"city":[_cityDic objectForKey:@"CityID"],
+                          @"address":addressFiled.text
+                          };
+    
+    [NetService serviceWithPostURL:@"wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
 
-- (void)requestProvince{
-   
-  
-    
-    NSString *provincepath = [[NSBundle mainBundle] pathForResource:@"Province.txt" ofType:nil];
-    
-    NSData *  provincedata = [NSData dataWithContentsOfFile:provincepath];
-    NSString* provinceStr = [[NSString alloc] initWithData:provincedata encoding:NSUTF8StringEncoding];
-    
-    NSString *citypath = [[NSBundle mainBundle] pathForResource:@"city.txt" ofType:nil];
-    
-    NSData *  citydata = [NSData dataWithContentsOfFile:citypath];
-    NSString* cityStr = [[NSString alloc] initWithData:citydata encoding:NSUTF8StringEncoding];
-   
-
-    NSDictionary *provinceDic = [Tools dictionaryWithJsonString:provinceStr];
-    
-    NSDictionary *cityDic = [Tools dictionaryWithJsonString:cityStr];
 }
+
+- (BOOL)isMobileWithStr:(NSString *)str{
+
+    if (str.length==0) {
+        return NO;
+    }
+    NSString *tmpRegex = @"^(0?1[3-9]\\d{9})?$";
+    NSPredicate *tmpTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", tmpRegex];
+    return [tmpTest evaluateWithObject:str];
+    
+
+    
+}
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -139,6 +181,8 @@
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
     [_addressTableview reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     NSLog(@"%@%@",province,cityDic[@"CityName"]);
+    
+    _cityDic = cityDic;
 }
 
 
@@ -225,6 +269,34 @@
             //        _pickerView.isAutoOpenLast = NO;
     }
     return _pickerView;
+}
+
+
+- (UIButton *)saveBtn{
+    
+    if (!_saveBtn) {
+        
+        UIButton *addAddress= [[UIButton alloc] init];
+        [addAddress setTitle:@"保存" forState:UIControlStateNormal];
+        [addAddress setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        addAddress.titleLabel.font = [UIFont systemFontOfSize:14];
+        
+        addAddress.backgroundColor = RGB(249, 80, 56);
+        
+        addAddress.width = mainScreenWidth ;
+        
+        addAddress.height = 45;
+        
+        addAddress.x = 0;
+        
+        addAddress.y = mainScreenHeight - addAddress.height;
+        [addAddress addTarget:self action:@selector(saveBtnclick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        _saveBtn = addAddress;
+    }
+    
+    return _saveBtn;
 }
 
 @end

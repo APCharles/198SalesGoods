@@ -15,6 +15,7 @@
 
 #import "UIView+APFrame.h"
 
+#import "MBProgressHUD+MJ.h"
 
 #import "Tools.h"
 #define MAXSIZE CGSizeMake(MAXFLOAT, MAXFLOAT)

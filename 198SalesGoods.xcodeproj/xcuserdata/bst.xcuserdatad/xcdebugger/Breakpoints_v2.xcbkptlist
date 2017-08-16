@@ -9,70 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Mine/EditAddressController.m"
-            timestampString = "524492754.435825"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-requestProvince"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Mine/EditAddressController.m"
-            timestampString = "524493057.919357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-requestProvince"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[EditAddressController requestProvince]"
-                  moduleName = "198SalesGoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
-                  timestampString = "524493093.009682"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[EditAddressController requestProvince]_block_invoke"
-                  moduleName = "198SalesGoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
-                  timestampString = "524493093.011287"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
             timestampString = "524493116.991192"
             startingColumnNumber = "9223372036854775807"
@@ -90,12 +26,12 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/NetService.m"
-                  timestampString = "524493117.205746"
+                  timestampString = "524539014.700165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "355">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "307">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -105,11 +41,11 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/NetService.m"
-                  timestampString = "524493117.207118"
+                  timestampString = "524539014.701854"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -170,7 +106,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Venders/AFNetworking/AFNetworking/AFHTTPRequestOperation.m"
-                  timestampString = "524493175.823608"
+                  timestampString = "524539014.710468"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -185,7 +121,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Venders/AFNetworking/AFNetworking/AFHTTPRequestOperation.m"
-                  timestampString = "524493175.825045"
+                  timestampString = "524539014.712049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
