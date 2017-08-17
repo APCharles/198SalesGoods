@@ -27,6 +27,11 @@
 
 @implementation MyAddressController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self requestAddress];
+}
+
 - (void)viewDidLoad {
      [super viewDidLoad];
 
@@ -60,7 +65,6 @@
    
     
     
-    [self requestAddress];
     
     
 }
