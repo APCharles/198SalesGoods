@@ -10,7 +10,8 @@
 #import "MyAddressController.h"
 #import "EditAddressController.h"
 #import "SBJsonParser.h"
-@interface MyAddressController ()
+#import "AddressViewCell.h"
+@interface MyAddressController ()<UITableViewDelegate,UITableViewDataSource,AddressViewCellDelegate>
 
 
 /** add address  */
@@ -18,6 +19,10 @@
 
 /** array  */
 @property(strong,nonatomic) NSArray *addressArr;
+
+
+/** addressTable  */
+@property(strong,nonatomic) UITableView *addressTableview;
 @end
 
 @implementation MyAddressController
@@ -27,15 +32,73 @@
 
     
     [self setBarName:@"我的地址"];
-
     
-    [self.view addSubview:self.addAddress];
+    UIScrollView * myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationBarView.frame), mainScreenWidth, mainScreenHeight - self.navigationBarView.height)];
+    myScrollView.backgroundColor = DCBGColor;
+    myScrollView.showsHorizontalScrollIndicator = NO;
+    myScrollView.showsVerticalScrollIndicator = NO;
+        //点击延迟
+    myScrollView.delaysContentTouches = NO;
+    if ([UIDevice currentDevice].systemVersion.intValue >= 8) {
+        for (UIView *currentView in myScrollView.subviews) {
+            if ([currentView isKindOfClass:[UIScrollView class]]) {
+                ((UIScrollView *)currentView).delaysContentTouches = NO;
+                break;
+            }
+        }
+    }
+    
+    
+    
+    [myScrollView setContentSize:CGSizeMake(myScrollView.frame.size.width, myScrollView.frame.size.height)];
+    
+    [self.view addSubview:myScrollView];
+    
+    [myScrollView addSubview:self.addressTableview];
+    
+    [myScrollView addSubview:self.addAddress];
+   
+    
     
     [self requestAddress];
     
     
 }
 
+
+- (void)editAddress:(UIButton *)sender{
+    EditAddressController *ed = [[EditAddressController alloc] initWithData:_addressArr[sender.tag - 200]];
+    [self.navigationController pushViewController:ed animated:YES];
+}
+
+- (void)deleteAddress:(UIButton *)sender{
+    
+    NSLog(@"点击删除");
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+   return _addressArr.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 100;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    AddressViewCell *cell = [AddressViewCell cellWithTableView:tableView];
+    cell.delegate = self;
+    cell.data = _addressArr[indexPath.row];
+    cell.deleteBtn.tag = indexPath.row + 100;
+    cell.editBtn.tag = indexPath.row + 200;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
+}
 - (void)requestAddress{
     
     NSDictionary *dic = [[NSDictionary alloc] init];
@@ -49,11 +112,18 @@
         
         _addressArr = dic[@"addbooks"];
         
-        
+        if (_addressArr.count > 0) {
+            
+          [_addressTableview reloadData];
+            
+            _addressTableview.height = 100 * _addressArr.count;
+            _addAddress.y = CGRectGetMaxY(self.addressTableview.frame) + 30;
+            
+        }
         
         
     } failure:^(NSError *error) {
-        
+         [self showProgressHUDString:@"服务器数据异常"];
     }];
 }
 
@@ -89,5 +159,25 @@
     }
     
     return _addAddress;
+}
+
+- (UITableView *)addressTableview{
+    
+    if (!_addressTableview) {
+        
+        UITableView *myTableview = [[UITableView alloc] init];
+        myTableview.x = 0;
+        myTableview.y = 0;
+        myTableview.width = mainScreenWidth;
+        myTableview.height = 200;
+        myTableview.delegate = self;
+        myTableview.dataSource = self;
+        myTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+        myTableview.backgroundColor = [UIColor clearColor];
+        myTableview.scrollEnabled = NO;
+        _addressTableview = myTableview;
+    }
+    
+    return _addressTableview;
 }
 @end

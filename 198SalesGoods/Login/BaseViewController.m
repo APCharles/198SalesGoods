@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "MBProgressHUD.h"
-
+#import "SmallButton.h"
 @interface BaseViewController ()
 
 /** title  */
@@ -26,7 +26,15 @@
     self.navigationController.navigationBar.hidden = YES;
     
     [self.view addSubview:self.navigationBarView];
+    
+    
    
+}
+
+- (void)resign:(UITapGestureRecognizer *)tap{
+    
+    [self.view endEditing:YES];
+    
 }
 - (void)setBarName:(NSString *)barName{
     _titleLabel.text = barName;
@@ -50,12 +58,12 @@
         topView.height = 64;
         
         
-        UIButton *leftBtn = [[UIButton alloc] init];
+        SmallButton *leftBtn = [[SmallButton alloc] init];
         [leftBtn setBackgroundImage:[UIImage imageNamed:@"icon_fanhui"] forState:UIControlStateNormal];
         
         leftBtn.size = CGSizeMake(10, 19);
         leftBtn.x = 15;
-        leftBtn.y = 32 - leftBtn.height * 0.5 + 5;
+        leftBtn.y = 32 - leftBtn.height * 0.5 + 8;
         [leftBtn addTarget:self action:@selector(back)forControlEvents:UIControlEventTouchUpInside];
 
         [topView addSubview:leftBtn];
@@ -116,4 +124,9 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
 @end
