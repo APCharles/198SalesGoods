@@ -27,4 +27,9 @@
 
 /** address */
 @property(strong,nonatomic)UILabel *addressLabel;
+
+
+
+/** infoData  */
+@property(strong,nonatomic) NSDictionary *infoData;
 @end

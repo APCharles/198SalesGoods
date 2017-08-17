@@ -30,10 +30,28 @@
 
 /** citYDta  */
 @property(strong,nonatomic) NSDictionary *cityDic;
+
+
+/** data  */
+@property(strong,nonatomic) NSDictionary *data;
 @end
 
 @implementation EditAddressController
 
+- (instancetype)initWithData:(NSDictionary *)dic{
+    
+    if (self == [super init]) {
+        
+        
+        _data = dic;
+   
+    
+    }
+  
+    
+    
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,44 +64,65 @@
     
     [self.view addSubview:self.saveBtn];
     
+
+    
+    
    
 }
+
+
 
 - (void)saveBtnclick:(UIButton *)sender{
     
     UITextField *nameFiled = (UITextField *)[self.view viewWithTag:100];
     UITextField *mobileFiled = (UITextField *)[self.view viewWithTag:101];
-    UITextField *codeFiled = (UITextField *)[self.view viewWithTag:102];
-    UITextField *addressFiled = (UITextField *)[self.view viewWithTag:104];
+   
+    UITextField *addressFiled = (UITextField *)[self.view viewWithTag:103];
     if (nameFiled.text.length == 0) {
-        [MBProgressHUD showMessage:@"请输入姓名"];
+        
+        [self showProgressHUDString:@"请输入姓名"];
+        return;
     }else if (mobileFiled.text.length == 0){
         
-         [MBProgressHUD showMessage:@"请输入手机号码"];
+         [self showProgressHUDString:@"请输入手机号码"];
+        return;
     }else if ( ![self isMobileWithStr:mobileFiled.text]){
         
-        [MBProgressHUD showMessage:@"请输入正确的手机号码"];
-    }else if ( codeFiled.text.length == 0){
-        
-        [MBProgressHUD showMessage:@"请输入邮政编码"];
+        [self showProgressHUDString:@"请输入正确的手机号码" ];
+        return;
     }else if ( _address.length == 0){
         
-        [MBProgressHUD showMessage:@"请选择地址"];
+        [self showProgressHUDString:@"请选择地址"];
+        return;
     }else if ( addressFiled.text.length == 0){
         
-        [MBProgressHUD showMessage:@"请输入详细地址"];
+        [self showProgressHUDString:@"请输入详细地址"];
+        return;
     }
     
+    NSString *ProvinceID;
+    NSString *CityID;
+    if ([_data count] > 0) {
+        ProvinceID = [_data objectForKey:@"province"];
+        CityID = [_data objectForKey:@"city"];
+    }
+    if ([_cityDic count]> 0) {
+        ProvinceID = [_cityDic objectForKey:@"ProvinceID"];
+        CityID = [_cityDic objectForKey:@"CityID"];
+
+    }
     NSDictionary *dic = @{@"name":nameFiled.text,
                           @"tel":mobileFiled.text,
-                          @"province":[_cityDic objectForKey:@"ProvinceID"],
-                          @"city":[_cityDic objectForKey:@"CityID"],
+                          @"province":ProvinceID,
+                          @"city":CityID,
                           @"address":addressFiled.text
                           };
     
     [NetService serviceWithPostURL:@"wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
         
+        NSLog(@"----");
     } failure:^(NSError *error) {
+        
         
     }];
 
@@ -106,7 +145,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 5;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -130,18 +169,18 @@
     cell.filed.delegate = self;
     
      [cell.filed addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    if (indexPath.row == 2 || indexPath.row == 1) {
+    if ( indexPath.row == 1) {
         
         cell.filed.keyboardType = UIKeyboardTypePhonePad;
     }
-    if (indexPath.row == 4) {
+    if (indexPath.row == 3) {
         cell.bottomLineView.hidden = NO;
         
     }else{
         cell.bottomLineView.hidden = YES;
     }
     
-    if (indexPath.row == 3) {
+    if (indexPath.row == 2) {
         
         if (![Tools isBlankString:_address]) {
             
@@ -150,6 +189,28 @@
             
         }
     }
+    
+    if ([_data count] > 0) {
+        
+        if (indexPath.row == 0) {
+            cell.filed.text = [_data objectForKey:@"name"];
+        }else if (indexPath.row == 1){
+            cell.filed.text = [_data objectForKey:@"tel"];
+            
+        }
+        else if (indexPath.row == 2){
+            
+            cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@",_data[@"sheng"],_data[@"shi"]];
+            
+            _address = [NSString stringWithFormat:@"%@ %@",_data[@"sheng"],_data[@"shi"]];
+            cell.addressLabel.textColor = [UIColor blackColor];
+        }else if (indexPath.row == 3){
+            
+            cell.filed.text = [_data objectForKey:@"address"];
+            
+        }
+        
+    }
     return cell;
     
 }
@@ -157,7 +218,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 3) {
+    if (indexPath.row == 2) {
+        [self.view endEditing:YES];
         [self.pickerView show];
         
     }
@@ -173,12 +235,13 @@
 
 - (void)sureBtnClickReturnProvince:(NSString *)province City:(NSDictionary *)cityDic{
     
+    _data = nil;
     
     [self.pickerView hide];
     _address = [NSString stringWithFormat:@"%@ %@",province,cityDic[@"CityName"]];
     
 
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:2 inSection:0];
     [_addressTableview reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     NSLog(@"%@%@",province,cityDic[@"CityName"]);
     
@@ -187,6 +250,11 @@
 
 
 #pragma mark uitextfielddelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    [self.pickerView hide];
+}
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
@@ -199,6 +267,7 @@
         // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
     if (!position) {
         
+        _data = nil;
         if (textField.tag == 100) {
             if (toBeString.length > 20) {
                 textField.text = [toBeString substringToIndex:20];
@@ -236,6 +305,10 @@
         myTableview.dataSource = self;
         myTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         myTableview.backgroundColor = [UIColor clearColor];
+        
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resgn:)];
+//        tap.numberOfTapsRequired = 1;
+//        [myTableview addGestureRecognizer:tap];
         _addressTableview = myTableview;
     }
     
@@ -251,7 +324,7 @@
         NSArray *infoArr = [[NSArray alloc] init];
         infoArr = @[@{@"image":@"通讯录",@"plaeHolder":@"填写收货人姓名"},
                     @{@"image":@"电话",@"plaeHolder":@"填写手机号码"},
-                    @{@"image":@"邮编",@"plaeHolder":@"填写所在地邮政编码"},
+                
                     @{@"image":@"定位",@"plaeHolder":@""},
                     @{@"image":@"详细地址",@"plaeHolder":@"填写详细地址"}
                     ];
@@ -299,4 +372,8 @@
     return _saveBtn;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
 @end

@@ -10,4 +10,10 @@
 
 @interface EditAddressController : BaseViewController
 
+/** 是否是编辑  */
+@property(assign,nonatomic) BOOL isEdit;
+
+
+- (instancetype)initWithData:(NSDictionary *)dic;
+
 @end

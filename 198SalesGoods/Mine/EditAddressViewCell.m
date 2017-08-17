@@ -74,6 +74,12 @@
     }
 }
 
+- (void)setInfoData:(NSDictionary *)infoData{
+    
+    _infoData = infoData;
+    
+}
+
 - (UIImageView *)iconView{
     
     if (!_iconView) {
