@@ -126,10 +126,31 @@
     NSLog(@"微信登录");
     __weak typeof(self)weakSelf = self;
     [[UMShareHelper defaultUMShareHelper]applyByController:self snsAccountWithUMSocialSnsType:UMSocialPlatformType_WechatSession success:^(UMSocialUserInfoResponse *response) {
-        [weakSelf showProgressHUDString:@"登录成功"];
+        [weakSelf requestAfterWeChatLogin:response.openid];
     } failed:^(NSError *error) {
         [weakSelf showProgressHUDString:@"登录失败"];
     }];
+}
+
+-(void)requestAfterWeChatLogin:(NSString *)openid{
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+    [paramDic setObject:openid forKey:@"openid"];
+    __weak typeof(self)weakSelf = self;
+    [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@member/get_member_info",API_URL] params:paramDic success:^(id responseObject) {
+        UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
+        
+        [UserData shareInstance].user_Model = userModel.user_info;
+        
+        if (userModel.res) {
+            [weakSelf doDealWithUserModel:userModel];
+        }else{
+            ResModel *resModel = [ResModel objectWithKeyValues:responseObject];
+            [weakSelf showProgressHUDString:resModel.message];
+        }
+    } failure:^(NSError *error) {
+        [weakSelf showProgressHUDString:@"服务器数据异常"];
+    }];
+
 }
 
 #pragma mark 登录
@@ -137,9 +158,6 @@
     NSLog(@"登录");
     [_mobileTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
-    
-    _mobileTextField.text = @"18683898365";
-    _passwordTextField.text = @"123321";
     if ([self checkText]) {
         NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
@@ -194,7 +212,6 @@
 }
 
 -(void)doDealWithUserModel:(UserModel *)userModel{
-    
     if (userModel.user_info.pid.intValue>0) {
         [[NSUserDefaults standardUserDefaults]setObject:[userModel.user_info keyValues] forKey:kUserInfoModel];
         [[NSUserDefaults standardUserDefaults]synchronize];

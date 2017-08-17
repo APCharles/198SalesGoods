@@ -33,7 +33,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = DCBGColor;
     self.navigationController.navigationBar.hidden = YES;
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     [self.view addSubview:self.topView];
     [self.view addSubview:self.myTableview];
     

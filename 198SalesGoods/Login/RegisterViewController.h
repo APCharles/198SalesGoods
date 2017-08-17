@@ -30,5 +30,8 @@
     
     UIView *_pidView;
     UITextField *_pidTextField;
+    
+    NSTimer * timer;
+    int _totalTime;
 }
 @end
