@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "MBProgressHUD.h"
+#import "ResModel.h"
 
 @interface RegisterViewController ()
 
@@ -40,7 +41,76 @@
 
 #pragma mark 完成注册
 -(void)onClickDone{
+    [_mobileTextField resignFirstResponder];
+    [_verifyTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+    [_nameTextField  resignFirstResponder];
+    [_addressTextField resignFirstResponder];
+    [_pidTextField resignFirstResponder];
     
+    if ([self checkText]) {
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+        [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
+        [paramDic setObject:_passwordTextField.text forKey:@"password"];
+        [paramDic setObject:_verifyTextField.text forKey:@"verify_code"];
+        [paramDic setObject:_addressTextField.text forKey:@"address"];
+        if (_pidTextField.text.length) {
+            [paramDic setObject:_pidTextField.text forKey:@"pid"];
+        }
+        [paramDic setObject:_nameTextField.text forKey:@"name"];
+        __weak typeof(self)weakSelf = self;
+        [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/registr_ios",API_URL] params:paramDic success:^(id responseObject) {
+            ResModel *resModel = [ResModel objectWithKeyValues:responseObject];
+            if (resModel.success.intValue == 1) {
+                [weakSelf showSynProgressHUDString:resModel.message time:1 completion:^{
+                    [weakSelf.navigationController popViewControllerAnimated:YES];
+                }];
+            }else{
+                [weakSelf showProgressHUDString:resModel.message];
+            }
+        } failure:^(NSError *error) {
+            [weakSelf showProgressHUDString:@"服务器数据异常"];
+        }];
+    }
+}
+
+-(BOOL)checkText{
+    BOOL result = YES;
+    NSString *msg = @"";
+    if (_mobileTextField.text.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入手机号"];
+    }
+    if (_mobileTextField.text.length) {
+        if (![[_mobileTextField.text substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {
+            msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+        }
+    }
+    if (_mobileTextField.text.length != 11) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+    }
+    if (!_verifyTextField.text.length) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入验证码"];
+    }
+    if (!_passwordTextField.text.length) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请设置密码"];
+    }
+    if (_passwordTextField.text.length<6) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"输入密码不能少于6位字符"];
+    }
+    if (_passwordTextField.text.length>20) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"输入密码不能多于20位字符"];
+    }
+    if (!_nameTextField.text.length) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请设置用户名"];
+    }
+    if (!_addressTextField.text.length) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入地址"];
+    }
+    if (msg.length > 0) {
+        [self showProgressHUDString:msg];
+        result = NO;
+    }
+    return result;
 }
 
 -(void)inStallController{
@@ -167,11 +237,36 @@
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
         __weak typeof(self)weakSelf = self;
         [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/send_juhesms",API_URL] params:paramDic success:^(id responseObject) {
-            
+            if (!timer) {
+                _verifyBtn.userInteractionEnabled = NO;
+                timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadtime) userInfo:nil repeats:YES];
+                _totalTime = 61;
+            }
         } failure:^(NSError *error) {
+            [weakSelf releaseTimer];
             [weakSelf showProgressHUDString:@"服务器数据异常"];
         }];
+    }
+}
 
+-(void)loadtime{
+    _totalTime = _totalTime-1;
+    if (_totalTime == 0) {
+        [_verifyBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [self releaseTimer];
+        _verifyBtn.userInteractionEnabled = YES;
+        return;
+    }
+    NSString *time = [NSString stringWithFormat:@"%d秒",_totalTime];
+    [_verifyBtn setTitle:time forState:UIControlStateNormal];
+}
+
+-(void)releaseTimer{
+    if (timer) {
+        [_verifyBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        _verifyBtn.userInteractionEnabled = YES;
+        [timer invalidate];
+        timer = nil;
     }
 }
 
@@ -195,7 +290,6 @@
     }
     return result;
 }
-
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [_mobileTextField resignFirstResponder];
@@ -268,6 +362,11 @@
             completion();
         }
     }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self releaseTimer];
 }
 
 

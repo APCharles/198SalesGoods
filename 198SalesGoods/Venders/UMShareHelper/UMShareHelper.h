@@ -12,7 +12,7 @@
 #define UMAppKey @"5993c846a40fa35cb5000d59"
 
 #define WXAppId @"wxa2af916683765e86"
-#define WXAppSecret @"ade2f6c169ec172157d25267582ae579"
+#define WXAppSecret @"379571814a5c0be5ad55e8c7e75ef99b"
 #define DefaultUrl @""
 #define DefaultShareImageName @"icon_logo"
 
