@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "MBProgressHUD.h"
-#import "SmallButton.h"
+
 @interface BaseViewController ()
 
 /** title  */
@@ -68,7 +68,7 @@
 
         [topView addSubview:leftBtn];
         
-        
+        _leftBtn = leftBtn;
         
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.text = @"我的地址";

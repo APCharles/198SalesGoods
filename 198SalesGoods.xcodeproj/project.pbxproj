@@ -106,6 +106,7 @@
 		0F8793FC1F453D6600666EDE /* SmallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8793FB1F453D6600666EDE /* SmallButton.m */; };
 		0F8794021F45443600666EDE /* 删除@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8794011F45443600666EDE /* 删除@2x.png */; };
 		0F8794061F4544C100666EDE /* 编辑@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8794051F4544C100666EDE /* 编辑@2x.png */; };
+		0F8794091F459B2100666EDE /* GoodsListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8794081F459B2100666EDE /* GoodsListViewCell.m */; };
 		0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */; };
 		0FF685C21F28849200ED09D9 /* SalesTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C11F28849200ED09D9 /* SalesTabController.m */; };
 		0FF685C51F2884C200ED09D9 /* SalesNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF685C41F2884C200ED09D9 /* SalesNavgationController.m */; };
@@ -393,6 +394,8 @@
 		0F8793FB1F453D6600666EDE /* SmallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallButton.m; path = MBProgressHUD/SmallButton.m; sourceTree = "<group>"; };
 		0F8794011F45443600666EDE /* 删除@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除@2x.png"; sourceTree = "<group>"; };
 		0F8794051F4544C100666EDE /* 编辑@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "编辑@2x.png"; sourceTree = "<group>"; };
+		0F8794071F459B2100666EDE /* GoodsListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListViewCell.h; sourceTree = "<group>"; };
+		0F8794081F459B2100666EDE /* GoodsListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListViewCell.m; sourceTree = "<group>"; };
 		0FC6095E1F3D4DF80017531E /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingCartViewController.h; path = 198SalesGoods/Mine/ShoppingCartViewController.h; sourceTree = SOURCE_ROOT; };
 		0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingCartViewController.m; path = 198SalesGoods/Mine/ShoppingCartViewController.m; sourceTree = SOURCE_ROOT; };
 		0FF685C01F28849200ED09D9 /* SalesTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTabController.h; sourceTree = "<group>"; };
@@ -951,6 +954,8 @@
 			children = (
 				0F3F6FAE1F39E1A900152140 /* GoodsViewController.h */,
 				0F3F6FAF1F39E1A900152140 /* GoodsViewController.m */,
+				0F8794071F459B2100666EDE /* GoodsListViewCell.h */,
+				0F8794081F459B2100666EDE /* GoodsListViewCell.m */,
 			);
 			path = Goods;
 			sourceTree = "<group>";
@@ -1688,7 +1693,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3ED54QFZS2;
+						DevelopmentTeam = 7VH6A7LBL2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -1824,6 +1829,7 @@
 				BC036EC41F43E2190037312D /* SBJsonStreamParserAccumulator.m in Sources */,
 				0F67B1861F3C39B3000028A1 /* GoodsShowCell.m in Sources */,
 				0F1DA73F1F4293A400595405 /* MBProgressHUD.m in Sources */,
+				0F8794091F459B2100666EDE /* GoodsListViewCell.m in Sources */,
 				0F1DA7B81F42F3AB00595405 /* MyAddressController.m in Sources */,
 				BC036ED61F43E3D90037312D /* UserInfoModel.m in Sources */,
 				BC036E9A1F43E1170037312D /* MJIvar.m in Sources */,
@@ -2043,7 +2049,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2056,7 +2062,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2107,7 +2113,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2120,7 +2126,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -55,6 +55,7 @@
     _mobileTextField = [[UITextField alloc]initWithFrame:CGRectMake(15, 0, mainView.width-30, mainView.height/2)];
     _mobileTextField.font = [UIFont systemFontOfSize:15];
     _mobileTextField.placeholder = @"请输入手机号码";
+    _mobileTextField.text =@"18683898365";
     _mobileTextField.keyboardType = UIKeyboardTypeNumberPad;
     [_mobileTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
     _mobileTextField.delegate = self;
@@ -63,6 +64,7 @@
     _passwordTextField = [[UITextField alloc]initWithFrame:CGRectMake(15, mainView.height/2, mainView.width-30, mainView.height/2)];
     _passwordTextField.font = [UIFont systemFontOfSize:15];
     _passwordTextField.placeholder = @"请输入登录密码";
+    _passwordTextField.text = @"123321";
     _passwordTextField.returnKeyType = UIReturnKeyJoin;
     [_passwordTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
     [_passwordTextField setSecureTextEntry:YES];

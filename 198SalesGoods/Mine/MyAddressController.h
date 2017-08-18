@@ -10,4 +10,5 @@
 #import "BaseViewController.h"
 @interface MyAddressController : BaseViewController
 
+- (void)requestAddress;
 @end

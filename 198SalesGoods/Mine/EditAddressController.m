@@ -9,6 +9,7 @@
 #import "EditAddressController.h"
 #import "EditAddressViewCell.h"
 #import "AddressPickerView.h"
+#import "MyAddressController.h"
 @interface EditAddressController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,AddressPickerViewDelegate>
 
 /** dizhi  */
@@ -118,11 +119,36 @@
                           @"address":addressFiled.text
                           };
     
-    [NetService serviceWithPostURL:@"wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
+    __weak typeof(self)weakSelf = self;
+    [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
         
-        NSLog(@"----");
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            NSLog(@"%@",[responseObject objectForKey:@"success"]);
+            if ([[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]] isEqualToString:@"1"]) {
+                
+                for (UIViewController *vc in weakSelf.navigationController.viewControllers){
+                    if ([vc isKindOfClass:[MyAddressController class]]){
+                        MyAddressController *temp = (MyAddressController *)vc;
+                            //刷新评价状态和显示按钮
+                        [temp requestAddress];
+                        [weakSelf.navigationController popToViewController:temp animated:YES];
+                        return;
+                    }
+                }
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }
+            else{
+                
+                [weakSelf showProgressHUDString:[responseObject objectForKey:@"message"]];
+            }
+            
+        }
+       
+        
+        
     } failure:^(NSError *error) {
-        
+          [self showProgressHUDString:@"服务器数据异常"];
         
     }];
 

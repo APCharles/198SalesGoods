@@ -65,6 +65,8 @@
 //接口地址前缀
 #define API_URL @"http://wx.dianpuj.com/index.php/Wap/"
 
+#define APPIP @"http://wx.dianpuj.com"
+
 /**
  *	@brief user对象本地化key
  */

@@ -7,9 +7,15 @@
 //
 
 #import "GoodsViewController.h"
+#import "GoodsListViewCell.h"
+@interface GoodsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@interface GoodsViewController ()
+/** 商品列表  */
+@property(strong,nonatomic) UITableView *goodsListTableview;
 
+
+/** shuju  */
+@property(strong,nonatomic) NSArray *listArr;
 @end
 
 @implementation GoodsViewController
@@ -17,22 +23,109 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.view.backgroundColor = DCBGColor;
+    [self setBarName:@"商品列表"];
+    
+    self.leftBtn.hidden = YES;
+    
+  [self.view addSubview:self.goodsListTableview];
+    
+//    [self requestGoodsList];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [self requestGoodsList];
 }
 
-/*
-#pragma mark - Navigation
+- (void)requestGoodsList{
+    
+    NSDictionary *dic = [[NSDictionary alloc] init];
+    [NetService serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/Wap/Product/index_ios" params:dic success:^(id responseObject) {
+        
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            if ([[responseObject objectForKey:@"rows"] isKindOfClass:[NSArray class]]) {
+                
+                _listArr = [responseObject objectForKey:@"rows"];
+            }
+        }
+        
+        [_goodsListTableview reloadData];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        
+        
+    } failure:^(NSError *error) {
+        [self showProgressHUDString:@"服务器数据异常"];
+   
+    }];
+
 }
-*/
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return _listArr.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    if (section == 0) {
+        return 0;
+    }else{
+        
+        return 30;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 250 ;
+}
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GoodsListViewCell *cell = [GoodsListViewCell cellWithTableView:tableView];
+    
+    cell.data = _listArr[indexPath.row];
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSLog(@"点击某一个商品");
+}
+- (UITableView *)goodsListTableview{
+    
+    if (!_goodsListTableview) {
+        
+        UITableView *goodsListTableview = [[UITableView alloc] init];
+        goodsListTableview.x = 0;
+        goodsListTableview.y = CGRectGetMaxY(self.navigationBarView.frame);
+        goodsListTableview.width = mainScreenWidth;
+        goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
+        goodsListTableview.delegate = self;
+        goodsListTableview.dataSource = self;
+        goodsListTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+        goodsListTableview.backgroundColor = [UIColor clearColor];
+        
+            //        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resgn:)];
+            //        tap.numberOfTapsRequired = 1;
+            //        [myTableview addGestureRecognizer:tap];
+        _goodsListTableview = goodsListTableview;
+    }
+    
+    return _goodsListTableview;
+}
+
 
 @end
