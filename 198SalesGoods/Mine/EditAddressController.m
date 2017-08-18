@@ -119,9 +119,11 @@
                           @"address":addressFiled.text
                           };
     
+  
     __weak typeof(self)weakSelf = self;
     [NetService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
         
+      
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             NSLog(@"%@",[responseObject objectForKey:@"success"]);
@@ -148,6 +150,7 @@
         
         
     } failure:^(NSError *error) {
+    
           [self showProgressHUDString:@"服务器数据异常"];
         
     }];
