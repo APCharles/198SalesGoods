@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SmallButton.h"
 @interface BaseViewController : UIViewController
 
+/** SmallButton *leftBtn  */
+@property(strong,nonatomic) SmallButton *leftBtn;
 
 /** topView  */
 @property(strong,nonatomic) UIView *navigationBarView;

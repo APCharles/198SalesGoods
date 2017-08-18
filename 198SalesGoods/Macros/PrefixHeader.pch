@@ -58,12 +58,14 @@
 
 #define PFR [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"PingFang SC"
 
-
+#define MY_WINDOW  [[[UIApplication sharedApplication] delegate ]window]
     //分割线
 #define LINECOLOR [UIColor colorWithRed:212/255.f green:212/255.f blue:212/255.f alpha:1]
 
 //接口地址前缀
 #define API_URL @"http://wx.dianpuj.com/index.php/Wap/"
+
+#define APPIP @"http://wx.dianpuj.com"
 
 /**
  *	@brief user对象本地化key
