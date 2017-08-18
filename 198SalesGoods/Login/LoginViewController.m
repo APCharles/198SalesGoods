@@ -139,7 +139,8 @@
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
     [paramDic setObject:openid forKey:@"openid"];
     __weak typeof(self)weakSelf = self;
-    [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@member/get_member_info",API_URL] params:paramDic success:^(id responseObject) {
+     NetService *netService = [[NetService alloc] init];
+    [netService serviceWithPostURL:[NSString stringWithFormat:@"%@member/get_member_info",API_URL] params:paramDic success:^(id responseObject) {
         UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
         
         [UserData shareInstance].user_Model = userModel.user_info;
@@ -166,7 +167,8 @@
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
         [paramDic setObject:_passwordTextField.text forKey:@"password"];
         __weak typeof(self)weakSelf = self;
-        [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
+         NetService *netService = [[NetService alloc] init];
+        [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/sigin_ios",API_URL] params:paramDic success:^(id responseObject) {
             UserModel *userModel = [UserModel objectWithKeyValues:responseObject];
             
             [UserData shareInstance].user_Model = userModel.user_info;

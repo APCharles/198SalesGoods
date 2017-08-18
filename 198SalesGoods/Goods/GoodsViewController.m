@@ -41,7 +41,8 @@
 - (void)requestGoodsList{
     
     NSDictionary *dic = [[NSDictionary alloc] init];
-    [NetService serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/Wap/Product/index_ios" params:dic success:^(id responseObject) {
+    NetService *netService = [[NetService alloc] init];
+    [netService serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/Wap/Product/index_ios" params:dic success:^(id responseObject) {
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             

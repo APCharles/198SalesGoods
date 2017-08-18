@@ -81,7 +81,8 @@
         NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
         [paramDic setObject:_pidTextField.text forKey:@"pid"];
         __weak typeof(self)weakSelf = self;
-        [NetService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/mypid",API_URL] params:paramDic success:^(id responseObject) {
+         NetService *netService = [[NetService alloc] init];
+        [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/mypid",API_URL] params:paramDic success:^(id responseObject) {
             ResModel *resModel = [ResModel objectWithKeyValues:responseObject];
             if (resModel.success.intValue == 1) {
                 [weakSelf showSynProgressHUDString:resModel.message time:1 completion:^{

@@ -106,7 +106,8 @@
 - (void)requestAddress{
     
     NSDictionary *dic = [[NSDictionary alloc] init];
-    [NetService serviceWithGetURL:[NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/Wap/order/myaddress/mid/%@",[UserData shareInstance].user_Model.base_id] params:dic success:^(id responseObject) {
+     NetService *netService = [[NetService alloc] init];
+    [netService serviceWithGetURL:[NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/Wap/order/myaddress/mid/%@",[UserData shareInstance].user_Model.base_id] params:dic success:^(id responseObject) {
        
         NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
