@@ -29,7 +29,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self requestAddress];
+//    [self requestAddress];
 }
 
 - (void)viewDidLoad {
@@ -63,7 +63,7 @@
     
     [myScrollView addSubview:self.addAddress];
    
-    
+    [self requestAddress];
     
     
     

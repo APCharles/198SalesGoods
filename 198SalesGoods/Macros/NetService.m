@@ -9,7 +9,7 @@
                     params:(NSDictionary *)param
                    success:(void (^)(id responseObject))successBlock
                    failure:(void (^)(NSError *error))failureBlock {
-  
+  [MBProgressHUD  hideHUD];
      [MBProgressHUD showMessage:@"正在加载中" toView: MY_WINDOW  ];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -31,6 +31,7 @@
                    params:(NSDictionary *)param
                   success:(void (^)(id responseObject))successBlock
                   failure:(void (^)(NSError *error))failureBlock{
+    [MBProgressHUD  hideHUD];
       [MBProgressHUD showMessage:@"正在加载中" toView: MY_WINDOW  ];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -52,7 +53,7 @@
                        params:(NSDictionary *)param
                       success:(void (^)(id responseObject))successBlock
                       failure:(void (^)(NSError *error))failureBlock{
-    
+    [MBProgressHUD  hideHUD];
     [MBProgressHUD showMessage:@"正在加载中" toView: MY_WINDOW  ];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

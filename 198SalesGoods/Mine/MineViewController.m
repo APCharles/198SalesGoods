@@ -12,6 +12,7 @@
 #import "MineGroup.h"
 #import "MineItem.h"
 #import "MyAddressController.h"
+#import "SmallButton.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
@@ -162,7 +163,7 @@
         titleLabel.x = mainScreenWidth * 0.5 - titleLabel.width * 0.5;
         titleLabel.y = 36 + titleLabel.height * 0.5;
         
-        UIButton *settingView = [[UIButton alloc] init];
+        SmallButton *settingView = [[SmallButton alloc] init];
         settingView.size = CGSizeMake(20, 20);
         [settingView setBackgroundImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal] ;
         settingView.x = mainScreenWidth - 15 - settingView.width;

@@ -41,22 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Mine/MyAddressController.m"
-            timestampString = "524641173.535321"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-requestAddress"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Mine/EditAddressController.m"
             timestampString = "524714275.965353"
             startingColumnNumber = "9223372036854775807"
@@ -105,13 +89,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Mine/EditAddressController.m"
-            timestampString = "524714275.965353"
+            filePath = "198SalesGoods/Macros/NetService.m"
+            timestampString = "524715226.926022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "-saveBtnclick:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "+serviceWithGetURL:params:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Macros/NetService.m"
+            timestampString = "524715226.926022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "+serviceWithGetURL:params:success:failure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[NetService serviceWithGetURL:params:success:failure:]"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/NetService.m"
+                  timestampString = "524715228.051498"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__55+[NetService serviceWithGetURL:params:success:failure:]_block_invoke"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/NetService.m"
+                  timestampString = "524715228.052891"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Macros/NetService.m"
+            timestampString = "524715226.926022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "+serviceWithGetURL:params:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
