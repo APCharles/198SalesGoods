@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import "UserModel.h"
 #import "UMShareHelper.h"
+#import "FillPidViewController.h"
 
 @interface LoginViewController ()
 
@@ -220,7 +221,12 @@
             [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
         }];
     }else{
-        
+        __weak typeof(self)weakSelf = self;
+        [self showSynProgressHUDString:userModel.res.message time:1 completion:^{
+            FillPidViewController *fillPidViewController = [[FillPidViewController alloc]init];
+            fillPidViewController.userModel = userModel;
+            [weakSelf.navigationController pushViewController:fillPidViewController animated:YES];
+        }];
     }
 }
 

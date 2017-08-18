@@ -7,7 +7,13 @@
 //
 
 #import "BaseViewController.h"
+#import "UserModel.h"
 
-@interface FillPidViewController : BaseViewController
+@interface FillPidViewController : UIViewController<UITextFieldDelegate>
+{
+    UIView *_pidView;
+    UITextField *_pidTextField;
+}
 
+@property (nonatomic , strong)UserModel *userModel;
 @end
