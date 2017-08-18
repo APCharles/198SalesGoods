@@ -16,6 +16,7 @@
 /** topView  */
 @property(strong,nonatomic) UIView *navigationBarView;
 
+
 - (void)back;
 
 - (void)setBarName:(NSString *)barName;
@@ -28,4 +29,19 @@
  *	@param 	atime 	对话框显示时间
 */
 - (void)showSynProgressHUDString:(NSString *)content time:(float)atime completion:(void (^)())completion;
+
+/**
+ *	@brief	显示加载消息 透明背景
+ *
+ *	@param 	title 	标题
+ *	@param 	message 	内容
+ *
+ */
+- (void)showLoadingClearcolorWithTitle:(NSString *)title withMessage:(NSString *)message;
+
+/**
+ *	@brief	移除加载消息
+ *
+ */
+- (void)removeLoadingMessage;
 @end

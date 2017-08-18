@@ -1,6 +1,7 @@
 
 #import "NetService.h"
 #import "AFNetworking.h"
+#import "BaseViewController.h"
 
 @implementation NetService
 
@@ -13,7 +14,6 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
 //    NSString *url = [Login_URL stringByAppendingFormat:@"%@", methedName];
     [manager POST:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
         successBlock(responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -34,8 +34,6 @@
          successBlock(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           failureBlock(error);
-        
-        
     }] ;
     
 }

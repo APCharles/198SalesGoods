@@ -27,8 +27,6 @@
     
     [self.view addSubview:self.navigationBarView];
     
-    
-   
 }
 
 - (void)resign:(UITapGestureRecognizer *)tap{
@@ -117,6 +115,32 @@
     }];
 }
 
+/**
+ *	@brief	显示加载消息 透明背景
+ *
+ *	@param 	title 	标题
+ *	@param 	message 	内容
+ *
+ */
+- (void)showLoadingClearcolorWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    [MBProgressHUD hideHUDForView:self.view animated:NO];
+    MBProgressHUD *mbProgressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    [mbProgressHUD setMode:MBProgressHUDModeIndeterminate];
+    [mbProgressHUD setSquare:YES];
+    [mbProgressHUD setLabelText:title];
+    [mbProgressHUD setDetailsLabelText:message];
+    [self.view addSubview:mbProgressHUD];
+}
+
+/**
+ *	@brief	移除加载消息
+ *
+ */
+- (void)removeLoadingMessage
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
 
 - (void)back{
     
