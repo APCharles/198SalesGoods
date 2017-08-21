@@ -21,7 +21,16 @@
 }
 
 -(void)requestGoodsDetaiData{
+    NSString *urlStr = self.goodsDetailType==GoodsDetailBuy?[NSString stringWithFormat:@"%@Product/show_shop_ios/id/%@",API_URL,[self.data objectForKey:@"id"]]:[NSString stringWithFormat:@"%@Product/show_ios/id/%@",API_URL,[self.data objectForKey:@"id"]];
     
+    NetService *netService = [[NetService alloc] init];
+    [netService serviceWithGetURL:urlStr params:nil success:^(id responseObject) {
+        
+        NSString *result = [[NSString alloc] initWithData:responseObject  encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",result);
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

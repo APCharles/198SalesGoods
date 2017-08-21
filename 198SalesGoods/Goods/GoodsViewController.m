@@ -105,7 +105,12 @@
     NSDictionary *data = [_listArr objectAtIndex:indexPath.row];
     NSLog(@"点击某一个商品");
     GoodsDetailViewController *goodsDetailViewController = [[GoodsDetailViewController alloc]init];
-    
+    if ([[data objectForKey:@"level"] intValue] == 1) {
+        goodsDetailViewController.goodsDetailType = GoodsDetailBuy;
+    }else if ([[data objectForKey:@"level"] intValue] == 0){
+        goodsDetailViewController.goodsDetailType = GoodsDetailFree;
+    }
+    goodsDetailViewController.data = data;
     [self.navigationController pushViewController:goodsDetailViewController animated:YES];
     
 }
