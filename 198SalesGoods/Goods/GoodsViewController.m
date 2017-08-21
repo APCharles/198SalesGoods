@@ -8,6 +8,8 @@
 
 #import "GoodsViewController.h"
 #import "GoodsListViewCell.h"
+#import "GoodsDetailViewController.h"
+
 @interface GoodsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 /** 商品列表  */
@@ -88,8 +90,6 @@
 }
 
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     GoodsListViewCell *cell = [GoodsListViewCell cellWithTableView:tableView];
@@ -102,8 +102,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    NSDictionary *data = [_listArr objectAtIndex:indexPath.row];
     NSLog(@"点击某一个商品");
+    GoodsDetailViewController *goodsDetailViewController = [[GoodsDetailViewController alloc]init];
+    
+    [self.navigationController pushViewController:goodsDetailViewController animated:YES];
+    
 }
 - (UITableView *)goodsListTableview{
     

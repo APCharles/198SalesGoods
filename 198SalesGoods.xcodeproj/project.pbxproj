@@ -212,6 +212,7 @@
 		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 		BC44CC2F1F44294700A61E61 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FC51F441C220037312D /* libSocialWeChat.a */; };
+		BCD198EA1F468B0200A78D59 /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -645,6 +646,8 @@
 		BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
 		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
+		BCD198E81F468B0200A78D59 /* GoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
+		BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -983,6 +986,8 @@
 				0F3F6FAF1F39E1A900152140 /* GoodsViewController.m */,
 				0F8794071F459B2100666EDE /* GoodsListViewCell.h */,
 				0F8794081F459B2100666EDE /* GoodsListViewCell.m */,
+				BCD198E81F468B0200A78D59 /* GoodsDetailViewController.h */,
+				BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */,
 			);
 			path = Goods;
 			sourceTree = "<group>";
@@ -1720,7 +1725,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7VH6A7LBL2;
+						DevelopmentTeam = 3ED54QFZS2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -1866,6 +1871,7 @@
 				0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */,
 				BC036EA51F43E1870037312D /* BaseModel.m in Sources */,
 				0F1DA7AF1F4293D300595405 /* NetService.m in Sources */,
+				BCD198EA1F468B0200A78D59 /* GoodsDetailViewController.m in Sources */,
 				0F1DA76E1F4293AC00595405 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0F1DA7AA1F4293B400595405 /* UIProgressView+AFNetworking.m in Sources */,
 				BC036EC31F43E2190037312D /* SBJsonStreamParser.m in Sources */,
@@ -2080,7 +2086,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7VH6A7LBL2;
+				DEVELOPMENT_TEAM = 3ED54QFZS2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2093,7 +2099,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2144,7 +2150,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7VH6A7LBL2;
+				DEVELOPMENT_TEAM = 3ED54QFZS2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2157,7 +2163,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
