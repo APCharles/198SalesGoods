@@ -15,7 +15,7 @@
 #import "UIView+APFrame.h"
 #import "Tools.h"
 #import "AppDelegate.h"
-
+#import "UIImageView+WebCache.h"
 #define ApplicationDelegate  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 #import "MBProgressHUD+MJ.h"

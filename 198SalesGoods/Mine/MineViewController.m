@@ -13,6 +13,7 @@
 #import "MineItem.h"
 #import "MyAddressController.h"
 #import "SmallButton.h"
+#import "MyOrderViewController.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
@@ -133,6 +134,15 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.section == 1) {
+        
+        if (indexPath.row == 0) {
+            
+            MyOrderViewController *order = [[MyOrderViewController alloc] init];
+            [self.navigationController pushViewController:order animated:YES];
+            
+        }
+    }
     if (indexPath.section == 2) {
         
         if (indexPath.row == 1) {
