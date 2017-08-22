@@ -14,6 +14,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
 //    NSString *url = [Login_URL stringByAppendingFormat:@"%@", methedName];
+    NSLog(@"POST_URL====%@",url);
     [manager POST:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         
@@ -36,6 +37,7 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //      manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         //    NSString *url = [Login_URL stringByAppendingFormat:@"%@", methedName];
+    NSLog(@"GET_URL====%@",url);
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
        [self popCancle];
          successBlock(responseObject);
@@ -57,6 +59,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     url = [url  stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSLog(@"GET_URL====%@",url);
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
        [self popCancle];

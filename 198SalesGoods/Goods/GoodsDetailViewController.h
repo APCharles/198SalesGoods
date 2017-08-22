@@ -7,15 +7,25 @@
 //
 
 #import "BaseViewController.h"
-
-typedef enum {
-    GoodsDetailBuy,
-    GoodsDetailFree,
-}GoodsDetailType;
-
-@interface GoodsDetailViewController : BaseViewController
+#import "GoodsDetailModel.h"
 
 
-@property (assign) GoodsDetailType goodsDetailType;
+@interface GoodsDetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
+{
+    GoodsDetailModel *_goodsDetailModel;
+    
+    UITableView *_tableView;
+    
+    UIView *_headerView;
+    UIButton *_addToShopCartBtn;
+    UIButton *_buyBtn;
+    UIView *_shopCartView;
+    UIButton *_shopCartBtn;
+    UILabel *_shopCartCount;
+    
+    NSArray *_imgArr;
+    NSMutableArray *_recArr;
+}
+
 @property (nonatomic,strong)NSDictionary*data;
 @end
