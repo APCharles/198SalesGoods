@@ -326,12 +326,144 @@
 
 #pragma mark 立即购买
 -(void)onClickBuy{
-    
+    SizeModel *sizeModel;
+    ColorModel *colorModel;
+    for (int i = 0; i<_goodsDetailModel.szs.count; i++) {
+        SizeModel *size = [_goodsDetailModel.szs objectAtIndex:i];
+        if (size.selected.intValue == 1) {
+            sizeModel = size;
+            break;
+        }
+    }
+    for (int j = 0; j<_goodsDetailModel.cols.count; j++) {
+        ColorModel *color = [_goodsDetailModel.cols objectAtIndex:j];
+        if (color.selected.intValue == 1) {
+            colorModel = color;
+            break;
+        }
+    }
+    if (colorModel && sizeModel) {
+        SpecModel *specModel;
+        for (int i = 0; i<_goodsDetailModel.cols.count; i++) {
+            ColorModel *color = [_goodsDetailModel.cols objectAtIndex:i];
+            if (color.selected.intValue == 1) {
+                for (int j = 0; j<_goodsDetailModel.szs.count; j++) {
+                    SizeModel *size = [_goodsDetailModel.szs objectAtIndex:j];
+                    if (size.selected.intValue == 1) {
+                        for (int k = 0; k<_goodsDetailModel.specs.count; k++) {
+                            SpecModel *spec = [_goodsDetailModel.specs objectAtIndex:k];
+                            if ([spec.color isEqualToString:color.color] && spec.size.intValue == size.size.intValue) {
+                                specModel = spec;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        if (specModel.num.intValue>0) {
+            
+        }else{
+            [self showProgressHUDString:@"该商品暂无库存"];
+            return;
+        }
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+        [params setObject:_goodsDetailModel.row.base_id forKey:@"pid"];
+        [params setObject:_goodsDetailModel.row.att_rm forKey:@"attr"];
+        NetService *netService = [[NetService alloc]init];
+        
+        __weak typeof(self)weakSelf = self;
+        [netService serviceWithGetjsonURL:[NSString stringWithFormat:@"%@Order/add_ordershoe_ios",API_URL] params:params success:^(id responseObject) {
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }else{
+        [self showProgressHUDString:@"请选择商品规格"];
+    }
 }
 
 #pragma mark 加入购物车
 -(void)onClickAddToShopCart{
-    
+    SizeModel *sizeModel;
+    ColorModel *colorModel;
+    for (int i = 0; i<_goodsDetailModel.szs.count; i++) {
+        SizeModel *size = [_goodsDetailModel.szs objectAtIndex:i];
+        if (size.selected.intValue == 1) {
+            sizeModel = size;
+            break;
+        }
+    }
+    for (int j = 0; j<_goodsDetailModel.cols.count; j++) {
+        ColorModel *color = [_goodsDetailModel.cols objectAtIndex:j];
+        if (color.selected.intValue == 1) {
+            colorModel = color;
+            break;
+        }
+    }
+    if (colorModel && sizeModel) {
+        SpecModel *specModel;
+        for (int i = 0; i<_goodsDetailModel.cols.count; i++) {
+            ColorModel *color = [_goodsDetailModel.cols objectAtIndex:i];
+            if (color.selected.intValue == 1) {
+                for (int j = 0; j<_goodsDetailModel.szs.count; j++) {
+                    SizeModel *size = [_goodsDetailModel.szs objectAtIndex:j];
+                    if (size.selected.intValue == 1) {
+                        for (int k = 0; k<_goodsDetailModel.specs.count; k++) {
+                            SpecModel *spec = [_goodsDetailModel.specs objectAtIndex:k];
+                            if ([spec.color isEqualToString:color.color] && spec.size.intValue == size.size.intValue) {
+                                specModel = spec;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        if (specModel.num.intValue>0) {
+            
+        }else{
+            [self showProgressHUDString:@"该商品暂无库存"];
+            return;
+        }
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+        [params setObject:specModel.price forKey:@"price"];
+        [params setObject:_goodsDetailModel.row.base_id forKey:@"attr"];
+        [params setObject:specModel.base_id forKey:@"pid"];
+        [params setObject:_goodsDetailModel.row.title forKey:@"name"];
+        [params setObject:_goodsDetailModel.row.pinpai.length?_goodsDetailModel.row.pinpai:@"" forKey:@"pinpai"];
+        for (int i = 0; i<_goodsDetailModel.cols.count; i++) {
+            ColorModel *color = [_goodsDetailModel.cols objectAtIndex:i];
+            if (color.selected.intValue == 1) {
+                for (int j = 0; j<_goodsDetailModel.specs.count; j++) {
+                    SpecModel *spec = [_goodsDetailModel.specs objectAtIndex:j];
+                    if ([spec.color isEqualToString:color.color]) {
+                        [params setObject:[NSString stringWithFormat:@"%@%@",APPIP,spec.image] forKey:@"img"];
+                        break;
+                    }
+                }
+                break;
+            }
+        }        [params setObject:[NSNumber numberWithInt:1] forKey:@"num"];
+        
+        NetService *netService = [[NetService alloc]init];
+        
+        __weak typeof(self)weakSelf = self;
+        [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Order/cart_add_ios",API_URL] params:params success:^(id responseObject) {
+            _goodsDetailModel.cart_num = [responseObject objectForKey:@"item_num"];
+            [weakSelf inStallController];
+        } failure:^(NSError *error) {
+            [weakSelf showProgressHUDString:@"服务器数据异常"];
+        }];
+    }else{
+        [self showProgressHUDString:@"请选择商品规格"];
+    }
 }
 
 #pragma mark 进入购物车
