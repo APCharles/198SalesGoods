@@ -126,6 +126,27 @@
     price.textColor = [UIcolortool colorWithHexString:@"e21111"];
     price.font = [UIFont systemFontOfSize:14];
     price.text = [NSString stringWithFormat:@"¥%@",_goodsDetailModel.row.price];
+    for (int i = 0; i<_goodsDetailModel.cols.count; i++) {
+        ColorModel *color = [_goodsDetailModel.cols objectAtIndex:i];
+        if (color.selected.intValue == 1) {
+            for (int j = 0; j<_goodsDetailModel.szs.count; j++) {
+                SizeModel *size = [_goodsDetailModel.szs objectAtIndex:j];
+                if (size.selected.intValue == 1) {
+                    for (int k = 0; k<_goodsDetailModel.specs.count; k++) {
+                        SpecModel *spec = [_goodsDetailModel.specs objectAtIndex:k];
+                        if ([spec.color isEqualToString:color.color] && spec.size.intValue == size.size.intValue) {
+                            if (spec.price.length) {
+                                price.text = [NSString stringWithFormat:@"¥%@",spec.price];
+                            }
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            break;
+        }
+    }
     CGSize size1;
     size1.width = [price.text sc_calculateWidthInFontSize:14 withStableHeight:20];
     price.width = size1.width;
@@ -326,6 +347,15 @@
 
 #pragma mark 立即购买
 -(void)onClickBuy{
+    UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+    if (userInfoModel.mobile) {
+        [self doBuyAfterCheckUserMobile];
+    }else{
+        
+    }
+}
+
+-(void)doBuyAfterCheckUserMobile{
     SizeModel *sizeModel;
     ColorModel *colorModel;
     for (int i = 0; i<_goodsDetailModel.szs.count; i++) {
@@ -388,6 +418,15 @@
 
 #pragma mark 加入购物车
 -(void)onClickAddToShopCart{
+    UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+    if (userInfoModel.mobile) {
+        [self doAddToShopCartAfterCheckUserMobile];
+    }else{
+        
+    }
+}
+
+-(void)doAddToShopCartAfterCheckUserMobile{
     SizeModel *sizeModel;
     ColorModel *colorModel;
     for (int i = 0; i<_goodsDetailModel.szs.count; i++) {
