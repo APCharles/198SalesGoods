@@ -53,11 +53,12 @@
         [paramDic setObject:_mobileTextField.text forKey:@"mobile"];
         [paramDic setObject:_passwordTextField.text forKey:@"password"];
         [paramDic setObject:_verifyTextField.text forKey:@"verify_code"];
-        [paramDic setObject:_addressTextField.text forKey:@"address"];
-        if (_pidTextField.text.length) {
-            [paramDic setObject:_pidTextField.text forKey:@"pid"];
+        if (_addressTextField.text.length) {
+            [paramDic setObject:_addressTextField.text forKey:@"address"];
         }
+        [paramDic setObject:_pidTextField.text.length?_pidTextField.text:@"0" forKey:@"pid"];
         [paramDic setObject:_nameTextField.text forKey:@"name"];
+        [paramDic setObject:@"1" forKey:@"ios"];
         __weak typeof(self)weakSelf = self;
          NetService *netService = [[NetService alloc] init];
         [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/registr_ios",API_URL] params:paramDic success:^(id responseObject) {
@@ -103,9 +104,6 @@
     }
     if (!_nameTextField.text.length) {
         msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请设置用户名"];
-    }
-    if (!_addressTextField.text.length) {
-        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入地址"];
     }
     if (msg.length > 0) {
         [self showProgressHUDString:msg];
@@ -200,7 +198,7 @@
     [_mainScrollView addSubview:_addressView];
     _addressTextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 0, _addressView.width-20, _addressView.height)];
     _addressTextField.font = [UIFont systemFontOfSize:15];
-    _addressTextField.placeholder = @"请输入地址";
+    _addressTextField.placeholder = @"请输入地址（非必填）";
     _addressTextField.returnKeyType = UIReturnKeyDone;
     [_addressTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
     _addressTextField.delegate = self;

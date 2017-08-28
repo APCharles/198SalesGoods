@@ -37,6 +37,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     
+    if (ApplicationDelegate.isFromGoodsDetail == YES) {
+        ApplicationDelegate.isFromGoodsDetail = NO;
+        [self.tabBarController setSelectedIndex:2];
+    }
     [self requestGoodsList];
 }
 
@@ -104,10 +108,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *data = [_listArr objectAtIndex:indexPath.row];
     NSLog(@"点击某一个商品");
-    GoodsDetailViewController *goodsDetailViewController = [[GoodsDetailViewController alloc]init];
-    
-    [self.navigationController pushViewController:goodsDetailViewController animated:YES];
-    
+    if ([[data objectForKey:@"price"] floatValue]>15) {
+        GoodsDetailViewController *goodsDetailViewController = [[GoodsDetailViewController alloc]init];
+        goodsDetailViewController.data = data;
+        [self.navigationController pushViewController:goodsDetailViewController animated:YES];
+    }else{
+        
+    }
 }
 - (UITableView *)goodsListTableview{
     

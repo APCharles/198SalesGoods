@@ -28,7 +28,7 @@
 
     //第三方平台设置
     [[UMShareHelper defaultUMShareHelper]setUMInfo];
-  
+    self.isFromGoodsDetail = NO;
     return YES;
 }
 

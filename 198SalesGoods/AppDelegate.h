@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+
+@property (nonatomic, assign) BOOL isFromGoodsDetail;
+
 /**
  *	@brief	判断用户是否登录
 */
