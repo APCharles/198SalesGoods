@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ShoppingCartViewController : UIViewController
+#import "BaseViewController.h"
+@interface ShoppingCartViewController : BaseViewController
 
 @end

@@ -99,6 +99,7 @@
 		0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67B1801F3C0974000028A1 /* ToolsCollectionViewCell.m */; };
 		0F67B1831F3C36E3000028A1 /* home_good.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F67B1821F3C36E3000028A1 /* home_good.gif */; };
 		0F67B1861F3C39B3000028A1 /* GoodsShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67B1851F3C39B3000028A1 /* GoodsShowCell.m */; };
+		0F6956841F553A80003FE441 /* ShoppingCartViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6956831F553A80003FE441 /* ShoppingCartViewCell.m */; };
 		0F6B75591F468D7100F05E9B /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B75581F468D7100F05E9B /* MyOrderViewController.m */; };
 		0F6B755C1F4691E000F05E9B /* OrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B755B1F4691E000F05E9B /* OrderHeaderView.m */; };
 		0F6B75631F46B73600F05E9B /* shop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B75611F46B73600F05E9B /* shop@2x.png */; };
@@ -396,6 +397,8 @@
 		0F67B1821F3C36E3000028A1 /* home_good.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = home_good.gif; sourceTree = "<group>"; };
 		0F67B1841F3C39B3000028A1 /* GoodsShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsShowCell.h; sourceTree = "<group>"; };
 		0F67B1851F3C39B3000028A1 /* GoodsShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsShowCell.m; sourceTree = "<group>"; };
+		0F6956821F553A80003FE441 /* ShoppingCartViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewCell.h; sourceTree = "<group>"; };
+		0F6956831F553A80003FE441 /* ShoppingCartViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartViewCell.m; sourceTree = "<group>"; };
 		0F6B75571F468D7100F05E9B /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		0F6B75581F468D7100F05E9B /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
 		0F6B755A1F4691E000F05E9B /* OrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderView.h; sourceTree = "<group>"; };
@@ -777,7 +780,7 @@
 				0FF685B61F28843500ED09D9 /* Goods */,
 				0FF685B71F28843500ED09D9 /* Home */,
 				0FF685BA1F28843500ED09D9 /* Mine */,
-				0FF685BB1F28843500ED09D9 /* ShoppingCart */,
+				0F6956811F553A5E003FE441 /* Shoppingcart */,
 				0F6B75561F468D5500F05E9B /* Order */,
 				BC0A43EE1F41921B00A929C0 /* Login */,
 				0F3F6F8C1F39DE4800152140 /* Resource */,
@@ -983,6 +986,17 @@
 			path = Venders/Resource;
 			sourceTree = "<group>";
 		};
+		0F6956811F553A5E003FE441 /* Shoppingcart */ = {
+			isa = PBXGroup;
+			children = (
+				0FC6095E1F3D4DF80017531E /* ShoppingCartViewController.h */,
+				0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */,
+				0F6956821F553A80003FE441 /* ShoppingCartViewCell.h */,
+				0F6956831F553A80003FE441 /* ShoppingCartViewCell.m */,
+			);
+			path = Shoppingcart;
+			sourceTree = "<group>";
+		};
 		0F6B75561F468D5500F05E9B /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,15 +1091,6 @@
 				560174F11F435B4F00EAC87E /* Province.m */,
 			);
 			path = Mine;
-			sourceTree = "<group>";
-		};
-		0FF685BB1F28843500ED09D9 /* ShoppingCart */ = {
-			isa = PBXGroup;
-			children = (
-				0FC6095E1F3D4DF80017531E /* ShoppingCartViewController.h */,
-				0FC6095F1F3D4DF80017531E /* ShoppingCartViewController.m */,
-			);
-			path = ShoppingCart;
 			sourceTree = "<group>";
 		};
 		0FF685BC1F28843500ED09D9 /* Venders */ = {
@@ -1763,7 +1768,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3ED54QFZS2;
+						DevelopmentTeam = 7VH6A7LBL2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -1944,6 +1949,7 @@
 				0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */,
 				BC036ECA1F43E2190037312D /* SBJsonTokeniser.m in Sources */,
 				BC036EC81F43E2190037312D /* SBJsonStreamWriterAccumulator.m in Sources */,
+				0F6956841F553A80003FE441 /* ShoppingCartViewCell.m in Sources */,
 				0FF685C81F28851E00ED09D9 /* SalesTabBar.m in Sources */,
 				0F1DA7631F4293AC00595405 /* NSData+ImageContentType.m in Sources */,
 				0F67B1811F3C0974000028A1 /* ToolsCollectionViewCell.m in Sources */,
@@ -2130,7 +2136,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2143,7 +2149,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2194,7 +2200,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2207,7 +2213,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
