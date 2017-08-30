@@ -121,6 +121,7 @@
 		560174E91F4333D200EAC87E /* Province.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560174E71F4333D200EAC87E /* Province.txt */; };
 		560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560174EF1F435B4F00EAC87E /* AddressPickerView.m */; };
 		560174F31F435B4F00EAC87E /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 560174F11F435B4F00EAC87E /* Province.m */; };
+		56134FE51F56EC51001ADA61 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56134FE41F56EC51001ADA61 /* WebViewController.m */; };
 		BC036E971F43E1170037312D /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = BC036E811F43E1170037312D /* MJArgument.m */; };
 		BC036E981F43E1170037312D /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC036E831F43E1170037312D /* MJConst.m */; };
 		BC036E991F43E1170037312D /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC036E861F43E1170037312D /* MJFoundation.m */; };
@@ -433,6 +434,8 @@
 		560174EF1F435B4F00EAC87E /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
 		560174F01F435B4F00EAC87E /* Province.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Province.h; sourceTree = "<group>"; };
 		560174F11F435B4F00EAC87E /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
+		56134FE31F56EC51001ADA61 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		56134FE41F56EC51001ADA61 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		BC036E7E1F43D79A0037312D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BC036E801F43E1170037312D /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		BC036E811F43E1170037312D /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
@@ -1034,6 +1037,8 @@
 				0F67B1801F3C0974000028A1 /* ToolsCollectionViewCell.m */,
 				0F67B1841F3C39B3000028A1 /* GoodsShowCell.h */,
 				0F67B1851F3C39B3000028A1 /* GoodsShowCell.m */,
+				56134FE31F56EC51001ADA61 /* WebViewController.h */,
+				56134FE41F56EC51001ADA61 /* WebViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1919,6 +1924,7 @@
 				0F1DA7AF1F4293D300595405 /* NetService.m in Sources */,
 				BCD198EA1F468B0200A78D59 /* GoodsDetailViewController.m in Sources */,
 				0F1DA76E1F4293AC00595405 /* UIImageView+HighlightedWebCache.m in Sources */,
+				56134FE51F56EC51001ADA61 /* WebViewController.m in Sources */,
 				0F1DA7AA1F4293B400595405 /* UIProgressView+AFNetworking.m in Sources */,
 				BC036EC31F43E2190037312D /* SBJsonStreamParser.m in Sources */,
 				BC036E9D1F43E1170037312D /* MJType.m in Sources */,
@@ -2149,7 +2155,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charles/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2213,7 +2219,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charles/Desktop/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

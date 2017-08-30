@@ -10,4 +10,11 @@
 #import "BaseViewController.h"
 @interface GoodsViewController : BaseViewController
 
+
+    /** url */
+    @property(strong,nonatomic)NSString *url;
+
+    @property(assign,nonatomic)BOOL isShow;
+    
+    @property(assign,nonatomic)BOOL isBack;
 @end

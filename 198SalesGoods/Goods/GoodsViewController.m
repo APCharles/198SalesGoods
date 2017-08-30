@@ -26,15 +26,28 @@
     [super viewDidLoad];
    
     [self setBarName:@"商品列表"];
-    
+      [self.view addSubview:self.goodsListTableview];
+    if (!_isShow) {
+        self.leftBtn.hidden = NO;
+        _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height;
+    }else{
     self.leftBtn.hidden = YES;
-    
-  [self.view addSubview:self.goodsListTableview];
+         _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
+    }
+
     
 //    [self requestGoodsList];
     
 }
 
+    - (void)back{
+        if (self.isBack) {
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            [super back];
+        }
+    }
 - (void)viewWillAppear:(BOOL)animated{
     
     if (ApplicationDelegate.isFromGoodsDetail == YES) {
@@ -48,7 +61,13 @@
     
     NSDictionary *dic = [[NSDictionary alloc] init];
     NetService *netService = [[NetService alloc] init];
-    [netService serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/Wap/Product/index_ios" params:dic success:^(id responseObject) {
+    if (self.url.length > 0) {
+        
+    }else{
+        self.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios";
+        
+    }
+    [netService serviceWithGetjsonURL: self.url params:dic success:^(id responseObject) {
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
@@ -68,7 +87,32 @@
     }];
 
 }
+    - (void)requestManGoodsWithUrl:(NSString *)url{
+        
+        
+        NSDictionary *dic = [[NSDictionary alloc] init];
+        NetService *netService = [[NetService alloc] init];
+        [netService serviceWithGetjsonURL:url params:dic success:^(id responseObject) {
+            
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                
+                if ([[responseObject objectForKey:@"rows"] isKindOfClass:[NSArray class]]) {
+                    
+                    _listArr = [responseObject objectForKey:@"rows"];
+                }
+            }
+            
+            [_goodsListTableview reloadData];
+            
+            
+            
+        } failure:^(NSError *error) {
+            [self showProgressHUDString:@"服务器数据异常"];
+            
+        }];
 
+        
+    }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -124,6 +168,9 @@
         goodsListTableview.x = 0;
         goodsListTableview.y = CGRectGetMaxY(self.navigationBarView.frame);
         goodsListTableview.width = mainScreenWidth;
+        if (self.url.length > 0) {
+            goodsListTableview.height = mainScreenHeight - self.navigationBarView.height ;
+        }
         goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
         goodsListTableview.delegate = self;
         goodsListTableview.dataSource = self;

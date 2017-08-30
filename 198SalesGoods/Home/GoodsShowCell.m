@@ -43,7 +43,7 @@
     if (!_iconView) {
         
         UIImageView *icon = [[UIImageView alloc] init];
-        icon.size = CGSizeMake(mainScreenWidth  , 100);
+        icon.size = CGSizeMake(mainScreenWidth  , 200);
         icon.y = 0;
         icon.x = 0;
         
