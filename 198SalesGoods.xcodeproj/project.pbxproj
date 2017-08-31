@@ -214,6 +214,10 @@
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 		BC44CC2F1F44294700A61E61 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FC51F441C220037312D /* libSocialWeChat.a */; };
 		BCCD4EBA1F57972800A38702 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EB91F57972800A38702 /* WebViewController.m */; };
+		BCCD4EBD1F57A33500A38702 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EBC1F57A33500A38702 /* VerifyView.m */; };
+		BCCD4EC11F57DBCF00A38702 /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EC01F57DBCF00A38702 /* SubmitViewController.m */; };
+		BCCD4EC41F57DC8D00A38702 /* SubmitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EC31F57DC8D00A38702 /* SubmitModel.m */; };
+		BCCD4EC71F57DCDA00A38702 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EC61F57DCDA00A38702 /* ProvinceModel.m */; };
 		BCD198EA1F468B0200A78D59 /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */; };
 		BCF134691F4BC0B800A6CD35 /* GoodsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF134681F4BC0B800A6CD35 /* GoodsDetailModel.m */; };
 		BCF1346C1F4BC0E800A6CD35 /* GoodsDetailInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1346B1F4BC0E800A6CD35 /* GoodsDetailInfoModel.m */; };
@@ -658,6 +662,14 @@
 		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
 		BCCD4EB81F57972800A38702 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		BCCD4EB91F57972800A38702 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		BCCD4EBB1F57A33500A38702 /* VerifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyView.h; sourceTree = "<group>"; };
+		BCCD4EBC1F57A33500A38702 /* VerifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyView.m; sourceTree = "<group>"; };
+		BCCD4EBF1F57DBCF00A38702 /* SubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitViewController.h; sourceTree = "<group>"; };
+		BCCD4EC01F57DBCF00A38702 /* SubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
+		BCCD4EC21F57DC8D00A38702 /* SubmitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitModel.h; sourceTree = "<group>"; };
+		BCCD4EC31F57DC8D00A38702 /* SubmitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitModel.m; sourceTree = "<group>"; };
+		BCCD4EC51F57DCDA00A38702 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		BCCD4EC61F57DCDA00A38702 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
 		BCD198E81F468B0200A78D59 /* GoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
 		BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
 		BCF134671F4BC0B800A6CD35 /* GoodsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailModel.h; sourceTree = "<group>"; };
@@ -1023,6 +1035,10 @@
 				0F8794081F459B2100666EDE /* GoodsListViewCell.m */,
 				BCD198E81F468B0200A78D59 /* GoodsDetailViewController.h */,
 				BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */,
+				BCCD4EBB1F57A33500A38702 /* VerifyView.h */,
+				BCCD4EBC1F57A33500A38702 /* VerifyView.m */,
+				BCCD4EBF1F57DBCF00A38702 /* SubmitViewController.h */,
+				BCCD4EC01F57DBCF00A38702 /* SubmitViewController.m */,
 				BCF134661F4BC0A100A6CD35 /* Model */,
 			);
 			path = Goods;
@@ -1702,6 +1718,10 @@
 				BCF134721F4BD79A00A6CD35 /* SpecModel.m */,
 				BCF134741F4BD83100A6CD35 /* SizeModel.h */,
 				BCF134751F4BD83100A6CD35 /* SizeModel.m */,
+				BCCD4EC21F57DC8D00A38702 /* SubmitModel.h */,
+				BCCD4EC31F57DC8D00A38702 /* SubmitModel.m */,
+				BCCD4EC51F57DCDA00A38702 /* ProvinceModel.h */,
+				BCCD4EC61F57DCDA00A38702 /* ProvinceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1902,6 +1922,7 @@
 				0F19AA461F0D085000997F66 /* AppDelegate.m in Sources */,
 				0F1DA79B1F4293B400595405 /* AFHTTPRequestOperationManager.m in Sources */,
 				0F1DA7A61F4293B400595405 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				BCCD4EC41F57DC8D00A38702 /* SubmitModel.m in Sources */,
 				BCF1346C1F4BC0E800A6CD35 /* GoodsDetailInfoModel.m in Sources */,
 				0F1DA7651F4293AC00595405 /* SDWebImageCompat.m in Sources */,
 				0F3F6F9B1F39DFF800152140 /* GQGesVCTransition.m in Sources */,
@@ -1945,9 +1966,11 @@
 				560174F21F435B4F00EAC87E /* AddressPickerView.m in Sources */,
 				0F1DA7A71F4293B400595405 /* UIAlertView+AFNetworking.m in Sources */,
 				0F1DA76D1F4293AC00595405 /* UIImage+MultiFormat.m in Sources */,
+				BCCD4EC11F57DBCF00A38702 /* SubmitViewController.m in Sources */,
 				BCF1347A1F4BF4BC00A6CD35 /* NSString+SizeCalculate.m in Sources */,
 				0F1DA7681F4293AC00595405 /* SDWebImageDownloaderOperation.m in Sources */,
 				0F1DA7221F42816400595405 /* MineTermViewCell.m in Sources */,
+				BCCD4EC71F57DCDA00A38702 /* ProvinceModel.m in Sources */,
 				BC036E991F43E1170037312D /* MJFoundation.m in Sources */,
 				0F1DA7621F4293AC00595405 /* README.md in Sources */,
 				0F520EB51F29BEA0004AFCB4 /* UIView+APFrame.m in Sources */,
@@ -1977,6 +2000,7 @@
 				0F1DA76A1F4293AC00595405 /* SDWebImagePrefetcher.m in Sources */,
 				0F1DA7AB1F4293B400595405 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */,
+				BCCD4EBD1F57A33500A38702 /* VerifyView.m in Sources */,
 				0F6B756B1F46CF7900F05E9B /* OrderListTableViewCell.m in Sources */,
 				0F3F6FAD1F39E19500152140 /* HomeViewController.m in Sources */,
 				0F1DA7A01F4293B400595405 /* AFURLRequestSerialization.m in Sources */,

@@ -9,6 +9,8 @@
 #import "GoodsDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+SizeCalculate.h"
+#import "SubmitModel.h"
+#import "SubmitViewController.h"
 
 @interface GoodsDetailViewController ()
 
@@ -259,6 +261,117 @@
         [_recArr addObjectsFromArray:_goodsDetailModel.recommend];
     }
     [_tableView reloadData];
+    
+    if (!_bgControl) _bgControl = [[UIControl alloc] initWithFrame:CGRectMake(0.0, 0.0, mainScreenWidth, mainScreenHeight)];
+    _bgControl.backgroundColor = [UIColor blackColor];
+    _bgControl.alpha = 0;
+    [_bgControl addTarget:self action:@selector(tapControl) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_bgControl];
+    
+    _verifyView = [[VerifyView alloc]initWithFrame:CGRectMake(20, StateNaviBarHeight+10, mainScreenWidth-40, mainScreenWidth)];
+    _verifyView.layer.cornerRadius = 3;
+    _verifyView.layer.masksToBounds = YES;
+    __weak typeof(self)weakSelf = self;
+    [_verifyView setOnClickGetCodeCallBack:^(NSString *mobile) {
+        [weakSelf doGetCode:mobile];
+    }];
+    [_verifyView setOnClickDoneCallBack:^(NSString *mobile, NSString *code) {
+        [weakSelf doCheckUserMobile:mobile andCode:code];
+    }];
+    
+    
+    [self.view addSubview:_verifyView];
+    _verifyView.hidden = YES;
+}
+
+-(void)doCheckUserMobile:(NSString *)mobile andCode:(NSString *)code{
+    if ([self checkText:mobile andCode:code]) {
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+        [paramDic setObject:mobile forKey:@"mobile"];
+        [paramDic setObject:code forKey:@"verify_code"];
+        UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+        [paramDic setObject:userInfoModel.name forKey:@"name"];
+        __weak typeof(self)weakSelf = self;
+        NetService *netService = [[NetService alloc] init];
+        [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/member_update",API_URL] params:paramDic success:^(id responseObject) {
+            if (_verifyType.intValue == 1) {
+                [weakSelf doBuyAfterCheckUserMobile];
+            }else if (_verifyType.intValue ==2){
+                [weakSelf doAddToShopCartAfterCheckUserMobile];
+            }
+        } failure:^(NSError *error) {
+            [weakSelf showProgressHUDString:@"服务器数据异常"];
+        }];
+    }
+}
+
+-(BOOL)checkText:(NSString *)mobile andCode:(NSString *)code{
+    BOOL result = YES;
+    NSString *msg = @"";
+    if (mobile.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入手机号"];
+    }
+    if (mobile.length) {
+        if (![[mobile substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {
+            msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+        }
+    }
+    if (mobile.length != 11) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+    }
+    if (!code.length) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入验证码"];
+    }
+    if (msg.length > 0) {
+        [self showProgressHUDString:msg];
+        result = NO;
+    }
+    return result;
+}
+
+
+-(void)doGetCode:(NSString *)mobile{
+    if ([self checkMobile:mobile]) {
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc]init];
+        [paramDic setObject:mobile forKey:@"mobile"];
+        __weak typeof(self)weakSelf = self;
+        NetService *netService = [[NetService alloc] init];
+        [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Member/send_juhesms",API_URL] params:paramDic success:^(id responseObject) {
+            
+        } failure:^(NSError *error) {
+            [weakSelf showProgressHUDString:@"服务器数据异常"];
+        }];
+    }
+}
+
+-(BOOL)checkMobile:(NSString *)mobile{
+    BOOL result = YES;
+    NSString *msg = @"";
+    if (mobile.length == 0) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"请输入手机号"];
+    }
+    if (mobile.length) {
+        if (![[mobile substringWithRange:NSMakeRange(0,1)] isEqualToString:@"1"]) {
+            msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+        }
+    }
+    if (mobile.length != 11) {
+        msg = (msg.length > 0) ? msg : [msg stringByAppendingString:@"手机号码输入不正确,请重新输入"];
+    }
+    if (msg.length > 0) {
+        [self showProgressHUDString:msg];
+        result = NO;
+    }
+    return result;
+}
+
+-(void)tapControl{
+    [UIView animateWithDuration:0.3 animations:^{
+        [_verifyView.mobileTextField resignFirstResponder];
+        [_verifyView.codeTextField  resignFirstResponder];
+        _bgControl.alpha = 0.0;
+        _verifyView.hidden = YES;
+    }];
 }
 
 -(void)onClickColorBtn:(id)sender{
@@ -351,7 +464,8 @@
     if (userInfoModel.mobile) {
         [self doBuyAfterCheckUserMobile];
     }else{
-        
+        _verifyType = [NSNumber numberWithInt:1];
+        [self showVerifyView];
     }
 }
 
@@ -407,7 +521,8 @@
         
         __weak typeof(self)weakSelf = self;
         [netService serviceWithGetjsonURL:[NSString stringWithFormat:@"%@Order/add_ordershoe_ios",API_URL] params:params success:^(id responseObject) {
-            
+            SubmitModel *submitModel = [SubmitModel objectWithKeyValues:responseObject];
+            [weakSelf doPushToSubmitVC:submitModel];
         } failure:^(NSError *error) {
             
         }];
@@ -416,13 +531,20 @@
     }
 }
 
+-(void)doPushToSubmitVC:(SubmitModel *)submitModel{
+    SubmitViewController *submitViewController = [[SubmitViewController alloc]init];
+    submitViewController.submitModel = submitModel;
+    [self.navigationController pushViewController:submitViewController animated:YES];
+}
+
 #pragma mark 加入购物车
 -(void)onClickAddToShopCart{
     UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
     if (userInfoModel.mobile) {
         [self doAddToShopCartAfterCheckUserMobile];
     }else{
-        
+        _verifyType = [NSNumber numberWithInt:2];
+        [self showVerifyView];
     }
 }
 
@@ -503,6 +625,13 @@
     }else{
         [self showProgressHUDString:@"请选择商品规格"];
     }
+}
+
+-(void)showVerifyView{
+    [UIView animateWithDuration:0.3 animations:^{
+        _verifyView.hidden = NO;
+        _bgControl.alpha = 0.6;
+    }];
 }
 
 #pragma mark 进入购物车

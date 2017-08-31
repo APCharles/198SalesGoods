@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "GoodsDetailModel.h"
+#import "VerifyView.h"
 
 
 @interface GoodsDetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
@@ -25,6 +26,11 @@
     
     NSArray *_imgArr;
     NSMutableArray *_recArr;
+    
+    UIControl *_bgControl;
+    VerifyView *_verifyView;
+    
+    NSNumber *_verifyType;
 }
 
 @property (nonatomic,strong)NSDictionary*data;
