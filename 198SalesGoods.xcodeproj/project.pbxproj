@@ -1768,7 +1768,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7VH6A7LBL2;
+						DevelopmentTeam = 3ED54QFZS2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -2136,7 +2136,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7VH6A7LBL2;
+				DEVELOPMENT_TEAM = 3ED54QFZS2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2149,7 +2149,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2200,7 +2200,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7VH6A7LBL2;
+				DEVELOPMENT_TEAM = 3ED54QFZS2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2213,7 +2213,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
