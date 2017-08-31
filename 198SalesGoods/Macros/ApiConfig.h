@@ -10,7 +10,7 @@
 #define ApiConfig_h
 
     //测试
-#define APPIP    @"http://wx.dianpuj.com/"
+#define APPIP    @"http://wx.dianpuj.com"
 #define NEWAPPIP @"http://192.168.1.205:10090/"
 
 

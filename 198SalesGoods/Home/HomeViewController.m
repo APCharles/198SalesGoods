@@ -8,9 +8,10 @@
 
 #import "HomeViewController.h"
 #import "ToolsCollectionViewCell.h"
+#import "GoodsViewController.h"
 #import "GoodsShowCell.h"
 #import "LoginViewController.h"
-
+#import "WebViewController.h"
 /* cell */
 static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
@@ -30,6 +31,12 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 
 /** tableview  */
 @property(strong,nonatomic) UITableView *goodsTableview;
+    
+    /** tableview */
+    @property(strong,nonatomic)NSDictionary *bannerDic;
+    
+    /**  */
+    @property(strong,nonatomic)NSMutableArray *bannerArr;
 @end
 
 @implementation HomeViewController
@@ -45,11 +52,13 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self onClickLogin];
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationBarView.hidden = YES;
+    self.leftBtn.hidden = YES;
     
     NSLog(@"做好会经常冲突的准备");
     
-    
+    _bannerArr = [NSMutableArray array];
+    [self requestHomeBanner];
     UIScrollView * myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, mainScreenWidth, mainScreenHeight)];
     myScrollView.backgroundColor = LIGHTWHITE;
     myScrollView.showsHorizontalScrollIndicator = NO;
@@ -78,6 +87,28 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     [myScrollView addSubview:self.goodsTableview];
 }
 
+    
+- (void)requestHomeBanner{
+    
+    NSDictionary *dic  =[[NSDictionary alloc] init];
+    NetService *service = [[NetService alloc] init];
+    
+    [service serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/wap/home/index_ios" params:dic success:^(id responseObject) {
+     
+        
+        _bannerDic = (NSDictionary *)responseObject;
+        [_bannerArr addObject:[_bannerDic objectForKey:@"index_man"]];
+        [_bannerArr addObject:[_bannerDic objectForKey:@"index_woman"]];
+        [_bannerArr addObject:[_bannerDic objectForKey:@"index_receive"]];
+        [_bannerArr addObject:[_bannerDic objectForKey:@"index_free"]];
+         
+        [_goodsTableview reloadData];
+        
+    } failure:^(NSError *error) {
+        [self showProgressHUDString:@"服务器数据异常"];
+    }];
+
+}
 -(void)onClickLogin{
     LoginViewController *loginViewController = [[LoginViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
@@ -91,7 +122,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 3;
+    return _bannerArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -106,12 +137,55 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     
     GoodsShowCell *cell = [GoodsShowCell cellWithTableView:tableView];
     
-  
-    cell.iconView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0f];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSURL *url =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",APPIP,_bannerArr[indexPath.row]]];
+    [cell.iconView sd_setImageWithURL:url placeholderImage:nil];
+
     
     return cell;
     
     
+}
+    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    if (indexPath.row == 0) {
+        
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/type=74";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+        
+        
+    }else if (indexPath.row == 1){
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/type=74";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+
+        
+    }else if (indexPath.row == 2){
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/free_ios";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+        
+        
+    }else if (indexPath.row == 3){
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/lingqu_ios";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+        
+        
+    }
 }
 
 #pragma mark - collectiondelegate
@@ -133,7 +207,32 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     
     NSDictionary *dic = [_toolArray objectAtIndex:indexPath.row];
     NSLog(@"---%@",[dic objectForKey:@"title"]);
+    
+    
+    WebViewController *web = [[WebViewController alloc ] init];
+        //活动详情
+    if (indexPath.row == 0) {
+//        web.url = [NSString stringWithFormat:@"%@%@",@"http://wx.dianpuj.com/index.php/Wap/activity/show/id/",[UserData shareInstance].user_Model.base_id];
+        
+        web.url = @"http://wx.dianpuj.com/index.php/Wap/activity/show/id/45";
+        //xinshou教程
+    }else if (indexPath.row == 1){
+        
+//        web.url = [NSString stringWithFormat:@"%@%@",@"http://wx.dianpuj.com/index.php/Wap/page/xinshou/id/",[UserData shareInstance].user_Model.base_id];
+        
+        web.url = @"http://wx.dianpuj.com/index.php/Wap/page/xinshou/id/92.html";
+            //资料库
+    }else if (indexPath.row == 2){
+        
+//        web.url = [NSString stringWithFormat:@"%@%@",@"http://wx.dianpuj.com/index.php/Wap/page/zlku/id/",[UserData shareInstance].user_Model.base_id];
+        
+           web.url = @"http://wx.dianpuj.com/index.php/Wap/page/zlku/id/129.html";
+    }else if (indexPath.row == 3){
+        
+    }
  
+    
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 
@@ -189,7 +288,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
         goodsTableview.x = 0;
         goodsTableview.y = CGRectGetMaxY(self.collectionView.frame);
         goodsTableview.width = mainScreenWidth;
-        goodsTableview.height = 600;
+        goodsTableview.height = mainScreenHeight - _headerView.height - _collectionView.height - self.tabBarController.tabBar.height + 20;
         goodsTableview.delegate = self;
         goodsTableview.dataSource = self;
         _goodsTableview = goodsTableview;
