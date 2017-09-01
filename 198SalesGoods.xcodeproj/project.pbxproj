@@ -213,6 +213,8 @@
 		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 		BC44CC2F1F44294700A61E61 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FC51F441C220037312D /* libSocialWeChat.a */; };
+		BCA017D11F58F955001AEC73 /* SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA017CF1F58F955001AEC73 /* SubmitCell.m */; };
+		BCA017D21F58F955001AEC73 /* SubmitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA017D01F58F955001AEC73 /* SubmitCell.xib */; };
 		BCCD4EBA1F57972800A38702 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EB91F57972800A38702 /* WebViewController.m */; };
 		BCCD4EBD1F57A33500A38702 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EBC1F57A33500A38702 /* VerifyView.m */; };
 		BCCD4EC11F57DBCF00A38702 /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EC01F57DBCF00A38702 /* SubmitViewController.m */; };
@@ -660,6 +662,9 @@
 		BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
 		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
+		BCA017CE1F58F955001AEC73 /* SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitCell.h; sourceTree = "<group>"; };
+		BCA017CF1F58F955001AEC73 /* SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitCell.m; sourceTree = "<group>"; };
+		BCA017D01F58F955001AEC73 /* SubmitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitCell.xib; sourceTree = "<group>"; };
 		BCCD4EB81F57972800A38702 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		BCCD4EB91F57972800A38702 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		BCCD4EBB1F57A33500A38702 /* VerifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyView.h; sourceTree = "<group>"; };
@@ -1039,6 +1044,9 @@
 				BCCD4EBC1F57A33500A38702 /* VerifyView.m */,
 				BCCD4EBF1F57DBCF00A38702 /* SubmitViewController.h */,
 				BCCD4EC01F57DBCF00A38702 /* SubmitViewController.m */,
+				BCA017CE1F58F955001AEC73 /* SubmitCell.h */,
+				BCA017CF1F58F955001AEC73 /* SubmitCell.m */,
+				BCA017D01F58F955001AEC73 /* SubmitCell.xib */,
 				BCF134661F4BC0A100A6CD35 /* Model */,
 			);
 			path = Goods;
@@ -1872,6 +1880,7 @@
 				0F1DA7A31F4293B400595405 /* LICENSE in Resources */,
 				0F67B17E1F3C084B000028A1 /* 4444@2x.png in Resources */,
 				0F1DA7341F428C3200595405 /* img_line@2x.png in Resources */,
+				BCA017D21F58F955001AEC73 /* SubmitCell.xib in Resources */,
 				0F19AA4C1F0D085000997F66 /* Main.storyboard in Resources */,
 				BC03700A1F441C220037312D /* VKSdkResources.bundle in Resources */,
 				0F67B1831F3C36E3000028A1 /* home_good.gif in Resources */,
@@ -1943,6 +1952,7 @@
 				0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */,
 				BC036EA51F43E1870037312D /* BaseModel.m in Sources */,
 				0F1DA7AF1F4293D300595405 /* NetService.m in Sources */,
+				BCA017D11F58F955001AEC73 /* SubmitCell.m in Sources */,
 				BCD198EA1F468B0200A78D59 /* GoodsDetailViewController.m in Sources */,
 				0F1DA76E1F4293AC00595405 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BCCD4EBA1F57972800A38702 /* WebViewController.m in Sources */,

@@ -10,6 +10,8 @@
 #import "SubmitModel.h"
 
 @interface SubmitViewController : BaseViewController
-
 @property (nonatomic , strong)SubmitModel *submitModel;
+
+@property (nonatomic , strong)NSDictionary *selectedAddr;
+
 @end

@@ -27,6 +27,8 @@
 
 @implementation MyAddressController
 
+@synthesize onClickAddressCallBack = _onClickAddressCallBack;
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    [self requestAddress];
@@ -90,7 +92,13 @@
     return 100;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *address = _addressArr[indexPath.row];
+    if (_onClickAddressCallBack) {
+        _onClickAddressCallBack(address);
+        [self back];
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     

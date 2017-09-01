@@ -18,6 +18,7 @@
 @property(nonatomic,copy) NSNumber *code;
 @property(nonatomic,strong) GoodsDetailInfoModel *row;
 @property(nonatomic,copy) NSString *spec;
+@property(nonatomic,strong) NSMutableArray *rows;
 
 
 @end

@@ -10,5 +10,7 @@
 #import "BaseViewController.h"
 @interface MyAddressController : BaseViewController
 
+@property(strong , nonatomic)void (^onClickAddressCallBack)(NSDictionary *address);
+
 - (void)requestAddress;
 @end

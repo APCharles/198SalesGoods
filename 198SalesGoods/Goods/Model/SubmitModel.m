@@ -11,6 +11,6 @@
 @implementation SubmitModel
 - (NSDictionary *)objectClassInArray
 {
-    return @{@"Provinces":[ProvinceModel class]};
+    return @{@"Provinces":[ProvinceModel class],@"rows":[GoodsDetailInfoModel class]};
 }
 @end
