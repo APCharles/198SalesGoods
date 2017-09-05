@@ -2229,7 +2229,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/UMSocialSDKPlugin",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dpj198.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangjunxie.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
@@ -2293,7 +2293,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/UMSocialSDKPlugin",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dpj198.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangjunxie.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
