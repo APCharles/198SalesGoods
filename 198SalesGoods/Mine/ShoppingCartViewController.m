@@ -34,9 +34,11 @@
 }
 - (void)requestGoodsList{
     
-    NSDictionary *dic = [[NSDictionary alloc] init];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+    [dic setObject:userInfoModel.base_id forKey:@"mid"];
     NetService *netService = [[NetService alloc] init];
-     NSString *url = [NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/wap/order/cart_ios/id/%@",[UserData shareInstance].user_Model.base_id];
+     NSString *url = [NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/Wap/Order/cart_ios"];
     [netService serviceWithGetjsonURL:url params:dic success:^(id responseObject) {
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -53,7 +55,6 @@
         
     } failure:^(NSError *error) {
         [self showProgressHUDString:@"服务器数据异常"];
-        
     }];
     
 }

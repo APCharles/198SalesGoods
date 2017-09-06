@@ -11,6 +11,7 @@
 #import "NSString+SizeCalculate.h"
 #import "SubmitModel.h"
 #import "SubmitViewController.h"
+#import "ResModel.h"
 
 @interface GoodsDetailViewController ()
 
@@ -616,15 +617,20 @@
                 break;
             }
         }        [params setObject:[NSNumber numberWithInt:1] forKey:@"num"];
-        [params setObject:@"1" forKey:@"ios"];
         UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
         [params setObject:userInfoModel.base_id forKey:@"userid"];
         NetService *netService = [[NetService alloc]init];
         
         __weak typeof(self)weakSelf = self;
         [netService serviceWithPostURL:[NSString stringWithFormat:@"%@Order/cart_add_ios",API_URL] params:params success:^(id responseObject) {
-            _goodsDetailModel.cart_num = [responseObject objectForKey:@"item_num"];
-            [weakSelf inStallController];
+            ResModel *res = [ResModel objectWithKeyValues:responseObject];
+            if (res.success.intValue == 1) {
+                _goodsDetailModel.cart_num = [NSNumber numberWithInt:_goodsDetailModel.cart_num.intValue+1];
+                [weakSelf inStallController];
+            }else{
+                [weakSelf showProgressHUDString:res.message];
+            }
+
         } failure:^(NSError *error) {
             [weakSelf showProgressHUDString:@"服务器数据异常"];
         }];
