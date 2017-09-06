@@ -517,6 +517,10 @@
         NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
         [params setObject:_goodsDetailModel.row.base_id forKey:@"pid"];
         [params setObject:_goodsDetailModel.row.att_rm forKey:@"attr"];
+        [params setObject:@"1" forKey:@"ios"];
+        UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+        [params setObject:userInfoModel.base_id forKey:@"userid"];
+        
         NetService *netService = [[NetService alloc]init];
         
         __weak typeof(self)weakSelf = self;
@@ -612,7 +616,9 @@
                 break;
             }
         }        [params setObject:[NSNumber numberWithInt:1] forKey:@"num"];
-        
+        [params setObject:@"1" forKey:@"ios"];
+        UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+        [params setObject:userInfoModel.base_id forKey:@"userid"];
         NetService *netService = [[NetService alloc]init];
         
         __weak typeof(self)weakSelf = self;
