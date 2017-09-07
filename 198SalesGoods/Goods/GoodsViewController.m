@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+   self.leftBtn.hidden = YES;
     [self setBarName:@"商品列表"];
       [self.view addSubview:self.goodsListTableview];
     if (!_isShow) {
@@ -87,7 +87,7 @@
     }];
 
 }
-    - (void)requestManGoodsWithUrl:(NSString *)url{
+- (void)requestManGoodsWithUrl:(NSString *)url{
         
         
         NSDictionary *dic = [[NSDictionary alloc] init];

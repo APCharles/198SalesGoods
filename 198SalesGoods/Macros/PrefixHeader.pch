@@ -16,6 +16,7 @@
 #import "Tools.h"
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+Additions.h"
 #define ApplicationDelegate  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 #import "MBProgressHUD+MJ.h"
@@ -61,7 +62,8 @@
 #define MY_WINDOW  [[[UIApplication sharedApplication] delegate ]window]
     //分割线
 #define LINECOLOR [UIColor colorWithRed:212/255.f green:212/255.f blue:212/255.f alpha:1]
-
+    //黑色
+#define BLACKTEXTCOLOR [UIColor colorWithRed:62/255.f green:62/255.f blue:62/255.f alpha:1]
 //接口地址前缀
 #define API_URL @"http://wx.dianpuj.com/index.php/Wap/"
 
