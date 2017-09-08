@@ -8,10 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MineInfoViewCellDelegate <NSObject>
+
+@optional
+
+- (void)gotoScoreDetail;
+
+- (void)gotoshoppingCart;
+
+@end
 @interface MineInfoViewCell : UITableViewCell
 + (instancetype) cellWithTableView:(UITableView *)tableview;
 
 
 /** data  */
 @property(strong,nonatomic) NSDictionary *data;
+
+@property(retain,nonatomic) id <MineInfoViewCellDelegate> del;
 @end

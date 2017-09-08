@@ -7,7 +7,7 @@
 //
 
 #import "MineInfoViewCell.h"
-
+#import "Tools.h"
 @interface MineInfoViewCell()
 
 /** headerView  */
@@ -67,7 +67,7 @@
         [self addSubview:self.scoreLabel];
         [self addSubview:self.scoreInfo];
         [self addSubview:self.centerLabel];
-        [self addSubview:self.shoppingCenter];
+            //[self addSubview:self.shoppingCenter];
         
         
         
@@ -76,23 +76,55 @@
     return self;
 }
 
+- (void)gotoScoreDetail:(UITapGestureRecognizer *)tap{
+  
+    [self.del gotoScoreDetail];
+    
+    
+}
+
+- (void)gotoShoppingCart:(UITapGestureRecognizer *)tap{
+    
+    [self.del gotoshoppingCart];
+}
 - (void)setData:(NSDictionary *)data{
     
     _data = data;
     
-    self.iconView.backgroundColor = [UIColor redColor];
-    self.userName.text = @"鹏大爷";
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:[UserData shareInstance].user_Model.headimgurl]];
+    self.userName.text = [UserData shareInstance].user_Model.name;
     self.userName.size = [self.userName.text sizeWithFont:[UIFont systemFontOfSize:16] maxSize:MAXSIZE];
     self.userName.x = CGRectGetMaxX(self.iconView.frame) + 10;
     self.userName.y = self.iconView.y;
     
+   
+    if (  [[NSString stringWithFormat:@"%@",[UserData shareInstance].user_Model.cate ] isEqualToString:@"69"]) {
+        
+        self.userID.text = @"身份：会员";
+    }else{
+         self.userID.text = @"身份：游客";
+        
+    }
     
-    self.userID.text = @"身份：专家";
+   
     self.userID.size = [self.userID.text sizeWithFont:[UIFont systemFontOfSize:16] maxSize:MAXSIZE];
     self.userID.x = self.userName.x;
     self.userID.y = CGRectGetMaxY(self.userName.frame) + 15;
     
-    self.userReferee.text = @"推荐人：专家";
+    
+    if ( [NSString stringWithFormat:@"%@",[UserData shareInstance].user_Model.pid].length == 0) {
+        self.userReferee.hidden = YES;
+    }else{
+         self.userReferee.hidden = NO;
+        self.userReferee.text =  [NSString stringWithFormat:@"推荐人：%@",[UserData shareInstance].user_Model.pid] ;
+    }
+    
+    
+   
+    
+    
+    
+    
     self.userReferee.size = [self.userReferee.text sizeWithFont:[UIFont systemFontOfSize:16] maxSize:MAXSIZE];
     self.userReferee.x = self.userName.x;
     self.userReferee.y = CGRectGetMaxY(self.userID.frame) + 15;
@@ -101,15 +133,35 @@
     self.scoreLabel.x = mainScreenWidth * 0.5 * 0.5 - self.scoreLabel.width * 0.5;
     self.scoreLabel.y = CGRectGetMaxY(self.headerView.frame) + 5;
     
+    UIView *scoreView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scoreLabel.y, mainScreenWidth * 0.5, 50)];
     
-    self.scoreInfo.text = @"10";
+    scoreView.userInteractionEnabled = YES;
+    [self addSubview:scoreView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoScoreDetail:)];
+    [scoreView addGestureRecognizer:tap];
+
+    if ([Tools isBlankString:[NSString stringWithFormat:@"%@",[UserData shareInstance].user_Model.jifen ]]) {
+        self.scoreInfo.hidden = YES;
+    }else{
+        
+        self.scoreInfo.hidden = NO;
+        
+        self.scoreInfo.text = [NSString stringWithFormat:@"%@",[UserData shareInstance].user_Model.jifen] ;
+        
+    
+    }
+    
+    
+    
+    
     self.scoreInfo.size = [self.scoreInfo.text sizeWithFont:[UIFont systemFontOfSize:14 ] maxSize:MAXSIZE];
     self.scoreInfo.x = self.scoreLabel.x + self.scoreLabel.width * 0.5 -  self.scoreInfo.width * 0.5;
     self.scoreInfo.y = CGRectGetMaxY(self.scoreLabel.frame ) + 10;
     
     UILabel *lineLabel = [[UILabel alloc] init];
     lineLabel.backgroundColor = LINECOLOR;
-    lineLabel.width = 1;
+    lineLabel.width = 0.5;
     lineLabel.height = 50;
     lineLabel.x = mainScreenWidth * 0.5;
     lineLabel.y = CGRectGetMaxY(self.headerView.frame);
@@ -119,6 +171,14 @@
     
     self.centerLabel.x = mainScreenWidth * 0.5 + mainScreenWidth * 0.5 * 0.5 - self.centerLabel.width * 0.5;
     self.centerLabel.y = self.scoreLabel.y;
+    
+    
+    UIView *scoreView1 = [[UIView alloc] initWithFrame:CGRectMake(mainScreenWidth * 0.5 + 10, self.centerLabel.y, mainScreenWidth * 0.5 - 10, 50)];
+    scoreView1.userInteractionEnabled = YES;
+    [self addSubview:scoreView1];
+  
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoShoppingCart:)];
+    [scoreView1 addGestureRecognizer:tap1];
     
     self.shoppingCenter.text = @"10";
     self.shoppingCenter.size = [self.shoppingCenter.text sizeWithFont:[UIFont systemFontOfSize:14 ] maxSize:MAXSIZE];
@@ -135,7 +195,8 @@
         iconView.x = 15;
         iconView.size = CGSizeMake(80, 80);
         iconView.y = 60;
-        
+        iconView.layer.cornerRadius = 40;
+        iconView.layer.masksToBounds = YES;
         _iconView = iconView;
         
     }

@@ -14,7 +14,10 @@
 #import "MyAddressController.h"
 #import "SmallButton.h"
 #import "MyOrderViewController.h"
-@interface MineViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "QrcodeViewcontroller.h"
+#import "ScoreDetailController.h"
+#import "MyCustomerViewController.h"
+@interface MineViewController ()<UITableViewDataSource,UITableViewDelegate,MineInfoViewCellDelegate>
 
 
 /** topview  */
@@ -40,6 +43,20 @@
     [self.view addSubview:self.topView];
     [self.view addSubview:self.myTableview];
     
+    
+}
+
+- (void)gotoshoppingCart{
+    [self.tabBarController setSelectedIndex:1];
+
+    
+}
+
+
+- (void)gotoScoreDetail{
+    ScoreDetailController *score = [[ScoreDetailController alloc] init];
+    
+    [self.navigationController pushViewController:score animated:YES];
     
 }
 
@@ -90,7 +107,7 @@
         MineInfoViewCell *cell = [MineInfoViewCell cellWithTableView:tableView];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.data = @{@"data":@"123"};
-        
+        cell.del = self;
         return cell;
         
     }else{
@@ -140,15 +157,39 @@
             
             MyOrderViewController *order = [[MyOrderViewController alloc] init];
             [self.navigationController pushViewController:order animated:YES];
+            return;
             
+        }if (indexPath.row == 1) {
+            
+          
+            NSLog(@"联系客服");
+            return;
+            
+        }
+        if (indexPath.row == 2) {
+            
+            MyCustomerViewController *order = [[MyCustomerViewController alloc] init];
+            [self.navigationController pushViewController:order animated:YES];
+            return;
+
         }
     }
     if (indexPath.section == 2) {
+        
+        if (indexPath.row == 0) {
+            QrcodeViewcontroller *qr = [[QrcodeViewcontroller alloc] init];
+            
+            [self.navigationController pushViewController:qr animated:YES];
+            return;
+            
+        }
+        
         
         if (indexPath.row == 1) {
             
             MyAddressController *add = [[MyAddressController alloc] init];
             [self.navigationController pushViewController:add animated:YES];
+            return;
         }
     }
 }
@@ -182,7 +223,7 @@
         [settingView addTarget:self action:@selector(setbtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [topView addSubview:titleLabel];
-        [topView addSubview:settingView];
+            //[topView addSubview:settingView];
         _topView = topView;
     }
     
@@ -217,7 +258,7 @@
         
         MineGroup *groupOne =  [[MineGroup alloc] init];
         MineItem *itemOne = [MineItem itemWithIconName:@"订单" text:@"我的订单"];
-         MineItem *itemTwo = [MineItem itemWithIconName:@"积分" text:@"积分提现"];
+         MineItem *itemTwo = [MineItem itemWithIconName:@"客服" text:@"联系客服"];
          MineItem *itemThree = [MineItem itemWithIconName:@"客户" text:@"我的客户"];
         groupOne.items = @[itemOne, itemTwo,itemThree];
         

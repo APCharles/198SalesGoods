@@ -107,6 +107,12 @@
 		0F6B75671F46BEFA00F05E9B /* tabr_02_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B75651F46BEFA00F05E9B /* tabr_02_down.png */; };
 		0F6B75681F46BEFA00F05E9B /* tabr_02_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B75661F46BEFA00F05E9B /* tabr_02_down@2x.png */; };
 		0F6B756B1F46CF7900F05E9B /* OrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B756A1F46CF7900F05E9B /* OrderListTableViewCell.m */; };
+		0F70B3391F6266AD004FC005 /* QrcodeViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B3381F6266AD004FC005 /* QrcodeViewcontroller.m */; };
+		0F70B33C1F628278004FC005 /* ScoreDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B33B1F628278004FC005 /* ScoreDetailController.m */; };
+		0F70B33F1F628606004FC005 /* ScoreDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B33E1F628606004FC005 /* ScoreDetailViewCell.m */; };
+		0F70B3421F628EDC004FC005 /* MyCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B3411F628EDC004FC005 /* MyCustomerViewController.m */; };
+		0F70B3451F628FBE004FC005 /* CustomerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B3441F628FBE004FC005 /* CustomerViewCell.m */; };
+		0F70B3471F6295FC004FC005 /* 客服.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F70B3461F6295FC004FC005 /* 客服.png */; };
 		0F8793F91F452D4800666EDE /* AddressViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8793F81F452D4800666EDE /* AddressViewCell.m */; };
 		0F8793FC1F453D6600666EDE /* SmallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8793FB1F453D6600666EDE /* SmallButton.m */; };
 		0F8794021F45443600666EDE /* 删除@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8794011F45443600666EDE /* 删除@2x.png */; };
@@ -419,6 +425,17 @@
 		0F6B75661F46BEFA00F05E9B /* tabr_02_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_02_down@2x.png"; sourceTree = "<group>"; };
 		0F6B75691F46CF7900F05E9B /* OrderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListTableViewCell.h; sourceTree = "<group>"; };
 		0F6B756A1F46CF7900F05E9B /* OrderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListTableViewCell.m; sourceTree = "<group>"; };
+		0F70B3371F6266AD004FC005 /* QrcodeViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrcodeViewcontroller.h; sourceTree = "<group>"; };
+		0F70B3381F6266AD004FC005 /* QrcodeViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QrcodeViewcontroller.m; sourceTree = "<group>"; };
+		0F70B33A1F628278004FC005 /* ScoreDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDetailController.h; sourceTree = "<group>"; };
+		0F70B33B1F628278004FC005 /* ScoreDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDetailController.m; sourceTree = "<group>"; };
+		0F70B33D1F628606004FC005 /* ScoreDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDetailViewCell.h; sourceTree = "<group>"; };
+		0F70B33E1F628606004FC005 /* ScoreDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDetailViewCell.m; sourceTree = "<group>"; };
+		0F70B3401F628EDC004FC005 /* MyCustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomerViewController.h; sourceTree = "<group>"; };
+		0F70B3411F628EDC004FC005 /* MyCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomerViewController.m; sourceTree = "<group>"; };
+		0F70B3431F628FBE004FC005 /* CustomerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerViewCell.h; sourceTree = "<group>"; };
+		0F70B3441F628FBE004FC005 /* CustomerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerViewCell.m; sourceTree = "<group>"; };
+		0F70B3461F6295FC004FC005 /* 客服.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客服.png"; sourceTree = "<group>"; };
 		0F8793F71F452D4800666EDE /* AddressViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewCell.h; sourceTree = "<group>"; };
 		0F8793F81F452D4800666EDE /* AddressViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewCell.m; sourceTree = "<group>"; };
 		0F8793FA1F453D6600666EDE /* SmallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallButton.h; path = MBProgressHUD/SmallButton.h; sourceTree = "<group>"; };
@@ -988,6 +1005,7 @@
 				0F1DA7C51F4315CF00595405 /* 详细地址.png */,
 				0F1DA7C61F4315CF00595405 /* 邮编.png */,
 				0F1DA7351F428C5C00595405 /* setting.png */,
+				0F70B3461F6295FC004FC005 /* 客服.png */,
 				0F1DA7331F428C3200595405 /* img_line@2x.png */,
 				0F1DA7291F42863100595405 /* 地址.png */,
 				0F1DA72A1F42863100595405 /* 订单.png */,
@@ -1107,6 +1125,12 @@
 			children = (
 				0F3F6FB11F39E1B200152140 /* MineViewController.h */,
 				0F3F6FB21F39E1B200152140 /* MineViewController.m */,
+				0F70B33A1F628278004FC005 /* ScoreDetailController.h */,
+				0F70B33B1F628278004FC005 /* ScoreDetailController.m */,
+				0F70B3401F628EDC004FC005 /* MyCustomerViewController.h */,
+				0F70B3411F628EDC004FC005 /* MyCustomerViewController.m */,
+				0F70B3371F6266AD004FC005 /* QrcodeViewcontroller.h */,
+				0F70B3381F6266AD004FC005 /* QrcodeViewcontroller.m */,
 				0F1DA71D1F42816400595405 /* MineInfoViewCell.h */,
 				0F1DA71E1F42816400595405 /* MineInfoViewCell.m */,
 				0F1DA71F1F42816400595405 /* MineTermViewCell.h */,
@@ -1127,6 +1151,10 @@
 				560174EF1F435B4F00EAC87E /* AddressPickerView.m */,
 				560174F01F435B4F00EAC87E /* Province.h */,
 				560174F11F435B4F00EAC87E /* Province.m */,
+				0F70B33D1F628606004FC005 /* ScoreDetailViewCell.h */,
+				0F70B33E1F628606004FC005 /* ScoreDetailViewCell.m */,
+				0F70B3431F628FBE004FC005 /* CustomerViewCell.h */,
+				0F70B3441F628FBE004FC005 /* CustomerViewCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1860,6 +1888,7 @@
 				0F1DA7C91F4315CF00595405 /* 通讯录.png in Resources */,
 				0F1DA7301F42863100595405 /* 二维码.png in Resources */,
 				560174E81F4333D200EAC87E /* city.txt in Resources */,
+				0F70B3471F6295FC004FC005 /* 客服.png in Resources */,
 				0F1DA7611F4293AC00595405 /* LICENSE in Resources */,
 				0F3F6F961F39DE6700152140 /* tabr_01_down.png in Resources */,
 				BC0370171F441C220037312D /* UMSocialSDKResources.bundle in Resources */,
@@ -1930,6 +1959,7 @@
 				BC036E9B1F43E1170037312D /* MJMember.m in Sources */,
 				0F1DA76B1F4293AC00595405 /* UIButton+WebCache.m in Sources */,
 				0F1DA7691F4293AC00595405 /* SDWebImageManager.m in Sources */,
+				0F70B33F1F628606004FC005 /* ScoreDetailViewCell.m in Sources */,
 				0F1DA79F1F4293B400595405 /* AFURLConnectionOperation.m in Sources */,
 				0F3F6FB31F39E1B200152140 /* MineViewController.m in Sources */,
 				0F3F6FB01F39E1A900152140 /* GoodsViewController.m in Sources */,
@@ -1962,6 +1992,7 @@
 				BC036ED61F43E3D90037312D /* UserInfoModel.m in Sources */,
 				BC036E9A1F43E1170037312D /* MJIvar.m in Sources */,
 				BC036ED31F43E3930037312D /* ResModel.m in Sources */,
+				0F70B3391F6266AD004FC005 /* QrcodeViewcontroller.m in Sources */,
 				0F520EB21F29BDB3004AFCB4 /* UIcolortool.m in Sources */,
 				BC036EA51F43E1870037312D /* BaseModel.m in Sources */,
 				0F1DA7AF1F4293D300595405 /* NetService.m in Sources */,
@@ -1991,6 +2022,7 @@
 				0F1DA76D1F4293AC00595405 /* UIImage+MultiFormat.m in Sources */,
 				BCCD4EC11F57DBCF00A38702 /* SubmitViewController.m in Sources */,
 				BCF1347A1F4BF4BC00A6CD35 /* NSString+SizeCalculate.m in Sources */,
+				0F70B33C1F628278004FC005 /* ScoreDetailController.m in Sources */,
 				0FEC22801F613883008D555D /* UIView+Additions.m in Sources */,
 				0F1DA7681F4293AC00595405 /* SDWebImageDownloaderOperation.m in Sources */,
 				0F1DA7221F42816400595405 /* MineTermViewCell.m in Sources */,
@@ -2035,11 +2067,13 @@
 				0F8793FC1F453D6600666EDE /* SmallButton.m in Sources */,
 				BC036E9F1F43E1170037312D /* NSObject+MJCoding.m in Sources */,
 				0F1DA7A11F4293B400595405 /* AFURLResponseSerialization.m in Sources */,
+				0F70B3451F628FBE004FC005 /* CustomerViewCell.m in Sources */,
 				BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */,
 				BC036ED91F43ECDA0037312D /* FillPidViewController.m in Sources */,
 				BC036EC71F43E2190037312D /* SBJsonStreamWriter.m in Sources */,
 				BC036EC11F43E2190037312D /* NSObject+SBJson.m in Sources */,
 				0F1DA7211F42816400595405 /* MineInfoViewCell.m in Sources */,
+				0F70B3421F628EDC004FC005 /* MyCustomerViewController.m in Sources */,
 				BC036F0B1F43F0040037312D /* UMShareHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2204,7 +2238,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2269,7 +2303,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

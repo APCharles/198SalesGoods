@@ -291,6 +291,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
         goodsTableview.y = CGRectGetMaxY(self.collectionView.frame);
         goodsTableview.width = mainScreenWidth;
         goodsTableview.height = mainScreenHeight - _headerView.height - _collectionView.height - self.tabBarController.tabBar.height + 20;
+        goodsTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         goodsTableview.delegate = self;
         goodsTableview.dataSource = self;
         _goodsTableview = goodsTableview;
