@@ -156,13 +156,13 @@
     
 }
 - (void)jiaBtnClick:(UIButton *)sender{
-    
+     self.num ++;
     if (self.num > 0) {
         self.jianBtn.userInteractionEnabled = YES;
     }
     sender.userInteractionEnabled = YES;
     
-    self.num ++;
+   
     
     ShoppingCartViewController *shop = (ShoppingCartViewController *)[self viewController];
     
