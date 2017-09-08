@@ -47,6 +47,8 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
         [self onClickLogin];
     }
     
+    [self requestHomeBanner];
+    
 }
 
 - (void)viewDidLoad {
@@ -58,7 +60,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     NSLog(@"做好会经常冲突的准备");
     
     _bannerArr = [NSMutableArray array];
-    [self requestHomeBanner];
+    
     UIScrollView * myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, mainScreenWidth, mainScreenHeight)];
     myScrollView.backgroundColor = LIGHTWHITE;
     myScrollView.showsHorizontalScrollIndicator = NO;

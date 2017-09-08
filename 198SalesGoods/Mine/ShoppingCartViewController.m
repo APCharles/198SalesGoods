@@ -174,7 +174,7 @@
         congigLabel.font = [UIFont systemFontOfSize:13];
         congigLabel.textColor =[UIcolortool colorWithHexString:@"#f48831"];
         
-        congigLabel.size = [heji.text sizeWithFont:[UIFont systemFontOfSize:13] maxSize:MAXSIZE];
+        congigLabel.size = [@"¥13241356" sizeWithFont:[UIFont systemFontOfSize:13] maxSize:MAXSIZE];
         congigLabel.x = CGRectGetMaxX(heji.frame) +5;
         congigLabel.y = jiesuanView.height * 0.5 - congigLabel.height * 0.5;
         [jiesuanView addSubview:congigLabel];
