@@ -10,7 +10,7 @@
 #import "SalesTabController.h"
 #import "UserInfoModel.h"
 #import "UMShareHelper.h"
-
+#import "MQChatViewManager.h"
 @interface AppDelegate ()
 
 @end
@@ -29,6 +29,14 @@
     //第三方平台设置
     [[UMShareHelper defaultUMShareHelper]setUMInfo];
     self.isFromGoodsDetail = NO;
+    
+#pragma mark  美恰
+        //#error 请填写您的美洽 AppKey
+    [MQManager initWithAppkey:@"" completion:^(NSString *clientId, NSError *error) {
+        if (!error) {
+                //            NSLog(@"美洽 SDK：初始化成功");
+        }
+    }];
     return YES;
 }
 
