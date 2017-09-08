@@ -11,7 +11,6 @@
 		0F19AA461F0D085000997F66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA451F0D085000997F66 /* AppDelegate.m */; };
 		0F19AA491F0D085000997F66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA481F0D085000997F66 /* ViewController.m */; };
 		0F19AA4C1F0D085000997F66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F19AA4A1F0D085000997F66 /* Main.storyboard */; };
-		0F19AA4E1F0D085000997F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F19AA4D1F0D085000997F66 /* Assets.xcassets */; };
 		0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F19AA4F1F0D085000997F66 /* LaunchScreen.storyboard */; };
 		0F19AA5C1F0D085000997F66 /* _98SalesGoodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA5B1F0D085000997F66 /* _98SalesGoodsTests.m */; };
 		0F19AA671F0D085100997F66 /* _98SalesGoodsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19AA661F0D085100997F66 /* _98SalesGoodsUITests.m */; };
@@ -221,6 +220,7 @@
 		BC0A43F11F41923B00A929C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A43F01F41923B00A929C0 /* LoginViewController.m */; };
 		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
+		BC3C13471F6297A3005E24A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13461F6297A3005E24A0 /* Assets.xcassets */; };
 		BC44CC2F1F44294700A61E61 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FC51F441C220037312D /* libSocialWeChat.a */; };
 		BCA017D11F58F955001AEC73 /* SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA017CF1F58F955001AEC73 /* SubmitCell.m */; };
 		BCA017D21F58F955001AEC73 /* SubmitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA017D01F58F955001AEC73 /* SubmitCell.xib */; };
@@ -263,7 +263,6 @@
 		0F19AA471F0D085000997F66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0F19AA481F0D085000997F66 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F19AA4B1F0D085000997F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0F19AA4D1F0D085000997F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F19AA501F0D085000997F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F19AA521F0D085000997F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F19AA571F0D085000997F66 /* 198SalesGoodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 198SalesGoodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -686,6 +685,7 @@
 		BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
 		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
+		BC3C13461F6297A3005E24A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA017CE1F58F955001AEC73 /* SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitCell.h; sourceTree = "<group>"; };
 		BCA017CF1F58F955001AEC73 /* SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitCell.m; sourceTree = "<group>"; };
 		BCA017D01F58F955001AEC73 /* SubmitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitCell.xib; sourceTree = "<group>"; };
@@ -834,8 +834,8 @@
 				0F19AA451F0D085000997F66 /* AppDelegate.m */,
 				0F19AA471F0D085000997F66 /* ViewController.h */,
 				0F19AA481F0D085000997F66 /* ViewController.m */,
+				BC3C13461F6297A3005E24A0 /* Assets.xcassets */,
 				0F19AA4A1F0D085000997F66 /* Main.storyboard */,
-				0F19AA4D1F0D085000997F66 /* Assets.xcassets */,
 				0F19AA4F1F0D085000997F66 /* LaunchScreen.storyboard */,
 				0F19AA521F0D085000997F66 /* Info.plist */,
 				0F19AA411F0D085000997F66 /* Supporting Files */,
@@ -1902,7 +1902,6 @@
 				0F6B75631F46B73600F05E9B /* shop@2x.png in Resources */,
 				0F19AA511F0D085000997F66 /* LaunchScreen.storyboard in Resources */,
 				0FEC227C1F612CB2008D555D /* jia@2x.png in Resources */,
-				0F19AA4E1F0D085000997F66 /* Assets.xcassets in Resources */,
 				560174E91F4333D200EAC87E /* Province.txt in Resources */,
 				0F3F6FA41F39E0CB00152140 /* tabr_04_down@2x.png in Resources */,
 				0F1DA73E1F4293A400595405 /* MBProgressHUD.bundle in Resources */,
@@ -1927,6 +1926,7 @@
 				BC03700A1F441C220037312D /* VKSdkResources.bundle in Resources */,
 				0F67B1831F3C36E3000028A1 /* home_good.gif in Resources */,
 				0F3F6FA61F39E0EA00152140 /* tabr_04_up@2x.png in Resources */,
+				BC3C13471F6297A3005E24A0 /* Assets.xcassets in Resources */,
 				0F6B75641F46B73600F05E9B /* shopno@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2238,7 +2238,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2303,7 +2303,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Linkedin",
 					"$(PROJECT_DIR)/198SalesGoods/Venders/UMSocial/SocialLibraries/Twitter",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
