@@ -12,6 +12,8 @@
 #import "GoodsShowCell.h"
 #import "LoginViewController.h"
 #import "WebViewController.h"
+#import "MQChatViewManager.h"
+#import <MeiQiaSDK/MQManager.h>
 /* cell */
 static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
@@ -98,6 +100,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     [service serviceWithGetjsonURL:@"http://wx.dianpuj.com/index.php/wap/home/index_ios" params:dic success:^(id responseObject) {
      
         
+        [_bannerArr removeAllObjects];
         _bannerDic = (NSDictionary *)responseObject;
         [_bannerArr addObject:[_bannerDic objectForKey:@"index_man"]];
         [_bannerArr addObject:[_bannerDic objectForKey:@"index_woman"]];
@@ -231,6 +234,16 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
            web.url = @"http://wx.dianpuj.com/index.php/Wap/page/zlku/id/129.html";
     }else if (indexPath.row == 3){
         
+        MQChatViewManager *chatViewManager = [[MQChatViewManager alloc] init];
+        NSDictionary* clientCustomizedAttrs = @{@"name": [UserData shareInstance].user_Model.name,
+                                                @"avatar":  [UserData shareInstance].user_Model.headimgurl,
+                                                @"tel": [UserData shareInstance].user_Model.mobile
+                                               };
+        [chatViewManager enableOutgoingAvatar:YES]; //是否有头像
+          [chatViewManager setClientInfo:clientCustomizedAttrs override:YES];                                           //开启同步消息
+        [chatViewManager enableSyncServerMessage:true];
+        [chatViewManager pushMQChatViewControllerInViewController:self];
+        return;
     }
  
     

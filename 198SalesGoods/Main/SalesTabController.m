@@ -13,6 +13,7 @@
 #import "HomeViewController.h"
 #import "MineViewController.h"
 #import "ShoppingCartViewController.h"
+#import "GoodsViewController.h"
 @interface SalesTabController ()<UITabBarControllerDelegate>
 
 @end
@@ -82,7 +83,25 @@
 #pragma mark - <UITabBarControllerDelegate>
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
         //点击tabBarItem动画
-//    [self tabBarButtonClick:[self getTabBarButton]];
+//     [self tabBarButtonClick:[self getTabBarButton]];
+    if ([viewController isKindOfClass:[SalesNavgationController class]]){
+        
+        SalesNavgationController *sales = (SalesNavgationController *)viewController;
+        
+        for (UIViewController *vc in sales.viewControllers) {
+            if ([vc isKindOfClass:[GoodsViewController class]]) {
+                
+                GoodsViewController *goods = (GoodsViewController *)vc;
+                goods.isShow = YES;
+                
+            }
+        }
+
+        
+    }
+   
+        
+    
     
 }
 - (UIControl *)getTabBarButton{

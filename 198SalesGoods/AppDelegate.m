@@ -10,7 +10,7 @@
 #import "SalesTabController.h"
 #import "UserInfoModel.h"
 #import "UMShareHelper.h"
-#import "MQChatViewManager.h"
+#import <MeiQiaSDK/MQManager.h>
 @interface AppDelegate ()
 
 @end
@@ -32,7 +32,7 @@
     
 #pragma mark  美恰
         //#error 请填写您的美洽 AppKey
-    [MQManager initWithAppkey:@"" completion:^(NSString *clientId, NSError *error) {
+    [MQManager initWithAppkey:@"721da388d89414cfec14cc76cd5be321" completion:^(NSString *clientId, NSError *error) {
         if (!error) {
                 //            NSLog(@"美洽 SDK：初始化成功");
         }

@@ -17,6 +17,8 @@
 #import "QrcodeViewcontroller.h"
 #import "ScoreDetailController.h"
 #import "MyCustomerViewController.h"
+#import "MQChatViewManager.h"
+#import "GoodsViewController.h"
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate,MineInfoViewCellDelegate>
 
 
@@ -48,7 +50,8 @@
 
 - (void)gotoshoppingCart{
     [self.tabBarController setSelectedIndex:1];
-
+//    GoodsViewController *good = (GoodsViewController *) self.tabBarController.selectedViewController;
+//    good.isShow = NO;
     
 }
 
@@ -163,6 +166,18 @@
             
           
             NSLog(@"联系客服");
+            
+            MQChatViewManager *chatViewManager = [[MQChatViewManager alloc] init];
+            NSDictionary* clientCustomizedAttrs = @{@"name": [UserData shareInstance].user_Model.name,
+                                                    @"avatar":  [UserData shareInstance].user_Model.headimgurl,
+                                                    @"tel": [UserData shareInstance].user_Model.mobile
+                                                    };
+            [chatViewManager enableOutgoingAvatar:YES]; //是否有头像
+            [chatViewManager setClientInfo:clientCustomizedAttrs override:YES];                                           //开启同步消息
+            [chatViewManager enableSyncServerMessage:true];
+            [chatViewManager pushMQChatViewControllerInViewController:self];
+            return;
+
             return;
             
         }
