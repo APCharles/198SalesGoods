@@ -11,6 +11,8 @@
 #import "UserInfoModel.h"
 #import "UMShareHelper.h"
 #import <MeiQiaSDK/MQManager.h>
+#import "UserInfoModel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -35,10 +37,22 @@
     [MQManager initWithAppkey:@"721da388d89414cfec14cc76cd5be321" completion:^(NSString *clientId, NSError *error) {
         if (!error) {
                 //            NSLog(@"美洽 SDK：初始化成功");
+            [self MQLogin];
         }
     }];
     return YES;
 }
+
+-(void)MQLogin{
+    //创建自定义信息
+    UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+    if (userInfoModel) {
+        [MQManager setClientOnlineWithCustomizedId:[NSString stringWithFormat:@"%d",userInfoModel.base_id.intValue] success:^(MQClientOnlineResult result, MQAgent *agent, NSArray<MQMessage *> *messages) {
+        } failure:^(NSError *error) {
+        } receiveMessageDelegate:nil];
+    }
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

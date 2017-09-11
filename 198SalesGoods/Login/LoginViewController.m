@@ -217,6 +217,7 @@
 }
 
 -(void)doDealWithUserModel:(UserModel *)userModel{
+    [ApplicationDelegate MQLogin];
     if (userModel.user_info.pid.intValue>0) {
         [[NSUserDefaults standardUserDefaults]setObject:[userModel.user_info keyValues] forKey:kUserInfoModel];
         [[NSUserDefaults standardUserDefaults]synchronize];

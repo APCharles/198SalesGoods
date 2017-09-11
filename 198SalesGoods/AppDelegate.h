@@ -15,6 +15,8 @@
 
 @property (nonatomic, assign) BOOL isFromGoodsDetail;
 
+
+-(void)MQLogin;
 /**
  *	@brief	判断用户是否登录
 */
