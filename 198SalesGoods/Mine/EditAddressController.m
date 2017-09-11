@@ -10,6 +10,7 @@
 #import "EditAddressViewCell.h"
 #import "AddressPickerView.h"
 #import "MyAddressController.h"
+#import "UserInfoModel.h"
 @interface EditAddressController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,AddressPickerViewDelegate>
 
 /** dizhi  */
@@ -112,17 +113,20 @@
         CityID = [_cityDic objectForKey:@"CityID"];
 
     }
+    UserInfoModel *userInfoModel = [UserInfoModel objectWithKeyValues:[[NSUserDefaults standardUserDefaults]objectForKey:kUserInfoModel]];
+
     NSDictionary *dic = @{@"name":nameFiled.text,
                           @"tel":mobileFiled.text,
                           @"province":ProvinceID,
                           @"city":CityID,
-                          @"address":addressFiled.text
+                          @"address":addressFiled.text,
+                          @"mid":userInfoModel.base_id
                           };
-    
+
   
     __weak typeof(self)weakSelf = self;
      NetService *netService = [[NetService alloc] init];
-    [netService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/addr_update" params:dic success:^(id responseObject) {
+    [netService serviceWithPostURL:@"http://wx.dianpuj.com/index.php/Wap/Member/addr_shaodupdate" params:dic success:^(id responseObject) {
         
       
         if ([responseObject isKindOfClass:[NSDictionary class]]) {

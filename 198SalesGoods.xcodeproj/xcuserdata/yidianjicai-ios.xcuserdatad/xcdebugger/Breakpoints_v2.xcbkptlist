@@ -186,7 +186,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Login/LoginViewController.m"
-                  timestampString = "526804537.753431"
+                  timestampString = "526814593.086232"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -201,7 +201,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Login/LoginViewController.m"
-                  timestampString = "526804537.760597"
+                  timestampString = "526814593.088885"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
@@ -255,7 +255,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -289,6 +289,102 @@
             endingLineNumber = "626"
             landmarkName = "-doAddToShopCartAfterCheckUserMobile"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Mine/EditAddressController.m"
+            timestampString = "526814590.444154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-saveBtnclick:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EditAddressController saveBtnclick:]"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
+                  timestampString = "526814590.663536"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "1948">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[EditAddressController saveBtnclick:]_block_invoke"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
+                  timestampString = "526814590.666444"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Macros/NetService.m"
+            timestampString = "526814628.425984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-serviceWithPostURL:params:success:failure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetService serviceWithPostURL:params:success:failure:]"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/NetService.m"
+                  timestampString = "526814628.435215"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[NetService serviceWithPostURL:params:success:failure:]_block_invoke"
+                  moduleName = "198SalesGoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/NetService.m"
+                  timestampString = "526814628.439923"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
