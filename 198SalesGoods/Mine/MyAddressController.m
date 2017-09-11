@@ -79,7 +79,17 @@
 
 - (void)deleteAddress:(UIButton *)sender{
     
-    NSLog(@"点击删除");
+    NSDictionary *dic1 = _addressArr[sender.tag - 100];
+    NSDictionary *dic = [[NSDictionary alloc] init];
+    NetService *netService = [[NetService alloc] init];
+    [netService serviceWithGetURL:[NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/Wap/Member/addr_del_ios/id/%@", [NSString stringWithFormat:@"%@",dic1[@"id"]]] params:dic success:^(id responseObject) {
+        
+        [self  requestAddress];
+        
+    } failure:^(NSError *error) {
+        [self showProgressHUDString:@"服务器数据异常"];
+    }];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -132,6 +142,9 @@
             _addressTableview.height = 100 * _addressArr.count;
             _addAddress.y = CGRectGetMaxY(self.addressTableview.frame) + 30;
             
+        }else{
+            
+            _addAddress.y = CGRectGetMaxY(self.navigationBarView.frame) + 30;
         }
         
         
