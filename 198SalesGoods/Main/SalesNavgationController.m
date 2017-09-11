@@ -7,7 +7,7 @@
 //
 
 #import "SalesNavgationController.h"
-#import "GQGesVCTransition.h"
+//#import "GQGesVCTransition.h"
 
 #import "UIBarButtonItem+DCBarButtonItem.h"
 @interface SalesNavgationController ()
@@ -28,7 +28,7 @@
 #pragma mark - LifeCyle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [GQGesVCTransition validateGesBackWithType:GQGesVCTransitionTypePanWithPercentRight withRequestFailToLoopScrollView:YES]; //手势返回
+//    [GQGesVCTransition validateGesBackWithType:GQGesVCTransitionTypePanWithPercentRight withRequestFailToLoopScrollView:YES]; //手势返回
 }
 
 
