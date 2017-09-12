@@ -49,6 +49,7 @@
 }
 
 - (void)gotoshoppingCart{
+    
     [self.tabBarController setSelectedIndex:1];
 //    GoodsViewController *good = (GoodsViewController *) self.tabBarController.selectedViewController;
 //    good.isShow = NO;

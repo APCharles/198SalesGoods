@@ -77,7 +77,8 @@
         [self addSubview:self.goodView];
 //        [self.goodView addSubview:self.goodName];
         
-        
+        [self addSubview:self.deleteBtn];
+        [self addSubview:self.payforBtn];
         
     }
     
@@ -143,10 +144,19 @@
     
     [_marketLabel addSubview:divi];
 
-    
+    self.deleteBtn.x = mainScreenWidth - _deleteBtn.width - 15;
+    self.deleteBtn.y = CGRectGetMaxY(self.goodView.frame) + 15;
+    self.payforBtn.hidden = YES;
     if (_idx == 0) {
         
         self.typeLabel.text = @"待付款";
+        self.payforBtn.hidden = NO;
+        
+        self.payforBtn.x = mainScreenWidth - _payforBtn.width - 15;
+        self.payforBtn.y = CGRectGetMaxY(self.goodView.frame) + 15;
+        
+        self.deleteBtn.x = _payforBtn.x  - _deleteBtn.width - 15 ;
+        self.deleteBtn.y = CGRectGetMaxY(self.goodView.frame) + 15;
         
     }else if (_idx == 1) {
         
@@ -169,6 +179,23 @@
     self.typeLabel.size = [self.typeLabel.text sizeWithFont:[UIFont systemFontOfSize:14] maxSize:MAXSIZE];
     self.typeLabel.x = mainScreenWidth - self.typeLabel.width - 15;
     self.typeLabel.y = 25 - self.typeLabel.height * 0.5;
+    
+}
+
+- (void)deleteBtnClick:(UIButton *)sender{
+    
+    if ([self.del respondsToSelector:@selector(deleteBtnClick:)]) {
+        
+        [self.del deleteBtnClick:sender];
+    }
+    
+}
+
+- (void)payforOrder:(UIButton *)sender{
+    if ([self.del respondsToSelector:@selector(payForBtnClick:)]) {
+        
+        [self.del payForBtnClick:sender];
+    }
     
 }
 
@@ -334,4 +361,47 @@
     
     return _marketLabel;
 }
+
+- (UIButton *)deleteBtn{
+    
+    if (!_deleteBtn) {
+        
+        UIButton *canceBtn = [[UIButton alloc] init];
+        [canceBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+        [canceBtn setTitleColor:GRAYETEXTCOLOR forState:UIControlStateNormal];
+        canceBtn.size = CGSizeMake(67.5, 25);
+        canceBtn.layer.masksToBounds = YES;
+        canceBtn.layer.cornerRadius = 5;
+        canceBtn.layer.borderColor = [UIcolortool colorWithHexString:@"#acacac"].CGColor;
+        canceBtn.layer.borderWidth = 0.5;
+        canceBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        [canceBtn addTarget:self action:@selector(deleteBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        _deleteBtn = canceBtn;
+        
+    }
+    
+    return _deleteBtn;
+}
+- (UIButton *)payforBtn{
+    
+    if (!_payforBtn) {
+        
+        UIButton *canceBtn = [[UIButton alloc] init];
+        [canceBtn setTitle:@"立即支付" forState:UIControlStateNormal];
+        [canceBtn setTitleColor:[UIcolortool colorWithHexString:@"#ff6137"] forState:UIControlStateNormal];
+        canceBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        canceBtn.size = CGSizeMake(67.5, 25);
+        canceBtn.layer.masksToBounds = YES;
+        canceBtn.layer.cornerRadius = 5;
+        canceBtn.layer.borderColor = [UIcolortool colorWithHexString:@"#ff6137"].CGColor;
+        canceBtn.layer.borderWidth = 0.5;
+        [canceBtn addTarget:self action:@selector(payforOrder:) forControlEvents:UIControlEventTouchUpInside];
+        _payforBtn = canceBtn;
+        
+    }
+    
+    return _payforBtn;
+}
+
+
 @end

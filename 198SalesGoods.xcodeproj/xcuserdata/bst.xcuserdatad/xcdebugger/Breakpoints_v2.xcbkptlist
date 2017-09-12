@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Mine/MineViewController.m"
-            timestampString = "526792184.374801"
+            timestampString = "526894860.741593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Main/SalesTabController.m"
-            timestampString = "526792615.818128"
+            filePath = "198SalesGoods/Login/Order/MyOrderViewController.m"
+            timestampString = "526894247.771795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "-tabBarController:didSelectViewController:"
+            landmarkName = "-requestOrderTypeWithType:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Main/SalesTabController.m"
-            timestampString = "526792644.691799"
+            filePath = "198SalesGoods/Login/Order/MyOrderViewController.m"
+            timestampString = "526894486.597689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-tabBarController:didSelectViewController:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-requestOrderTypeWithType:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Mine/MyAddressController.m"
-            timestampString = "526803550.852742"
+            filePath = "198SalesGoods/Login/Order/MyOrderViewController.m"
+            timestampString = "526894508.006798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-deleteAddress:"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Goods/GoodsViewController.m"
+            timestampString = "526894753.935359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -24,17 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   self.leftBtn.hidden = YES;
+ 
     [self setBarName:@"商品列表"];
       [self.view addSubview:self.goodsListTableview];
-    if (!_isShow) {
-        self.leftBtn.hidden = NO;
-        _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height;
-    }else{
-    self.leftBtn.hidden = YES;
-         _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
-    }
-
+  
     
 //    [self requestGoodsList];
     
@@ -49,7 +42,14 @@
         }
     }
 - (void)viewWillAppear:(BOOL)animated{
-    
+    if (!_isShow) {
+        self.leftBtn.hidden = NO;
+        _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height;
+    }else{
+        self.leftBtn.hidden = YES;
+        _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
+    }
+
     if (ApplicationDelegate.isFromGoodsDetail == YES) {
         ApplicationDelegate.isFromGoodsDetail = NO;
         [self.tabBarController setSelectedIndex:2];
