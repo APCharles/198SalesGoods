@@ -87,7 +87,7 @@
         [self  requestAddress];
         
     } failure:^(NSError *error) {
-        [self showProgressHUDString:@"服务器数据异常"];
+        [self showProgressHUDString:[error localizedDescription]];
     }];
 
 }

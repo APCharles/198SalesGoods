@@ -10,7 +10,7 @@
 #import "OrderHeaderView.h"
 #import "OrderListTableViewCell.h"
 #import "SBJsonParser.h"
-@interface MyOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MyOrderViewController ()<UITableViewDelegate,UITableViewDataSource,OrderListTableViewCellDelegate>
 
 /** orderHeaderView  */
 @property(strong,nonatomic) OrderHeaderView *orderHeaderView;
@@ -50,7 +50,31 @@
      [self requestOrderTypeWithType:0];
     [self.view addSubview:self.orderView];
 }
+- (void)payForBtnClick:(UIButton *)sender{
+    
+    NSLog(@"立即支付");
+}
 
+- (void)deleteBtnClick:(UIButton *)sender{
+    
+    NSLog(@"删除订单");
+    NSDictionary *orderDic = _dataArr[sender.tag - 10000];
+    NSDictionary *dic  =[[NSDictionary alloc] init];
+    NetService *service = [[NetService alloc] init];
+    
+    NSString *url = [NSString stringWithFormat:@"http://wx.dianpuj.com/index.php/Wap/Order/delorder_ios/id/%@",[NSString stringWithFormat:@"%@",orderDic[@"id"]]];
+    
+    [service serviceWithGetURL:url params:dic success:^(id responseObject) {
+      
+       
+        [self requestOrderTypeWithType:_idx];
+        
+    } failure:^(NSError *error) {
+        
+        [self showProgressHUDString:@"服务器数据异常"];
+    }];
+
+}
 - (void)requestOrderTypeWithType:(NSInteger )idx{
     
     _idx = idx;
@@ -125,8 +149,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.idx = _idx;
     cell.data = _dataArr[indexPath.row];
-    
-    
+    cell.payforBtn.tag = 1000 + indexPath.section;
+    cell.deleteBtn.tag = 10000 + indexPath.section;
+    cell.del = self;
     return cell;
     
 }

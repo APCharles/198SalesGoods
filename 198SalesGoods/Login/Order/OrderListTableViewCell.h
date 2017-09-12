@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OrderListTableViewCellDelegate <NSObject>
+
+@optional
+
+-(void)payForBtnClick:(UIButton *)sender;
+
+-(void)deleteBtnClick:(UIButton *)sender;
+
+@end
 @interface OrderListTableViewCell : UITableViewCell
 
 + (instancetype) cellWithTableView:(UITableView *)tableview;
@@ -17,4 +26,11 @@
 
 /** idx  */
 @property(assign,nonatomic) NSInteger idx;
+
+/** cell高度  */
+@property(retain,nonatomic) id <OrderListTableViewCellDelegate> del;
+
+@property(strong,nonatomic) UIButton *deleteBtn;
+
+@property(strong,nonatomic) UIButton *payforBtn;
 @end
