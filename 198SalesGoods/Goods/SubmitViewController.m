@@ -9,6 +9,7 @@
 #import "SubmitViewController.h"
 #import "MyAddressController.h"
 #import "SubmitCell.h"
+#import "WXApi.h"
 
 @interface SubmitViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
@@ -72,6 +73,56 @@
 }
 
 -(void)onClickSubmit{
+    NSMutableDictionary *payInfoDic = [NSMutableDictionary new];
+    NSString *appId = payInfoDic[@"appid"];
+    NSString *partnerId = [payInfoDic[@"partnerid"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *prepayId = payInfoDic[@"prepayid"];
+    NSString *nonceStr = payInfoDic[@"noncestr"];
+    NSNumber *timeStamp = payInfoDic[@"timestamp"];
+    NSString *sign = payInfoDic[@"sign"];
+    NSString *packageValue = payInfoDic[@"packagevalue"];
+    
+    //调起微信支付
+    PayReq* req = [[PayReq alloc] init];
+    req.openID      = appId;
+    req.partnerId   = partnerId;
+    req.prepayId    = prepayId;
+    req.nonceStr    = nonceStr;
+    req.timeStamp   = [timeStamp intValue];
+    
+    req.package     = packageValue;
+    req.sign        = sign;
+    
+    [WXApi sendReq:req];
+}
+
+-(void) onResp:(BaseResp*)resp
+{
+    NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+    NSString *strTitle;
+    
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+    }
+    if([resp isKindOfClass:[PayResp class]]){
+        //微信支付返回结果，实际支付结果需要去微信服务器端查询
+        strTitle = [NSString stringWithFormat:@"支付结果"];
+        
+        switch (resp.errCode) {
+            case WXSuccess:
+                strMsg = @"支付结果：成功！";
+                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                break;
+                
+            default:
+                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
+                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
+                break;
+        }
+    }
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    //    [alert show];
 }
 
 -(void)installTableHeaderView{

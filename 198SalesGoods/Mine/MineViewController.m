@@ -19,6 +19,8 @@
 #import "MyCustomerViewController.h"
 #import "MQChatViewManager.h"
 #import "GoodsViewController.h"
+#import "AboutViewController.h"
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate,MineInfoViewCellDelegate>
 
 
@@ -66,7 +68,8 @@
 
 #pragma mark - 点击设置
 - (void)setbtnClick:(UIButton *)sender{
-    
+    AboutViewController *about = [[AboutViewController alloc] init];
+    [self.navigationController pushViewController:about animated:YES];
     NSLog(@"设置");
     
 }
@@ -239,7 +242,7 @@
         [settingView addTarget:self action:@selector(setbtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [topView addSubview:titleLabel];
-            //[topView addSubview:settingView];
+        [topView addSubview:settingView];
         _topView = topView;
     }
     
@@ -281,7 +284,7 @@
         MineGroup *groupTwo =  [[MineGroup alloc] init];
         MineItem *itemFour = [MineItem itemWithIconName:@"二维码" text:@"我的二维码"];
         MineItem *itemFive = [MineItem itemWithIconName:@"地址" text:@"地址管理"];
-       
+
         groupTwo.items = @[itemFour, itemFive];
         
         [_groupArr addObject:groupOne];

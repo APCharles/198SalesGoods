@@ -361,6 +361,7 @@
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 		BC3C13471F6297A3005E24A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13461F6297A3005E24A0 /* Assets.xcassets */; };
 		BC44CC2F1F44294700A61E61 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FC51F441C220037312D /* libSocialWeChat.a */; };
+		BC6D31401F6F6A9000C8DDB7 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D313F1F6F6A9000C8DDB7 /* AboutViewController.m */; };
 		BCA017D11F58F955001AEC73 /* SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA017CF1F58F955001AEC73 /* SubmitCell.m */; };
 		BCA017D21F58F955001AEC73 /* SubmitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA017D01F58F955001AEC73 /* SubmitCell.xib */; };
 		BCCD4EBA1F57972800A38702 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD4EB91F57972800A38702 /* WebViewController.m */; };
@@ -1102,6 +1103,8 @@
 		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
 		BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPassWordViewController.m; sourceTree = "<group>"; };
 		BC3C13461F6297A3005E24A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC6D313E1F6F6A9000C8DDB7 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		BC6D313F1F6F6A9000C8DDB7 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		BCA017CE1F58F955001AEC73 /* SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitCell.h; sourceTree = "<group>"; };
 		BCA017CF1F58F955001AEC73 /* SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitCell.m; sourceTree = "<group>"; };
 		BCA017D01F58F955001AEC73 /* SubmitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitCell.xib; sourceTree = "<group>"; };
@@ -2275,6 +2278,8 @@
 				0F70B33E1F628606004FC005 /* ScoreDetailViewCell.m */,
 				0F70B3431F628FBE004FC005 /* CustomerViewCell.h */,
 				0F70B3441F628FBE004FC005 /* CustomerViewCell.m */,
+				BC6D313E1F6F6A9000C8DDB7 /* AboutViewController.h */,
+				BC6D313F1F6F6A9000C8DDB7 /* AboutViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -3239,6 +3244,7 @@
 				BC036EC21F43E2190037312D /* SBJsonParser.m in Sources */,
 				0F70B6B71F629A3C004FC005 /* MEIQIA_FBSquareFont.m in Sources */,
 				0FC609601F3D4DF80017531E /* ShoppingCartViewController.m in Sources */,
+				BC6D31401F6F6A9000C8DDB7 /* AboutViewController.m in Sources */,
 				BC036ECA1F43E2190037312D /* SBJsonTokeniser.m in Sources */,
 				0F70B66D1F629A3C004FC005 /* MQChatViewStyleBlue.m in Sources */,
 				BC036EC81F43E2190037312D /* SBJsonStreamWriterAccumulator.m in Sources */,
@@ -3497,7 +3503,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/meiqia",
 					"$(PROJECT_DIR)/198SalesGoods/Macros/meiqia",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3566,7 +3572,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/meiqia",
 					"$(PROJECT_DIR)/198SalesGoods/Macros/meiqia",
 				);
-				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
