@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/AppDelegate.m"
-            timestampString = "526801322.39763"
+            timestampString = "527663884.60273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-applicationWillTerminate:"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -70,7 +70,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -86,7 +86,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -102,7 +102,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -118,7 +118,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -186,7 +186,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Login/LoginViewController.m"
-                  timestampString = "527395686.123572"
+                  timestampString = "527663976.661158"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -201,7 +201,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Login/LoginViewController.m"
-                  timestampString = "527395686.124916"
+                  timestampString = "527663976.663385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
@@ -265,28 +265,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "198SalesGoods/Goods/SubmitViewController.m"
-            timestampString = "525925502.115091"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-configCurrentView"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Goods/GoodsDetailViewController.m"
-            timestampString = "526382607.535276"
+            timestampString = "527663975.410673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
             landmarkName = "-doAddToShopCartAfterCheckUserMobile"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,7 +298,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
-                  timestampString = "527395686.149047"
+                  timestampString = "527663976.770085"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "129"
@@ -329,7 +313,7 @@
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Mine/EditAddressController.m"
-                  timestampString = "527395686.151213"
+                  timestampString = "527663976.772022"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
@@ -342,7 +326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "198SalesGoods/Macros/NetService.m"
@@ -355,14 +339,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[NetService serviceWithPostURL:params:success:failure:]"
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/NetService.m"
-                  timestampString = "527395686.15527"
+                  timestampString = "527663912.023811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -370,14 +354,14 @@
                   offsetFromSymbolStart = "412">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__56-[NetService serviceWithPostURL:params:success:failure:]_block_invoke"
                   moduleName = "198SalesGoods"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/NetService.m"
-                  timestampString = "527395686.157387"
+                  timestampString = "527663912.025211"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -385,6 +369,22 @@
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "198SalesGoods/Goods/GoodsViewController.m"
+            timestampString = "527663993.636038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

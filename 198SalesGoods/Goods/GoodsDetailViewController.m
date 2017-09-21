@@ -539,6 +539,7 @@
 -(void)doPushToSubmitVC:(SubmitModel *)submitModel{
     SubmitViewController *submitViewController = [[SubmitViewController alloc]init];
     submitViewController.submitModel = submitModel;
+    submitViewController.submitType = SubmitTypeBuy;
     [self.navigationController pushViewController:submitViewController animated:YES];
 }
 

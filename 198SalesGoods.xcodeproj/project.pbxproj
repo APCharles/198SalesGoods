@@ -357,6 +357,7 @@
 		BC0370171F441C220037312D /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC036FE11F441C220037312D /* UMSocialSDKResources.bundle */; };
 		BC0370181F441C220037312D /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC036FE21F441C220037312D /* UShareUI.framework */; };
 		BC0A43F11F41923B00A929C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A43F01F41923B00A929C0 /* LoginViewController.m */; };
+		BC0AE9311F73821600472798 /* PayManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC0AE9301F73821600472798 /* PayManager.mm */; };
 		BC2DD9CA1F429B71004E67E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */; };
 		BC2DD9CD1F429C1F004E67E6 /* FindPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD9CC1F429C1F004E67E6 /* FindPassWordViewController.m */; };
 		BC3C13471F6297A3005E24A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13461F6297A3005E24A0 /* Assets.xcassets */; };
@@ -1098,6 +1099,8 @@
 		BC036FE21F441C220037312D /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
 		BC0A43EF1F41923B00A929C0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BC0A43F01F41923B00A929C0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BC0AE92F1F73821600472798 /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
+		BC0AE9301F73821600472798 /* PayManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PayManager.mm; sourceTree = "<group>"; };
 		BC2DD9C81F429B71004E67E6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		BC2DD9C91F429B71004E67E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BC2DD9CB1F429C1F004E67E6 /* FindPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPassWordViewController.h; sourceTree = "<group>"; };
@@ -2287,6 +2290,7 @@
 		0FF685BC1F28843500ED09D9 /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				BC0AE92E1F73821600472798 /* PayManager */,
 				0F70B5151F629A3B004FC005 /* meiqia */,
 				0FEC227E1F613883008D555D /* UIView+Additions.h */,
 				0FEC227F1F613883008D555D /* UIView+Additions.m */,
@@ -2882,6 +2886,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		BC0AE92E1F73821600472798 /* PayManager */ = {
+			isa = PBXGroup;
+			children = (
+				BC0AE92F1F73821600472798 /* PayManager.h */,
+				BC0AE9301F73821600472798 /* PayManager.mm */,
+			);
+			path = PayManager;
+			sourceTree = "<group>";
+		};
 		BCF134661F4BC0A100A6CD35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3116,6 +3129,7 @@
 				0F70B6D41F629A3C004FC005 /* MQMessageFormInputModel.m in Sources */,
 				0F1DA7A21F4293B400595405 /* AFURLSessionManager.m in Sources */,
 				0F70B6971F629A3C004FC005 /* MQChatBaseCell.m in Sources */,
+				BC0AE9311F73821600472798 /* PayManager.mm in Sources */,
 				0F70B6D01F629A3C004FC005 /* MQToast.m in Sources */,
 				0F70B6C91F629A3C004FC005 /* MQRecorderView.m in Sources */,
 				0F1DA7A81F4293B400595405 /* UIButton+AFNetworking.m in Sources */,

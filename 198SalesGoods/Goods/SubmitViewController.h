@@ -9,9 +9,17 @@
 #import "BaseViewController.h"
 #import "SubmitModel.h"
 
+typedef enum {
+    SubmitTypeBuy,
+    SubmitTypeGift,
+}SubmitType;
+
 @interface SubmitViewController : BaseViewController
 @property (nonatomic , strong)SubmitModel *submitModel;
 
 @property (nonatomic , strong)NSDictionary *selectedAddr;
+
+@property (assign) SubmitType submitType;
+
 
 @end

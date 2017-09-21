@@ -12,6 +12,8 @@
 #import "UMShareHelper.h"
 #import <MeiQiaSDK/MQManager.h>
 #import "UserInfoModel.h"
+#import "PayManager.h"
+#import "WXApi.h"
 
 @interface AppDelegate ()
 
@@ -95,24 +97,28 @@
 
 #endif
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+#pragma mark - <openURL: sourceApplication:>
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    [WXApi handleOpenURL:url delegate:[PayManager defaultManager]];
     if (!result) {
         // 其他如支付等SDK的回调
+        //调用其他SDK
+        [[PayManager defaultManager] parseApplication:application openURL:url sourceApplication:sourceApplication annotation:annotation];
     }
     return result;
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    [WXApi handleOpenURL:url delegate:[PayManager defaultManager]];
     if (!result) {
         // 其他如支付等SDK的回调
+        [[PayManager defaultManager] parseApplication:application openURL:url sourceApplication:nil annotation:nil];
     }
     return result;
 }
+#pragma mark </openURL: sourceApplication:>
 #pragma mark </openURL: sourceApplication:>
 
 /**
