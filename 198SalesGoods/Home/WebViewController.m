@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 #import "GoodsViewController.h"
+#import "GoodsAddViewController.h"
 @interface WebViewController ()<UIWebViewDelegate>
 
     
@@ -84,7 +85,7 @@
     
         //点击购买
     if ([me isEqualToString:@"http://wx.dianpuj.com/index.php/Wap/Product/card.html"]) {
-        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        GoodsAddViewController *goods = [[GoodsAddViewController alloc] init];
         goods.isShow = NO;
         goods.isBack = YES;
         [self.navigationController pushViewController:goods animated:YES];

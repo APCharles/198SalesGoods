@@ -1,46 +1,44 @@
-//
-//  GoodsViewController.m
+
+
+    //
+//  GoodsAddViewController.m
 //  198SalesGoods
 //
-//  Created by BST on 2017/8/8.
+//  Created by BST on 2017/9/28.
 //  Copyright © 2017年 AP. All rights reserved.
 //
 
+#import "GoodsAddViewController.h"
+#import "GoodsAddTableViewCell.h"
 #import "GoodsViewController.h"
-#import "GoodsListViewCell.h"
-#import "GoodsDetailViewController.h"
-
-@interface GoodsViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+@interface GoodsAddViewController ()<UITableViewDelegate,UITableViewDataSource>
 /** 商品列表  */
 @property(strong,nonatomic) UITableView *goodsListTableview;
 
 
 /** shuju  */
 @property(strong,nonatomic) NSArray *listArr;
+
+/** dic  */
+@property(strong,nonatomic) NSDictionary *dic;
 @end
 
-@implementation GoodsViewController
+@implementation GoodsAddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
     [self setBarName:@"商品列表"];
-      [self.view addSubview:self.goodsListTableview];
-  
-    
-//    [self requestGoodsList];
-    
+    [self.view addSubview:self.goodsListTableview];
 }
 
-    - (void)back{
-        if (self.isBack) {
-            
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        }else{
-            [super back];
-        }
+- (void)back{
+    if (self.isBack) {
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [super back];
     }
+}
 - (void)viewWillAppear:(BOOL)animated{
     if (!_isShow) {
         self.leftBtn.hidden = NO;
@@ -49,11 +47,6 @@
         self.leftBtn.hidden = YES;
         _goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
     }
-
-    if (ApplicationDelegate.isFromGoodsDetail == YES) {
-        ApplicationDelegate.isFromGoodsDetail = NO;
-        [self.tabBarController setSelectedIndex:2];
-    }
     [self requestGoodsList];
 }
 
@@ -61,62 +54,33 @@
     
     NSDictionary *dic = [[NSDictionary alloc] init];
     NetService *netService = [[NetService alloc] init];
-    if (self.url.length > 0) {
+
         
-    }else{
-        self.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios";
+
+     NSString * url = @"http://wx.dianpuj.com/index.php/wap/product/index_ios";
         
-    }
-    [netService serviceWithGetjsonURL: self.url params:dic success:^(id responseObject) {
+
+    [netService serviceWithGetjsonURL: url params:dic success:^(id responseObject) {
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
-            if ([[responseObject objectForKey:@"rows"] isKindOfClass:[NSArray class]]) {
-                
-                _listArr = [responseObject objectForKey:@"rows"];
-            }
+            _dic = responseObject;
+            [_goodsListTableview reloadData];
         }
         
-        [_goodsListTableview reloadData];
-
+        
+        
         
         
     } failure:^(NSError *error) {
         [self showProgressHUDString:@"服务器数据异常"];
-   
+        
     }];
-
+    
 }
-- (void)requestManGoodsWithUrl:(NSString *)url{
-        
-        
-        NSDictionary *dic = [[NSDictionary alloc] init];
-        NetService *netService = [[NetService alloc] init];
-        [netService serviceWithGetjsonURL:url params:dic success:^(id responseObject) {
-            
-            if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                
-                if ([[responseObject objectForKey:@"rows"] isKindOfClass:[NSArray class]]) {
-                    
-                    _listArr = [responseObject objectForKey:@"rows"];
-                }
-            }
-            
-            [_goodsListTableview reloadData];
-            
-            
-            
-        } failure:^(NSError *error) {
-            [self showProgressHUDString:@"服务器数据异常"];
-            
-        }];
-
-        
-    }
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return _listArr.count;
+    return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -140,23 +104,45 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    GoodsListViewCell *cell = [GoodsListViewCell cellWithTableView:tableView];
+    GoodsAddTableViewCell *cell = [GoodsAddTableViewCell cellWithTableView:tableView];
     
-    cell.data = _listArr[indexPath.section];
+    if ([_dic count] > 0) {
+        if (indexPath.section == 0) {
+            
+            cell.data = [_dic objectForKey:@"image_man"];
+            
+            
+        }else{
+            cell.data = [_dic objectForKey:@"image_women"];
+            
+        }
+        
+    }
+    
     return cell;
     
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *data = [_listArr objectAtIndex:indexPath.section];
+ 
     NSLog(@"点击某一个商品");
-    if ([[data objectForKey:@"price"] floatValue]>15) {
-        GoodsDetailViewController *goodsDetailViewController = [[GoodsDetailViewController alloc]init];
-        goodsDetailViewController.data = data;
-        [self.navigationController pushViewController:goodsDetailViewController animated:YES];
-    }else{
+    if (indexPath.section == 0) {
+        
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/wap/product/index_man_ios";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+        
+        
+    }else if (indexPath.section == 1){
+        GoodsViewController *goods = [[GoodsViewController alloc] init];
+        goods.url = @"http://wx.dianpuj.com/index.php/wap/product/index_woman_ios";
+        goods.hidesBottomBarWhenPushed = YES;
+        goods.isShow = NO;
+        [self.navigationController pushViewController:goods animated:YES];
+        
         
     }
 }
@@ -168,9 +154,7 @@
         goodsListTableview.x = 0;
         goodsListTableview.y = CGRectGetMaxY(self.navigationBarView.frame);
         goodsListTableview.width = mainScreenWidth;
-        if (self.url.length > 0) {
-            goodsListTableview.height = mainScreenHeight - self.navigationBarView.height ;
-        }
+       
         goodsListTableview.height = mainScreenHeight - self.navigationBarView.height - self.tabBarController.tabBar.height;
         goodsListTableview.delegate = self;
         goodsListTableview.dataSource = self;
@@ -185,6 +169,5 @@
     
     return _goodsListTableview;
 }
-
 
 @end

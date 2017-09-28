@@ -74,6 +74,8 @@
 		0F1DA7CA1F4315CF00595405 /* 详细地址.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C51F4315CF00595405 /* 详细地址.png */; };
 		0F1DA7CB1F4315CF00595405 /* 邮编.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1DA7C61F4315CF00595405 /* 邮编.png */; };
 		0F1DA7CE1F43171D00595405 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DA7CD1F43171D00595405 /* Tools.m */; };
+		0F3767E31F7CA1360083A47C /* GoodsAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3767E21F7CA1360083A47C /* GoodsAddViewController.m */; };
+		0F3767E61F7CA2F40083A47C /* GoodsAddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3767E51F7CA2F40083A47C /* GoodsAddTableViewCell.m */; };
 		0F3F6F901F39DE5E00152140 /* tabr_01_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */; };
 		0F3F6F911F39DE5E00152140 /* tabr_01_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */; };
 		0F3F6F961F39DE6700152140 /* tabr_01_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6F931F39DE6700152140 /* tabr_01_down.png */; };
@@ -518,6 +520,10 @@
 		0F1DA7C61F4315CF00595405 /* 邮编.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邮编.png"; sourceTree = "<group>"; };
 		0F1DA7CC1F43171D00595405 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		0F1DA7CD1F43171D00595405 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		0F3767E11F7CA1360083A47C /* GoodsAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsAddViewController.h; sourceTree = "<group>"; };
+		0F3767E21F7CA1360083A47C /* GoodsAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsAddViewController.m; sourceTree = "<group>"; };
+		0F3767E41F7CA2F40083A47C /* GoodsAddTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsAddTableViewCell.h; sourceTree = "<group>"; };
+		0F3767E51F7CA2F40083A47C /* GoodsAddTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsAddTableViewCell.m; sourceTree = "<group>"; };
 		0F3F6F8D1F39DE5E00152140 /* tabr_01_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabr_01_up.png; sourceTree = "<group>"; };
 		0F3F6F8E1F39DE5E00152140 /* tabr_01_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabr_01_up@2x.png"; sourceTree = "<group>"; };
 		0F3F6F931F39DE6700152140 /* tabr_01_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabr_01_down.png; sourceTree = "<group>"; };
@@ -2188,9 +2194,13 @@
 			isa = PBXGroup;
 			children = (
 				0F3F6FAE1F39E1A900152140 /* GoodsViewController.h */,
+				0F3767E11F7CA1360083A47C /* GoodsAddViewController.h */,
+				0F3767E21F7CA1360083A47C /* GoodsAddViewController.m */,
 				0F3F6FAF1F39E1A900152140 /* GoodsViewController.m */,
 				0F8794071F459B2100666EDE /* GoodsListViewCell.h */,
 				0F8794081F459B2100666EDE /* GoodsListViewCell.m */,
+				0F3767E41F7CA2F40083A47C /* GoodsAddTableViewCell.h */,
+				0F3767E51F7CA2F40083A47C /* GoodsAddTableViewCell.m */,
 				BCD198E81F468B0200A78D59 /* GoodsDetailViewController.h */,
 				BCD198E91F468B0200A78D59 /* GoodsDetailViewController.m */,
 				BCCD4EBB1F57A33500A38702 /* VerifyView.h */,
@@ -2983,7 +2993,7 @@
 				TargetAttributes = {
 					0F19AA3D1F0D085000997F66 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3ED54QFZS2;
+						DevelopmentTeam = 7VH6A7LBL2;
 						ProvisioningStyle = Automatic;
 					};
 					0F19AA561F0D085000997F66 = {
@@ -3216,6 +3226,7 @@
 				0F70B69B1F629A3C004FC005 /* MQFileDownloadCell.m in Sources */,
 				0F70B6991F629A3C004FC005 /* MQEvaluationResultCell.m in Sources */,
 				560174F31F435B4F00EAC87E /* Province.m in Sources */,
+				0F3767E31F7CA1360083A47C /* GoodsAddViewController.m in Sources */,
 				0F70B6C71F629A3C004FC005 /* MQEvaluationView.m in Sources */,
 				0F70B6A41F629A3C004FC005 /* MQBundleUtil.m in Sources */,
 				0F70B67E1F629A3C004FC005 /* MQFileDownloadMessage.m in Sources */,
@@ -3344,6 +3355,7 @@
 				BC036ED91F43ECDA0037312D /* FillPidViewController.m in Sources */,
 				BC036EC71F43E2190037312D /* SBJsonStreamWriter.m in Sources */,
 				0F70B6781F629A3C004FC005 /* MQBotAnswerMessage.m in Sources */,
+				0F3767E61F7CA2F40083A47C /* GoodsAddTableViewCell.m in Sources */,
 				0F70B6D51F629A3C004FC005 /* MQMessageFormConfig.m in Sources */,
 				BC036EC11F43E2190037312D /* NSObject+SBJson.m in Sources */,
 				0F1DA7211F42816400595405 /* MineInfoViewCell.m in Sources */,
@@ -3502,7 +3514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3517,7 +3529,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/meiqia",
 					"$(PROJECT_DIR)/198SalesGoods/Macros/meiqia",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3571,7 +3583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ED54QFZS2;
+				DEVELOPMENT_TEAM = 7VH6A7LBL2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3586,7 +3598,7 @@
 					"$(PROJECT_DIR)/198SalesGoods/Venders/meiqia",
 					"$(PROJECT_DIR)/198SalesGoods/Macros/meiqia",
 				);
-				GCC_PREFIX_HEADER = "/Users/yidianjicai-ios/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/bst/Documents/GitHub/198SalesGoods/198SalesGoods/Macros/PrefixHeader.pch;
 				INFOPLIST_FILE = 198SalesGoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

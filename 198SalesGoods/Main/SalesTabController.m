@@ -14,6 +14,7 @@
 #import "MineViewController.h"
 #import "ShoppingCartViewController.h"
 #import "GoodsViewController.h"
+#import "GoodsAddViewController.h"
 @interface SalesTabController ()<UITabBarControllerDelegate>
 
 @end
@@ -49,7 +50,7 @@
                               MallImgKey    : @"tabr_01_up",
                               MallSelImgKey : @"tabr_01_down"},
                             
-                            @{MallClassKey  : @"GoodsViewController",
+                            @{MallClassKey  : @"GoodsAddViewController",
                               MallTitleKey  : @"分类",
                               MallImgKey    : @"tabr_02_up",
                               MallSelImgKey : @"tabr_02_down"},
@@ -89,9 +90,9 @@
         SalesNavgationController *sales = (SalesNavgationController *)viewController;
         
         for (UIViewController *vc in sales.viewControllers) {
-            if ([vc isKindOfClass:[GoodsViewController class]]) {
+            if ([vc isKindOfClass:[GoodsAddViewController class]]) {
                 
-                GoodsViewController *goods = (GoodsViewController *)vc;
+                GoodsAddViewController *goods = (GoodsAddViewController *)vc;
                 goods.isShow = YES;
                 
             }

@@ -160,7 +160,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
     if (indexPath.row == 0) {
         
         GoodsViewController *goods = [[GoodsViewController alloc] init];
-        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/type=74";
+        goods.url = @"http://wx.dianpuj.com/index.php/wap/product/index_man_ios";
         goods.hidesBottomBarWhenPushed = YES;
         goods.isShow = NO;
         [self.navigationController pushViewController:goods animated:YES];
@@ -168,7 +168,7 @@ static NSString *const GoodsCountDownCellID = @"GoodsCountDownCell";
         
     }else if (indexPath.row == 1){
         GoodsViewController *goods = [[GoodsViewController alloc] init];
-        goods.url = @"http://wx.dianpuj.com/index.php/Wap/Product/index_ios/type=74";
+        goods.url = @"http://wx.dianpuj.com/index.php/wap/product/index_woman_ios";
         goods.hidesBottomBarWhenPushed = YES;
         goods.isShow = NO;
         [self.navigationController pushViewController:goods animated:YES];
